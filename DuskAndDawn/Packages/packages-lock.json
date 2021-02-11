@@ -1,35 +1,5 @@
 {
   "dependencies": {
-    "com.unity.2d.sprite": {
-      "version": "1.0.0",
-      "depth": 0,
-      "source": "builtin",
-      "dependencies": {}
-    },
-    "com.unity.2d.tilemap": {
-      "version": "1.0.0",
-      "depth": 0,
-      "source": "builtin",
-      "dependencies": {}
-    },
-    "com.unity.ads": {
-      "version": "3.5.2",
-      "depth": 0,
-      "source": "registry",
-      "dependencies": {
-        "com.unity.ugui": "1.0.0"
-      },
-      "url": "https://packages.unity.com"
-    },
-    "com.unity.analytics": {
-      "version": "3.5.3",
-      "depth": 0,
-      "source": "registry",
-      "dependencies": {
-        "com.unity.ugui": "1.0.0"
-      },
-      "url": "https://packages.unity.com"
-    },
     "com.unity.cinemachine": {
       "version": "2.7.1",
       "depth": 0,
@@ -45,7 +15,7 @@
       "url": "https://packages.unity.com"
     },
     "com.unity.ext.nunit": {
-      "version": "1.0.6",
+      "version": "1.0.5",
       "depth": 1,
       "source": "registry",
       "dependencies": {},
@@ -83,15 +53,6 @@
       },
       "url": "https://packages.unity.com"
     },
-    "com.unity.purchasing": {
-      "version": "3.0.0-pre.4",
-      "depth": 0,
-      "source": "registry",
-      "dependencies": {
-        "com.unity.ugui": "1.0.0"
-      },
-      "url": "https://packages.unity.com"
-    },
     "com.unity.settings-manager": {
       "version": "1.0.3",
       "depth": 1,
@@ -100,11 +61,11 @@
       "url": "https://packages.unity.com"
     },
     "com.unity.test-framework": {
-      "version": "1.1.20",
+      "version": "1.1.19",
       "depth": 0,
       "source": "registry",
       "dependencies": {
-        "com.unity.ext.nunit": "1.0.6",
+        "com.unity.ext.nunit": "1.0.5",
         "com.unity.modules.imgui": "1.0.0",
         "com.unity.modules.jsonserialize": "1.0.0"
       },
@@ -140,13 +101,18 @@
         "com.unity.modules.imgui": "1.0.0"
       }
     },
-    "com.unity.xr.legacyinputhelpers": {
-      "version": "2.1.7",
+    "com.unity.visualscripting": {
+      "version": "1.5.1-pre.3",
       "depth": 0,
       "source": "registry",
       "dependencies": {
-        "com.unity.modules.vr": "1.0.0",
-        "com.unity.modules.xr": "1.0.0"
+        "com.unity.ugui": "1.0.0",
+        "com.unity.modules.ai": "1.0.0",
+        "com.unity.modules.animation": "1.0.0",
+        "com.unity.modules.jsonserialize": "1.0.0",
+        "com.unity.modules.particlesystem": "1.0.0",
+        "com.unity.modules.physics": "1.0.0",
+        "com.unity.modules.physics2d": "1.0.0"
       },
       "url": "https://packages.unity.com"
     },
