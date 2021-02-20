@@ -56,11 +56,7 @@ public class ThreeDMovement : MonoBehaviour
 
     private void RotateTowardMovementVector(Vector3 movementVector)
     {
-        if(movementVector.magnitude == 0) {
-            anim.SetBool("isRunning", false);
-            return; 
-        }
-        anim.SetBool("isRunning", true);
+        if(movementVector.magnitude == 0) { return; }
         print(movementVector);
         var rotation = Quaternion.LookRotation(new Vector3(movementVector.z, 0, -movementVector.x));
         transform.rotation = Quaternion.RotateTowards(transform.rotation, rotation, rotateSpeed);
