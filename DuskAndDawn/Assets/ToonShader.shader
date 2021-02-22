@@ -17,7 +17,7 @@ Shader "Unlit/ToonShader"
             Pass
             {
                 CGPROGRAM
-                #pragma vertex vert
+                #pragma vertex vert surface surf Standard fullforwardshadows
                 #pragma fragment frag
 
                 #include "UnityCG.cginc"
