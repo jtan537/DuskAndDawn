@@ -5,53 +5,64 @@ using UnityEngine;
 
 public class SwitchCharacter : MonoBehaviour
 {
+    [SerializeField]
+    CameraController _cameras;
+    [SerializeField]
+    GameObject _dusk, _dawn;
+    [SerializeField]
+    Light _duskLighting, _dawnLighting;
 
-    public CameraController cameras;
-    CinemachineVirtualCamera currentduskCamera;
-    CinemachineVirtualCamera currentdawnCamera;
+    CinemachineVirtualCamera _currentduskCamera, _currentdawnCamera;
+    GameObject _currentCharacter;
 
-    
-
-    public GameObject dusk;
-    public GameObject dawn;
-
-    GameObject currentCharacter;
     // Start is called before the first frame update
     void Start()
     {
-        currentCharacter = dawn;
-        currentduskCamera = cameras.getDuskCurrentCamera();
-        currentdawnCamera = cameras.getDawnCurrentCamera();
+        _currentCharacter = _dawn;
+        _currentduskCamera = _cameras.getDuskCurrentCamera();
+        _currentdawnCamera = _cameras.getDawnCurrentCamera();
+        _dawnLighting.enabled = true;
+        _duskLighting.enabled = false;
     }
 
     // Update is called once per frame
     void Update()
     {
-        currentduskCamera = cameras.getDuskCurrentCamera();
-        currentdawnCamera = cameras.getDawnCurrentCamera();
+        _currentduskCamera = _cameras.getDuskCurrentCamera();
+        _currentdawnCamera = _cameras.getDawnCurrentCamera();
         if (Input.GetKeyDown("r"))
         {
-            if (currentCharacter == dusk)
+            // Switch to Dawn
+            if (_currentCharacter == _dusk)
             {
-                dusk.GetComponent<ThreeDMovement>().enabled = false;
-                currentduskCamera.GetComponent<CinemachineVirtualCamera>().enabled = false;
+                _dusk.GetComponent<ThreeDMovement>().enabled = false;
+                _currentduskCamera.GetComponent<CinemachineVirtualCamera>().enabled = false;
 
-                dawn.GetComponent<ThreeDMovement>().enabled = true;
-                currentdawnCamera.GetComponent<CinemachineVirtualCamera>().enabled = true;
+                _dawn.GetComponent<ThreeDMovement>().enabled = true;
+                _currentdawnCamera.GetComponent<CinemachineVirtualCamera>().enabled = true;
 
-                cameras.setCurPlayer(dawn);
-                currentCharacter = dawn;
+                _cameras.setCurPlayer(_dawn);
+                _currentCharacter = _dawn;
+
+                // Change lighting presets
+                _dawnLighting.enabled = true;
+                _duskLighting.enabled = false;
             }
+            // Switch to Dusk
             else
             {
-                dusk.GetComponent<ThreeDMovement>().enabled = true;
-                currentduskCamera.GetComponent<CinemachineVirtualCamera>().enabled = true;
+                _dusk.GetComponent<ThreeDMovement>().enabled = true;
+                _currentduskCamera.GetComponent<CinemachineVirtualCamera>().enabled = true;
 
-                dawn.GetComponent<ThreeDMovement>().enabled = false;
-                currentdawnCamera.GetComponent<CinemachineVirtualCamera>().enabled = false;
+                _dawn.GetComponent<ThreeDMovement>().enabled = false;
+                _currentdawnCamera.GetComponent<CinemachineVirtualCamera>().enabled = false;
 
-                currentCharacter = dusk;
-                cameras.setCurPlayer(dusk);
+                _currentCharacter = _dusk;
+                _cameras.setCurPlayer(_dusk);
+
+                // Change lighting presets
+                _dawnLighting.enabled = false;
+                _duskLighting.enabled = true;
             }
         }
     }

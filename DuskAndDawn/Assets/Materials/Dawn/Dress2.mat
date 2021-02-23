@@ -7,10 +7,10 @@ Material:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: lambert14
+  m_Name: Dress2
   m_Shader: {fileID: 4800000, guid: efcaf0878f23b2a4d8687f3015829ae6, type: 3}
-  m_ShaderKeywords: _EMISSION
-  m_LightmapFlags: 1
+  m_ShaderKeywords: 
+  m_LightmapFlags: 4
   m_EnableInstancingVariants: 0
   m_DoubleSidedGI: 0
   m_CustomRenderQueue: -1
@@ -60,7 +60,7 @@ Material:
     - _Brightness: 0.155
     - _BumpScale: 1
     - _Cutoff: 0.5
-    - _Detail: 0.3
+    - _Detail: 0.395
     - _DetailNormalMapScale: 1
     - _DstBlend: 0
     - _GlossMapScale: 1
@@ -75,15 +75,15 @@ Material:
     - _SpecularHighlights: 1
     - _SpecularSize: 0.1
     - _SrcBlend: 1
-    - _StepAmount: 8
+    - _StepAmount: 11
     - _StepWidth: 0.25
     - _Strength: 0.374
     - _UVSec: 0
     - _ZWrite: 1
     m_Colors:
-    - _Color: {r: 0.9063317, g: 0.9063317, b: 0.9063317, a: 1}
+    - _Color: {r: 0.37729898, g: 0.52896297, b: 0.7231055, a: 1}
     - _Emission: {r: 0, g: 0, b: 0, a: 1}
-    - _EmissionColor: {r: 0.0877193, g: 0.0877193, b: 0.0877193, a: 1}
+    - _EmissionColor: {r: 0, g: 0, b: 0, a: 1}
     - _ShadowTint: {r: 0.5, g: 0.5, b: 0.5, a: 1}
     - _Specular: {r: 1, g: 1, b: 1, a: 1}
   m_BuildTextureStacks: []

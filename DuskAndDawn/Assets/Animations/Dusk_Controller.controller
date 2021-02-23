@@ -81,7 +81,7 @@ AnimatorController:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: Player
+  m_Name: Dusk_Controller
   serializedVersion: 5
   m_AnimatorParameters:
   - m_Name: isRunning
@@ -124,7 +124,7 @@ AnimatorState:
   m_MirrorParameterActive: 0
   m_CycleOffsetParameterActive: 0
   m_TimeParameterActive: 0
-  m_Motion: {fileID: -203655887218126122, guid: 16d277596c6dbca4ca0eb7d971c7b2de,
+  m_Motion: {fileID: -203655887218126122, guid: d534dbfe1bedc8b46b6942ff3ffe5e6b,
     type: 3}
   m_Tag: 
   m_SpeedParameter: 
@@ -152,7 +152,7 @@ AnimatorState:
   m_MirrorParameterActive: 0
   m_CycleOffsetParameterActive: 0
   m_TimeParameterActive: 0
-  m_Motion: {fileID: -203655887218126122, guid: f8fee8e7368ded945a8a93a35d89888b,
+  m_Motion: {fileID: -203655887218126122, guid: 670df885a6a675e4d8946ab3ba9aa15d,
     type: 3}
   m_Tag: 
   m_SpeedParameter: 
