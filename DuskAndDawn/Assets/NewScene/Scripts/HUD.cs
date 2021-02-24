@@ -43,9 +43,9 @@ public class HUD : MonoBehaviour
 
                 itemDragHandler.Item = e.Item;
 
-                Transform deleteTransform = slot.GetChild(1);
-                Image deleteImage = deleteTransform.GetComponent<Image>();
-                deleteImage.enabled = true;
+                // Transform deleteTransform = slot.GetChild(1);
+                // Image deleteImage = deleteTransform.GetComponent<Image>();
+                // deleteImage.enabled = true;
 
     			break;
     		}
@@ -67,9 +67,9 @@ public class HUD : MonoBehaviour
                 image.sprite = null;
                 itemDragHandler.Item = null;
 
-                Transform deleteTransform = slot.GetChild(1);
-                Image deleteImage = deleteTransform.GetComponent<Image>();
-                deleteImage.enabled = false;
+                // Transform deleteTransform = slot.GetChild(1);
+                // Image deleteImage = deleteTransform.GetComponent<Image>();
+                // deleteImage.enabled = false;
 
                 break;
             }
