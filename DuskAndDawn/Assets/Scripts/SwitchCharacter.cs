@@ -10,7 +10,7 @@ public class SwitchCharacter : MonoBehaviour
     [SerializeField]
     GameObject _dusk, _dawn;
     [SerializeField]
-    Light _duskLighting, _dawnLighting;
+    GameObject _duskLighting, _dawnLighting;
 
     CinemachineVirtualCamera _currentduskCamera, _currentdawnCamera;
     GameObject _currentCharacter;
@@ -21,8 +21,8 @@ public class SwitchCharacter : MonoBehaviour
         _currentCharacter = _dawn;
         _currentduskCamera = _cameras.getDuskCurrentCamera();
         _currentdawnCamera = _cameras.getDawnCurrentCamera();
-        _dawnLighting.enabled = true;
-        _duskLighting.enabled = false;
+        _dawnLighting.SetActive(true);
+        _duskLighting.SetActive(false);
     }
 
     // Update is called once per frame
@@ -45,8 +45,8 @@ public class SwitchCharacter : MonoBehaviour
                 _currentCharacter = _dawn;
 
                 // Change lighting presets
-                _dawnLighting.enabled = true;
-                _duskLighting.enabled = false;
+                _dawnLighting.SetActive(true);
+                _duskLighting.SetActive(false);
             }
             // Switch to Dusk
             else
@@ -61,8 +61,8 @@ public class SwitchCharacter : MonoBehaviour
                 _cameras.setCurPlayer(_dusk);
 
                 // Change lighting presets
-                _dawnLighting.enabled = false;
-                _duskLighting.enabled = true;
+                _dawnLighting.SetActive(false);
+                _duskLighting.SetActive(true);
             }
         }
     }
