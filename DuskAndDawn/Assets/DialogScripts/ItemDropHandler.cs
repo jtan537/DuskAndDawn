@@ -24,7 +24,7 @@ public class ItemDropHandler : MonoBehaviour, IDropHandler
             RaycastHit hit;
             // Casts the ray and get the first game object hit
             Physics.Raycast(ray, out hit);
-            if (hit.transform.name == "Collider")
+            if (hit.transform.name == "TreeCollider")
             {
                 ItemDragHandler dragHandler = 
                     gameObject.transform.Find("Item").GetComponent<ItemDragHandler>();

@@ -8,6 +8,7 @@ public class NPCInteract : MonoBehaviour
 
     public GameObject InteractTriggerUI;
     public ItemDropHandler[] handlers;
+    public CameraController info;
 
     // Update is called once per frame
     void Update()
@@ -21,7 +22,11 @@ public class NPCInteract : MonoBehaviour
     public void OnDialogEnd()
     {
         isInDialog = false;
-        gameObject.transform.GetComponent<ThirdPersonMovement>().enabled = true;
+        if (gameObject.Equals(info.getCurPlayer()))
+        {
+            gameObject.transform.GetComponent<ThreeDMovement>().enabled = true;
+        }
+        
         if (NPC.ActiveNPC.Name == "Tree")
         {
             foreach (ItemDropHandler handler in handlers)
@@ -42,7 +47,7 @@ public class NPCInteract : MonoBehaviour
                 InteractTriggerUI.SetActive(false);
                 // Start dialog
                 isInDialog = true;
-                gameObject.transform.GetComponent<ThirdPersonMovement>().enabled = false;
+                gameObject.transform.GetComponent<ThreeDMovement>().enabled = false;
                 DialogUI.Instance.dialogueRunner.StartDialogue(NPC.ActiveNPC.YarnStartNode);
             }
         }

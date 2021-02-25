@@ -11,6 +11,8 @@ public class SwitchCharacter : MonoBehaviour
     GameObject _dusk, _dawn;
     [SerializeField]
     GameObject _duskLighting, _dawnLighting;
+    [SerializeField]
+    GameObject _duskInventory, _dawnInventory;
 
     CinemachineVirtualCamera _currentduskCamera, _currentdawnCamera;
     GameObject _currentCharacter;
@@ -23,6 +25,8 @@ public class SwitchCharacter : MonoBehaviour
         _currentdawnCamera = _cameras.getDawnCurrentCamera();
         _dawnLighting.SetActive(true);
         _duskLighting.SetActive(false);
+        _dawnInventory.SetActive(true);
+        _duskInventory.SetActive(false);
     }
 
     // Update is called once per frame
@@ -36,9 +40,11 @@ public class SwitchCharacter : MonoBehaviour
             if (_currentCharacter == _dusk)
             {
                 _dusk.GetComponent<ThreeDMovement>().enabled = false;
+                _dusk.GetComponent<NPCInteract>().enabled = false;
                 _currentduskCamera.GetComponent<CinemachineVirtualCamera>().enabled = false;
 
                 _dawn.GetComponent<ThreeDMovement>().enabled = true;
+                _dawn.GetComponent<NPCInteract>().enabled = true;
                 _currentdawnCamera.GetComponent<CinemachineVirtualCamera>().enabled = true;
 
                 _cameras.setCurPlayer(_dawn);
@@ -47,14 +53,19 @@ public class SwitchCharacter : MonoBehaviour
                 // Change lighting presets
                 _dawnLighting.SetActive(true);
                 _duskLighting.SetActive(false);
+                // Change inventory hud
+                _dawnInventory.SetActive(true);
+                _duskInventory.SetActive(false);
             }
             // Switch to Dusk
             else
             {
                 _dusk.GetComponent<ThreeDMovement>().enabled = true;
+                _dusk.GetComponent<NPCInteract>().enabled = true;
                 _currentduskCamera.GetComponent<CinemachineVirtualCamera>().enabled = true;
 
                 _dawn.GetComponent<ThreeDMovement>().enabled = false;
+                _dawn.GetComponent<NPCInteract>().enabled = false;
                 _currentdawnCamera.GetComponent<CinemachineVirtualCamera>().enabled = false;
 
                 _currentCharacter = _dusk;
@@ -63,6 +74,10 @@ public class SwitchCharacter : MonoBehaviour
                 // Change lighting presets
                 _dawnLighting.SetActive(false);
                 _duskLighting.SetActive(true);
+
+                // Change inventory hud
+                _dawnInventory.SetActive(false);
+                _duskInventory.SetActive(true);
             }
         }
     }
