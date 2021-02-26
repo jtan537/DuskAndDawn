@@ -32,7 +32,7 @@ public class CamZone : MonoBehaviour
         {
             camToSwitchTo.GetComponent<CinemachineVirtualCamera>().enabled = true;
             ogCamera.GetComponent<CinemachineVirtualCamera>().enabled = false;
-            if (other.gameObject.name == "Dawn_Test")
+            if (other.gameObject.name == "Dawn")
             {
                 cameras.setDawnCurrentCamera(cameras.getDawnCam2());
             } else
@@ -49,7 +49,7 @@ public class CamZone : MonoBehaviour
         {
             ogCamera.GetComponent<CinemachineVirtualCamera>().enabled = true;
             camToSwitchTo.GetComponent<CinemachineVirtualCamera>().enabled = false;
-            if (other.gameObject.name == "Dawn_Test")
+            if (other.gameObject.name == "Dawn")
             {
                 cameras.setDawnCurrentCamera(cameras.getDawnCam1());
             }
