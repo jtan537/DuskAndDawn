@@ -12,7 +12,7 @@ public class CamZone : MonoBehaviour
     [SerializeField]
     private CinemachineVirtualCamera ogCamera = null;
 
-    public CameraController cameras;
+    public Metadata cameras;
     GameObject curPlayer;
     CinemachineVirtualCamera curDuskCam;
     CinemachineVirtualCamera curDawnCam;

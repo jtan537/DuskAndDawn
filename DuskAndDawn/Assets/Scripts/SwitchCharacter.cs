@@ -6,7 +6,7 @@ using UnityEngine;
 public class SwitchCharacter : MonoBehaviour
 {
     [SerializeField]
-    CameraController _cameras;
+    Metadata _metadata;
     [SerializeField]
     GameObject _dusk, _dawn;
     [SerializeField]
@@ -21,8 +21,8 @@ public class SwitchCharacter : MonoBehaviour
     void Start()
     {
         _currentCharacter = _dawn;
-        _currentduskCamera = _cameras.getDuskCurrentCamera();
-        _currentdawnCamera = _cameras.getDawnCurrentCamera();
+        _currentduskCamera = _metadata.getDuskCurrentCamera();
+        _currentdawnCamera = _metadata.getDawnCurrentCamera();
         _dawnLighting.SetActive(true);
         _duskLighting.SetActive(false);
         _dawnInventory.SetActive(true);
@@ -32,9 +32,11 @@ public class SwitchCharacter : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        _currentduskCamera = _cameras.getDuskCurrentCamera();
-        _currentdawnCamera = _cameras.getDawnCurrentCamera();
-        if (Input.GetKeyDown("r"))
+        _currentduskCamera = _metadata.getDuskCurrentCamera();
+        _currentdawnCamera = _metadata.getDawnCurrentCamera();
+
+        // Don't allow switching when in dialog
+        if (Input.GetKeyDown("r") && !_metadata.dawnInDialog && !_metadata.duskInDialog)
         {
             // Switch to Dawn
             if (_currentCharacter == _dusk)
@@ -47,7 +49,7 @@ public class SwitchCharacter : MonoBehaviour
                 _dawn.GetComponent<NPCInteract>().enabled = true;
                 _currentdawnCamera.GetComponent<CinemachineVirtualCamera>().enabled = true;
 
-                _cameras.setCurPlayer(_dawn);
+                _metadata.setCurPlayer(_dawn);
                 _currentCharacter = _dawn;
 
                 // Change lighting presets
@@ -69,7 +71,7 @@ public class SwitchCharacter : MonoBehaviour
                 _currentdawnCamera.GetComponent<CinemachineVirtualCamera>().enabled = false;
 
                 _currentCharacter = _dusk;
-                _cameras.setCurPlayer(_dusk);
+                _metadata.setCurPlayer(_dusk);
 
                 // Change lighting presets
                 _dawnLighting.SetActive(false);

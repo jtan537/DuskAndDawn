@@ -4,11 +4,11 @@ using UnityEngine;
 
 public class NPCInteract : MonoBehaviour
 {
-	bool isInDialog = false;
+	public bool isInDialog = false;
 
     public GameObject InteractTriggerUI;
     public ItemDropHandler[] handlers;
-    public CameraController info;
+    public Metadata info;
 
     // Update is called once per frame
     void Update()
