@@ -9,8 +9,6 @@ public class CamZone : MonoBehaviour
 
     [SerializeField]
     private CinemachineVirtualCamera camToSwitchTo = null;
-    [SerializeField]
-    private CinemachineVirtualCamera ogCamera = null;
 
     public Metadata cameras;
     GameObject curPlayer;
@@ -20,44 +18,37 @@ public class CamZone : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        camToSwitchTo.GetComponent<CinemachineVirtualCamera>().enabled = false;
         curDuskCam = cameras.getDuskCurrentCamera();
         curDawnCam = cameras.getDawnCurrentCamera();
         curPlayer = cameras.getCurPlayer();
     }
 
+
     private void OnTriggerEnter(Collider other)
     {
+        curDuskCam = cameras.getDuskCurrentCamera();
+        curDawnCam = cameras.getDawnCurrentCamera();
+        curPlayer = cameras.getCurPlayer();
         if (other.CompareTag("Player"))
         {
-            camToSwitchTo.GetComponent<CinemachineVirtualCamera>().enabled = true;
-            ogCamera.GetComponent<CinemachineVirtualCamera>().enabled = false;
+            // Do nothing if player re-enters camzone
+            if (curDawnCam == camToSwitchTo || curDuskCam == camToSwitchTo)
+            {
+                return;
+            }
+            
             if (other.gameObject.name == "Dawn")
             {
-                cameras.setDawnCurrentCamera(cameras.getDawnCam2());
+                curDawnCam.GetComponent<CinemachineVirtualCamera>().enabled = false;
+                cameras.setDawnCurrentCamera(camToSwitchTo);
             } else
             {
-                cameras.setDuskCurrentCamera(cameras.getDuskCam2());
+                curDuskCam.GetComponent<CinemachineVirtualCamera>().enabled = false;
+                cameras.setDuskCurrentCamera(camToSwitchTo);
             }
+            camToSwitchTo.GetComponent<CinemachineVirtualCamera>().enabled = true;
         }
 
-    }
-
-    private void OnTriggerExit(Collider other)
-    {
-        if (other.CompareTag("Player"))
-        {
-            ogCamera.GetComponent<CinemachineVirtualCamera>().enabled = true;
-            camToSwitchTo.GetComponent<CinemachineVirtualCamera>().enabled = false;
-            if (other.gameObject.name == "Dawn")
-            {
-                cameras.setDawnCurrentCamera(cameras.getDawnCam1());
-            }
-            else
-            {
-                cameras.setDuskCurrentCamera(cameras.getDuskCam1());
-            }
-        }
     }
 
     private void OnValidate()

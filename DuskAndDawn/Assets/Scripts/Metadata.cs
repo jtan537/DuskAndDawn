@@ -8,13 +8,9 @@ public class Metadata : MonoBehaviour
     // Start is called before the first frame update
 
     [SerializeField]
-    CinemachineVirtualCamera duskCam1;
+    CinemachineVirtualCamera[] duskCameras;
     [SerializeField]
-    CinemachineVirtualCamera duskCam2;
-    [SerializeField]
-    CinemachineVirtualCamera dawnCam1;
-    [SerializeField]
-    CinemachineVirtualCamera dawnCam2;
+    CinemachineVirtualCamera[] dawnCameras;
     [SerializeField]
     NPCInteract duskNPCInteract, dawnNPCInteract;
 
@@ -29,24 +25,14 @@ public class Metadata : MonoBehaviour
         duskInDialog = duskNPCInteract.isInDialog;
     }
 
-    public CinemachineVirtualCamera getDuskCam1()
+    public CinemachineVirtualCamera getDuskCam(int camNumber)
     {
-        return duskCam1;
+        return duskCameras[camNumber - 1];
     }
 
-    public CinemachineVirtualCamera getDuskCam2()
+    public CinemachineVirtualCamera getDawnCam(int camNumber)
     {
-        return duskCam2;
-    }
-
-    public CinemachineVirtualCamera getDawnCam1()
-    {
-        return dawnCam1;
-    }
-
-    public CinemachineVirtualCamera getDawnCam2()
-    {
-        return dawnCam2;
+        return dawnCameras[camNumber - 1];
     }
 
     public GameObject getCurPlayer()
