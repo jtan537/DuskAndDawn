@@ -5,14 +5,15 @@ using UnityEngine;
 public class ThreeDMovement : MonoBehaviour
 {
     [SerializeField]
-    float moveSpeed = 4f, jumpHeight = 3f, gravity = -9.81f, rotateSpeed = 1f;
+    float groundedMoveSpeed = 4f, jumpMoveSpeed = 5f, jumpHeight = 3f, gravity = -9.81f, rotateSpeed = 1f;
 
+    private float _moveSpeed;
 
     Vector3 velocity;
     bool isGrounded;
 
     public Transform groundCheck;
-    public float groundDistance = 0.4f;
+    public float groundCheckRadius = 0.4f;
     public LayerMask groundMask;
 
     public CharacterController controller;
@@ -22,11 +23,15 @@ public class ThreeDMovement : MonoBehaviour
     {
 
         // Create sphere and check if it collides with the ground layer.
-        isGrounded = Physics.CheckSphere(groundCheck.position, groundDistance, groundMask);
-        if (isGrounded && velocity.y < 0)
+        isGrounded = Physics.CheckSphere(groundCheck.position, groundCheckRadius, groundMask);
+        if (isGrounded && velocity.y <= 0)
         {
             // -2 to force the player on the ground a bit
             velocity.y = -2f;
+            _moveSpeed = groundedMoveSpeed;
+        } else
+        {
+            _moveSpeed = jumpMoveSpeed;
         }
 
         var targetVector = new Vector3(Input.GetAxisRaw("HorizontalKey"), 0f, Input.GetAxisRaw("VerticalKey")).normalized;
@@ -47,7 +52,7 @@ public class ThreeDMovement : MonoBehaviour
     }
 
     private Vector3 MoveTowardTarget(Vector3 targetVector) {
-        var speed = moveSpeed * Time.deltaTime;
+        var speed = _moveSpeed * Time.deltaTime;
 
         targetVector = Quaternion.Euler(0,Camera.main.transform.eulerAngles.y, 0) * targetVector;
         controller.Move(targetVector * speed);
@@ -65,27 +70,36 @@ public class ThreeDMovement : MonoBehaviour
         transform.rotation = Quaternion.RotateTowards(transform.rotation, rotation, rotateSpeed);
     }
 
-
-
-/*    void Move()
+    // Draw jump sphere for debugging
+    void OnDrawGizmos()
     {
-        // Normalize so diagonal movement doesnt go faster
-        Vector3 direction = new Vector3(Input.GetAxisRaw("HorizontalKey"), 0f, Input.GetAxisRaw("VerticalKey")).normalized;
-        float targetAngle = Mathf.Atan2(direction.x, direction.z) * Mathf.Rad2Deg + Camera.main.transform.eulerAngles.y;
-        // Smooths numbers so rotation is smooth
-        float angle = Mathf.SmoothDampAngle(transform.eulerAngles.y, targetAngle, ref turnSmoothVelocity, turnSmoothTime);
-        var rotation = Quaternion.LookRotation(Quaternion.Euler(0, targetAngle, 0));
+        Gizmos.color = Color.yellow;
+        Gizmos.DrawWireSphere(groundCheck.position, groundCheckRadius);// Change to always see transform.position
+    }
 
-        transform.rotation = Quaternion.Euler(0f, angle, 0f);
 
-        Vector3 moveDir = Quaternion.Euler(0f, targetAngle, 0f) * Vector3.forward;
 
-        controller.Move(moveDir.normalized * moveSpeed * Time.deltaTime);
-        if (anim)
+
+
+    /*    void Move()
         {
-            anim.SetBool("isRunning", true);
-        }
-    }*/
+            // Normalize so diagonal movement doesnt go faster
+            Vector3 direction = new Vector3(Input.GetAxisRaw("HorizontalKey"), 0f, Input.GetAxisRaw("VerticalKey")).normalized;
+            float targetAngle = Mathf.Atan2(direction.x, direction.z) * Mathf.Rad2Deg + Camera.main.transform.eulerAngles.y;
+            // Smooths numbers so rotation is smooth
+            float angle = Mathf.SmoothDampAngle(transform.eulerAngles.y, targetAngle, ref turnSmoothVelocity, turnSmoothTime);
+            var rotation = Quaternion.LookRotation(Quaternion.Euler(0, targetAngle, 0));
+
+            transform.rotation = Quaternion.Euler(0f, angle, 0f);
+
+            Vector3 moveDir = Quaternion.Euler(0f, targetAngle, 0f) * Vector3.forward;
+
+            controller.Move(moveDir.normalized * moveSpeed * Time.deltaTime);
+            if (anim)
+            {
+                anim.SetBool("isRunning", true);
+            }
+        }*/
 }
     
 

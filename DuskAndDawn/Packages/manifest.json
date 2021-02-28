@@ -12,11 +12,13 @@
     "com.unity.polybrush": "1.0.2",
     "com.unity.probuilder": "5.0.0-pre.7",
     "com.unity.purchasing": "3.0.0-pre.4",
+    "com.unity.quicksearch": "2.0.2",
     "com.unity.test-framework": "1.1.20",
     "com.unity.textmeshpro": "3.0.3",
     "com.unity.timeline": "1.5.1-pre.3",
     "com.unity.ugui": "1.0.0",
     "com.unity.xr.legacyinputhelpers": "2.1.7",
+    "dev.yarnspinner.unity": "1.2.7",
     "com.unity.modules.ai": "1.0.0",
     "com.unity.modules.androidjni": "1.0.0",
     "com.unity.modules.animation": "1.0.0",
@@ -47,8 +49,7 @@
     "com.unity.modules.video": "1.0.0",
     "com.unity.modules.vr": "1.0.0",
     "com.unity.modules.wind": "1.0.0",
-    "com.unity.modules.xr": "1.0.0",
-    "dev.yarnspinner.unity": "1.2.7"
+    "com.unity.modules.xr": "1.0.0"
   },
   "scopedRegistries": [
     {
