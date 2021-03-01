@@ -12,10 +12,13 @@ public class HUD : MonoBehaviour
 
     private Canvas canvas;
     private bool show = false;
+    private Metadata metadata;
 
     void Start()
     {
-    	Inventory.ItemAdded += InventoryScript_ItemAdded;
+        metadata = GameObject.FindObjectOfType<Metadata>().GetComponent<Metadata>();
+
+        Inventory.ItemAdded += InventoryScript_ItemAdded;
         Inventory.ItemRemoved += InventoryScript_ItemRemoved;
         canvas = gameObject.GetComponent<Canvas>();
         canvas.enabled = show;
@@ -30,11 +33,17 @@ public class HUD : MonoBehaviour
             canvas.enabled = show;
         }
 
-        if (Input.GetKeyDown("b") && !_metadata.duskInDialog && !_metadata.dawnInDialog)
+        if (Input.GetKeyDown("b") && !_metadata.duskInDialog && !_metadata.dawnInDialog && gameObject.tag == metadata.curPlayer.name)
         {
             show = !show;
             canvas.enabled = show;
         }
+    }
+
+    public void toggleHud(bool showHud)
+    {
+        show = showHud;
+        canvas.enabled = show;
     }
 
     private void InventoryScript_ItemAdded(object sender, InventoryEventArgs e)

@@ -40,10 +40,14 @@ public class ThreeDMovement : MonoBehaviour
 
         RotateTowardMovementVector(movementVector);
 
-        if (Input.GetButtonDown("Jump") && isGrounded)
+        if (Input.GetButtonDown("Jump") )
         {
-            // Velocity needed to jump some height h: v = sqrt(h * -2 * gravity)
-            velocity.y = Mathf.Sqrt(jumpHeight * -2f * gravity);
+            isGrounded = Physics.CheckSphere(groundCheck.position, groundCheckRadius, groundMask);
+            if (isGrounded)
+            {
+                // Velocity needed to jump some height h: v = sqrt(h * -2 * gravity)
+                velocity.y = Mathf.Sqrt(jumpHeight * -2f * gravity);
+            }
         }
         // Apply Gravity (gravity * t^2 = velocity)
         velocity.y += gravity * Time.deltaTime;
