@@ -29,27 +29,32 @@ public class CamZone : MonoBehaviour
         curDuskCam = cameras.getDuskCurrentCamera();
         curDawnCam = cameras.getDawnCurrentCamera();
         curPlayer = cameras.getCurPlayer();
-        if (other.CompareTag("Player"))
+        if (curPlayer.name == gameObject.tag)
         {
-            // Do nothing if player re-enters camzone
-            if (curDawnCam == camToSwitchTo || curDuskCam == camToSwitchTo)
+            if (other.CompareTag("Player"))
             {
-                return;
-            }
-            
-            if (other.gameObject.name == "Dawn")
-            {
-                curDawnCam.GetComponent<CinemachineVirtualCamera>().enabled = false;
-                cameras.setDawnCurrentCamera(camToSwitchTo);
-            } else
-            {
-                curDuskCam.GetComponent<CinemachineVirtualCamera>().enabled = false;
-                cameras.setDuskCurrentCamera(camToSwitchTo);
-            }
-            camToSwitchTo.GetComponent<CinemachineVirtualCamera>().enabled = true;
-        }
+                // Do nothing if player re-enters camzone
+                if (curDawnCam == camToSwitchTo || curDuskCam == camToSwitchTo)
+                {
+                    return;
+                }
 
+                if (other.gameObject.name == "Dawn")
+                {
+                    curDawnCam.GetComponent<CinemachineVirtualCamera>().enabled = false;
+                    cameras.setDawnCurrentCamera(camToSwitchTo);
+                }
+                else
+                {
+                    curDuskCam.GetComponent<CinemachineVirtualCamera>().enabled = false;
+                    cameras.setDuskCurrentCamera(camToSwitchTo);
+                }
+                camToSwitchTo.GetComponent<CinemachineVirtualCamera>().enabled = true;
+            }
+
+        }
     }
+        
 
     private void OnValidate()
     {

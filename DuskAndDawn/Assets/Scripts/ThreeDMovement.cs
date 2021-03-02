@@ -42,7 +42,6 @@ public class ThreeDMovement : MonoBehaviour
 
         if (Input.GetButtonDown("Jump") )
         {
-            isGrounded = Physics.CheckSphere(groundCheck.position, groundCheckRadius, groundMask);
             if (isGrounded)
             {
                 // Velocity needed to jump some height h: v = sqrt(h * -2 * gravity)
