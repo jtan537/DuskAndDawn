@@ -6,6 +6,8 @@ public class ThreeDMovement : MonoBehaviour
 {
     [SerializeField]
     float groundedMoveSpeed = 4f, jumpMoveSpeed = 5f, jumpHeight = 3f, gravity = -9.81f, rotateSpeed = 1f;
+    [SerializeField]
+    UpdateRespawnPoint respawnPoint;
 
     private float _moveSpeed;
 
@@ -24,8 +26,11 @@ public class ThreeDMovement : MonoBehaviour
 
         // Create sphere and check if it collides with the ground layer.
         isGrounded = Physics.CheckSphere(groundCheck.position, groundCheckRadius, groundMask);
+
         if (isGrounded && velocity.y <= 0)
         {
+            // Whenever grounded, update respawn position
+            respawnPoint.updateRespawnPosition(transform.position);
             // -2 to force the player on the ground a bit
             velocity.y = -2f;
             _moveSpeed = groundedMoveSpeed;
