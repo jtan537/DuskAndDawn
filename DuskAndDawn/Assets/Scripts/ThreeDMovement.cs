@@ -9,10 +9,17 @@ public class ThreeDMovement : MonoBehaviour
     [SerializeField]
     UpdateRespawnPoint respawnPoint;
 
+    //TEMPORARY
+/*    [SerializeField]
+    int walkSoundNumber = 0, stepTimeInSeconds = 1;
+    [SerializeField]
+    bool isWalking = false;*/
+
     private float _moveSpeed;
 
     Vector3 velocity;
     bool isGrounded;
+    
 
     public Transform groundCheck;
     public float groundCheckRadius = 0.4f;
@@ -21,9 +28,13 @@ public class ThreeDMovement : MonoBehaviour
     public CharacterController controller;
     public Animator anim;
 
+    private void Start()
+    {
+        
+    }
+
     private void Update()
     {
-
         // Create sphere and check if it collides with the ground layer.
         isGrounded = Physics.CheckSphere(groundCheck.position, groundCheckRadius, groundMask);
 
@@ -58,6 +69,8 @@ public class ThreeDMovement : MonoBehaviour
         controller.Move(velocity * Time.deltaTime);
 
     }
+
+
 
     private Vector3 MoveTowardTarget(Vector3 targetVector) {
         var speed = _moveSpeed * Time.deltaTime;
