@@ -19,6 +19,11 @@ public class InventoryItemBase : MonoBehaviour, IInventoryItem
     	get { return _Image; }
     }
 
+    public InventorySlot Slot
+    {
+        get; set;
+    }
+
     public virtual void OnPickup()
     {
     	gameObject.SetActive(false);
@@ -39,5 +44,9 @@ public class InventoryItemBase : MonoBehaviour, IInventoryItem
             gameObject.SetActive(true);
             gameObject.transform.position = hit.point + new Vector3(0, 10, 0);
         }
+    }
+
+    public virtual void OnUse()
+    {
     }
 }

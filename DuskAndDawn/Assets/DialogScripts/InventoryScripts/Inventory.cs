@@ -7,7 +7,7 @@ public class Inventory : MonoBehaviour
 {
     private const int SLOTS = 5;
 
-    private List<IInventoryItem> mItems = new List<IInventoryItem>();
+    private IList<InventorySlot> mSlots = new List<InventorySlot>();
 
     public event EventHandler<InventoryEventArgs> ItemAdded;
 
@@ -15,49 +15,108 @@ public class Inventory : MonoBehaviour
 
     public event EventHandler<InventoryEventArgs> ItemUsed;
 
+    public Inventory()
+    {
+        for (int i = 0; i < SLOTS; i++)
+        {
+            mSlots.Add(new InventorySlot(i));
+        }
+    }
+
+    private InventorySlot FindStackableSlot(IInventoryItem item)
+    {
+        foreach (InventorySlot slot in mSlots)
+        {
+            if (slot.IsStackable(item))
+                return slot;
+        }
+        return null;
+    }
+
+    private InventorySlot FindNextEmptySlot()
+    {
+        foreach (InventorySlot slot in mSlots)
+        {
+            if (slot.IsEmpty)
+                return slot;
+        }
+        return null;
+    }
+
     public void AddItem(IInventoryItem item)
     {
-    	if (mItems.Count < SLOTS)
-    	{
-    		Collider collider = (item as MonoBehaviour).GetComponent<Collider>();
-    		if (collider.enabled)
-    		{
-    			collider.enabled = false;
-    			mItems.Add(item);
-    			item.OnPickup();
+        InventorySlot freeSlot = FindStackableSlot(item);
+        if (freeSlot == null)
+        {
+            freeSlot = FindNextEmptySlot();
+        }
+        if (freeSlot != null)
+        {
+            Collider collider = (item as MonoBehaviour).GetComponent<Collider>();
+            if (collider.enabled)
+            {
+                collider.enabled = false;
+                item.OnPickup();
+                freeSlot.AddItem(item);
+                if (ItemAdded != null)
+                {
+                    ItemAdded(this, new InventoryEventArgs(item));
+                }
+            }
+        }
 
-    			if (ItemAdded != null)
-    			{
-    				ItemAdded(this, new InventoryEventArgs(item));
-    			}
-    		}
-    	}
+    	// if (mItems.Count < SLOTS)
+    	// {
+    	// 	Collider collider = (item as MonoBehaviour).GetComponent<Collider>();
+    	// 	if (collider.enabled)
+    	// 	{
+    	// 		collider.enabled = false;
+    	// 		mItems.Add(item);
+    	// 		item.OnPickup();
+
+    	// 		if (ItemAdded != null)
+    	// 		{
+    	// 			ItemAdded(this, new InventoryEventArgs(item));
+    	// 		}
+    	// 	}
+    	// }
     }
 
     public void RemoveItem(IInventoryItem item)
     {
-        if (mItems.Remove(item))
+        foreach (InventorySlot slot in mSlots)
         {
-            mItems.Remove(item);
-
-            item.OnDelete(gameObject.transform);
-
-            Collider collider = (item as MonoBehaviour).GetComponent<Collider>();
-            if (collider != null)
+            if (slot.Remove(item))
             {
-                collider.enabled = true;
-            }
-
-            if (ItemRemoved != null)
-            {
-                ItemRemoved(this, new InventoryEventArgs(item));
+                if (ItemRemoved != null)
+                {
+                    ItemRemoved(this, new InventoryEventArgs(item));
+                }
+                break;
             }
         }
+        // if (mItems.Remove(item))
+        // {
+        //     mItems.Remove(item);
+
+        //     item.OnDelete(gameObject.transform);
+
+        //     Collider collider = (item as MonoBehaviour).GetComponent<Collider>();
+        //     if (collider != null)
+        //     {
+        //         collider.enabled = true;
+        //     }
+
+        //     if (ItemRemoved != null)
+        //     {
+        //         ItemRemoved(this, new InventoryEventArgs(item));
+        //     }
+        // }
     }
 
-    public List<IInventoryItem> GetItems() {
-        return mItems;
-    }
+    // public List<IInventoryItem> GetItems() {
+    //     return mItems;
+    // }
 
     public void UseItem(IInventoryItem item)
     {

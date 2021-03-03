@@ -26,14 +26,6 @@ public class NPCInteract : MonoBehaviour
         {
             gameObject.transform.GetComponent<ThreeDMovement>().enabled = true;
         }
-        
-        if (NPC.ActiveNPC.Name == "Tree")
-        {
-            foreach (ItemDropHandler handler in handlers)
-            {
-                handler.active = true;
-            }
-        }
     }
 
     void Interact()

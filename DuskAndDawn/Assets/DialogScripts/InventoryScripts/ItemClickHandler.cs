@@ -5,6 +5,7 @@ using UnityEngine;
 public class ItemClickHandler : MonoBehaviour
 {
 	public Inventory inventory;
+	public bool active = false;
 
     public void OnItemClicked()
     {
@@ -13,6 +14,9 @@ public class ItemClickHandler : MonoBehaviour
 
     	IInventoryItem item = dragHandler.Item;
 
-    	inventory.RemoveItem(item);
+    	if (active)
+        {
+            inventory.UseItem(item);
+        }
     }
 }
