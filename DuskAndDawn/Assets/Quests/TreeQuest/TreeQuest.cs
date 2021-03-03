@@ -19,7 +19,7 @@ public class TreeQuest : MonoBehaviour
         // scripts query to see if the tree quest is complete.
         dialogueRunner.AddFunction("doneTreeQuest", 0, delegate (Yarn.Value[] parameters)
         {
-            return numRequiredSuns == 0;
+            return numRequiredSuns <= 0;
         });
     }
 }

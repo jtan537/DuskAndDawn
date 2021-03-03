@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using TMPro;
 
 public class CatReceiver : MonoBehaviour
 {
@@ -9,6 +10,9 @@ public class CatReceiver : MonoBehaviour
     CatQuest quest;
 
     public Inventory inventory;
+
+    public GameObject InteractTriggerUI;
+    public GameObject textObj;
 
     void Start()
     {
@@ -24,13 +28,15 @@ public class CatReceiver : MonoBehaviour
         {
             item.OnUse();
             inventory.RemoveItem(item);
-            Debug.Log("received");
-            Debug.Log(quest.numRequiredFlowers);
         }
 
         if (quest.numRequiredFlowers == 0)
         {
+            textObj.GetComponent<TextMeshProUGUI>().SetText("");
+            InteractTriggerUI.SetActive(false);
             gem.SetActive(true);
+            DialogUI.Instance.dialogueRunner.StartDialogue(NPC.ActiveNPC.YarnStartNode);
+            quest.numRequiredFlowers = -1;
         }
     }
 }

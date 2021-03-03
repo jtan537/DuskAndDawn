@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using TMPro;
 
 public class TreeReceiver : MonoBehaviour
 {
@@ -10,6 +11,9 @@ public class TreeReceiver : MonoBehaviour
     TreeQuest quest;
 
     public Inventory inventory;
+
+    public GameObject InteractTriggerUI;
+    public GameObject textObj;
 
     void Start()
     {
@@ -26,14 +30,15 @@ public class TreeReceiver : MonoBehaviour
         {
             item.OnUse();
             inventory.RemoveItem(item);
-            Debug.Log("received");
-            Debug.Log(quest.numRequiredSuns);
         }
-
         if (quest.numRequiredSuns == 0)
         {
+            textObj.GetComponent<TextMeshProUGUI>().SetText("");
+            InteractTriggerUI.SetActive(false);
             ani.SetBool("received", true);
             gem.SetActive(true);
+            DialogUI.Instance.dialogueRunner.StartDialogue(NPC.ActiveNPC.YarnStartNode);
+            quest.numRequiredSuns = -1;
         }
     }
 }

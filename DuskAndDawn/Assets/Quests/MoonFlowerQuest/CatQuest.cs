@@ -19,7 +19,7 @@ public class CatQuest : MonoBehaviour
         // scripts query to see if the tree quest is complete.
         dialogueRunner.AddFunction("doneFlowerQuest", 0, delegate (Yarn.Value[] parameters)
         {
-            return numRequiredFlowers == 0;
+            return numRequiredFlowers <= 0;
         });
     }
 }
