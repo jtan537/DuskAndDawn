@@ -12,7 +12,7 @@ public class Sun : InventoryItemBase
         quest = GameObject.FindObjectOfType<TreeQuest>();
     }
 
-    public override void OnDelete(Transform trans)
+    public override void OnUse()
     {
         quest.numRequiredSuns -= 1;
     }

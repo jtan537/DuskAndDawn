@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using TMPro;
 
 public class HUD : MonoBehaviour
 {
@@ -40,50 +41,111 @@ public class HUD : MonoBehaviour
     private void InventoryScript_ItemAdded(object sender, InventoryEventArgs e)
     {
     	Transform inventoryPanel = transform.Find("InventoryPanel");
+        int index = -1;
     	foreach(Transform slot in inventoryPanel)
     	{
+            index++;
+
             Transform imageTransform = slot.GetChild(0);
     		Image image = imageTransform.GetComponent<Image>();
             ItemDragHandler itemDragHandler = imageTransform.GetComponent<ItemDragHandler>();
 
-    		if (!image.enabled)
-    		{
-    			image.enabled = true;
-    			image.sprite = e.Item.Image;
+            Transform countTransform = slot.GetChild(1);
+            TextMeshProUGUI countText = countTransform.GetComponent<TextMeshProUGUI>();
+
+            if (index == e.Item.Slot.Id)
+            {
+                image.enabled = true;
+                image.sprite = e.Item.Image;
+
+                int itemCount = e.Item.Slot.Count;
+                if (itemCount > 1)
+                    countText.text = itemCount.ToString();
+                else
+                    countText.text = "";
 
                 itemDragHandler.Item = e.Item;
+                break;
+            }
+      //       if (image.enabled)
+      //       {
+      //           if (image.enabled == e.Item.Image)
+      //           {
+      //               countText.SetText((int.Parse(countText.text) + 1).ToString());
+      //               break;
+      //           }
+      //       }
+    		// if (!image.enabled)
+    		// {
+    		// 	image.enabled = true;
+    		// 	image.sprite = e.Item.Image;
 
-                // Transform deleteTransform = slot.GetChild(1);
-                // Image deleteImage = deleteTransform.GetComponent<Image>();
-                // deleteImage.enabled = true;
+      //           countText.SetText("1");
 
-    			break;
-    		}
+      //           itemDragHandler.Item = e.Item;
+
+    		// 	break;
+    		// }
     	}
     }
 
     private void InventoryScript_ItemRemoved(object sender, InventoryEventArgs e)
     {
         Transform inventoryPanel = transform.Find("InventoryPanel");
+        int index = -1;
         foreach(Transform slot in inventoryPanel)
         {
+            index++;
+
             Transform imageTransform = slot.GetChild(0);
             Image image = imageTransform.GetComponent<Image>();
             
             ItemDragHandler itemDragHandler = imageTransform.GetComponent<ItemDragHandler>();
+
+            Transform countTransform = slot.GetChild(1);
+            TextMeshProUGUI countText = countTransform.GetComponent<TextMeshProUGUI>();
+
             if (itemDragHandler.Item is null) { continue; }
-            if (itemDragHandler.Item.Equals(e.Item))
+
+            if (e.Item.Slot.Id == index)
             {
-                image.enabled = false;
-                image.sprite = null;
-                itemDragHandler.Item = null;
+                int itemCount = e.Item.Slot.Count;
+                itemDragHandler.Item = e.Item.Slot.FirstItem;
 
-                // Transform deleteTransform = slot.GetChild(1);
-                // Image deleteImage = deleteTransform.GetComponent<Image>();
-                // deleteImage.enabled = false;
+                if (itemCount < 2)
+                {
+                    countText.text = "";
+                }
+                else
+                {
+                    countText.text = itemCount.ToString();
+                }
 
+                if (itemCount == 0)
+                {
+                    image.enabled = false;
+                    image.sprite = null;
+                }
                 break;
             }
+            // if (itemDragHandler.Item.Equals(e.Item))
+            // {
+            //     if (countText.text == "1")
+            //     {
+            //         image.enabled = false;
+            //         image.sprite = null;
+            //         itemDragHandler.Item = null;
+
+            //         countText.SetText("");
+
+            //         break;
+            //     }
+            //     else
+            //     {
+            //         countText.SetText((int.Parse(countText.text) - 1).ToString());
+            //         break;
+            //     }
+            // }
         }
     }
 }

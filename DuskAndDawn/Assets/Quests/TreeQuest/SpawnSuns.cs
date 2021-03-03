@@ -7,6 +7,7 @@ public class SpawnSuns : MonoBehaviour
 {
     VariableStorageBehaviour _varStorage;
     bool _initiatedDialog, _spawned;
+
     // Start is called before the first frame update
     void Start()
     {

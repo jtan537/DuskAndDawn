@@ -14,6 +14,10 @@ public interface IInventoryItem
 	void OnDelete(Transform trans);
 
 	void OnDrop();
+
+	void OnUse();
+
+	InventorySlot Slot { get; set; }
 }
 
 public class InventoryEventArgs : EventArgs
