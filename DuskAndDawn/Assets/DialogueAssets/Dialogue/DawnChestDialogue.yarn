@@ -1,0 +1,27 @@
+title: Dawn.Chest.Start
+tags: 
+colorID: 0
+position: 932,-271
+---
+<<if visited("Dawn.chest.complete") is true>>
+[[Dawn.chest.final.dialogue]]
+<<endif>>
+Dawn: Hey a chest!
+Dawn: Oh my GOODNESS.
+Dawn: There's a gem inside. LETS GOOOOOO!!!!!
+[[Dawn.chest.complete]]
+===
+title: Dawn.chest.final.dialogue
+tags: 
+colorID: 0
+position: 1302,-459
+---
+Dawn: (It's an empty chest)
+===
+title: Dawn.chest.complete
+tags: 
+colorID: 0
+position: 1304,-105
+---
+<<set $dawn_received_chest_gem to true>>
+===

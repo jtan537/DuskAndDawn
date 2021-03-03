@@ -6,6 +6,8 @@ TagManager:
   tags:
   - Dawn
   - Dusk
+  - DawnInvisiblePlatform
+  - DuskInvisiblePlatform
   layers:
   - Default
   - TransparentFX
@@ -14,7 +16,7 @@ TagManager:
   - Water
   - UI
   - Unstandable
-  - 
+  - Tower
   - 
   - 
   - 

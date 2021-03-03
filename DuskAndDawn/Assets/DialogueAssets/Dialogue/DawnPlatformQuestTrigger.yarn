@@ -1,0 +1,32 @@
+title: Dawn.Platform.Start
+tags: 
+colorID: 0
+position: 1063,144
+---
+<<if visited("Dawn.Platform.In.Progress") is true>>
+[[Waiting.For.Dusk]]
+<<endif>>
+Dawn: Huh I see a platform over there.
+Dawn: I don't see anyway I can get there myself though.
+Dusk: Really? There's clearly platforms you can jump across.
+Dawn: What are you talking about I can't see anything?
+Dusk: You must be BLIND dawn, I can see them clearly.
+Dawn: 😞 I can't see it for some reason.
+Dusk: Let me go check it out from my side.
+Dawn: (I should wait for Dusk to check it our from her end...)
+[[Dawn.Platform.In.Progress]]
+===
+title: Waiting.For.Dusk
+tags: 
+colorID: 0
+position: 1448,141
+---
+Dawn: (I should wait for Dusk to check it our from her end...)
+===
+title: Dawn.Platform.In.Progress
+tags: 
+colorID: 0
+position: 1403,-76
+---
+<<set $dawn_platform_quest_activated to true>>
+===
