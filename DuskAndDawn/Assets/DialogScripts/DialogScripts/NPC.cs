@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
+using Yarn.Unity;
 
 public class NPC : MonoBehaviour
 {
@@ -12,6 +13,7 @@ public class NPC : MonoBehaviour
 #pragma warning disable 0649
     [SerializeField] string yarnStartNode = "Start";
     [SerializeField] YarnProgram yarnDialog;
+
 #pragma warning restore 0649
 
     public GameObject InteractTriggerUI;
@@ -21,20 +23,37 @@ public class NPC : MonoBehaviour
 
     private Metadata _metadata;
 
+    VariableStorageBehaviour _varStorage;
+    bool _initiatedDialog;
+    public ItemClickHandler[] handlers;
     private void Start()
     {
         _metadata = GameObject.FindObjectOfType<Metadata>().GetComponent<Metadata>();
         DialogUI.Instance.dialogueRunner.Add(yarnDialog);
         InteractTriggerUI.SetActive(false);
+
+        _varStorage = GameObject.FindObjectOfType<VariableStorageBehaviour>().GetComponent<VariableStorageBehaviour>();
+    }
+
+    private void Update()
+    {
+        _initiatedDialog = _varStorage.GetValue("$quest_activated").AsBool;
     }
 
     private void OnTriggerEnter(Collider collision)
     {
-        if(collision.CompareTag("Player") && collision.gameObject.name == gameObject.tag  && _metadata.getCurPlayer().name == collision.gameObject.name)
+        if (collision.CompareTag("Player") && collision.gameObject.name == gameObject.tag && _metadata.getCurPlayer().name == collision.gameObject.name)
         {
             SetActiveNPC(true);
             textObj.GetComponent<TextMeshProUGUI>().SetText(text);
             InteractTriggerUI.SetActive(true);
+            if (_initiatedDialog)
+            {
+                foreach (ItemClickHandler handler in handlers)
+                {
+                    handler.active = true;
+                }
+            }
         }
     }
 
@@ -43,18 +62,33 @@ public class NPC : MonoBehaviour
         if (collision.CompareTag("Player") && collision.gameObject.name == gameObject.tag && _metadata.getCurPlayer().name == collision.gameObject.name)
         {
             SetActiveNPC(true);
-/*            textObj.GetComponent<TextMeshProUGUI>().SetText(text);
-            InteractTriggerUI.SetActive(true);*/
+            /*            textObj.GetComponent<TextMeshProUGUI>().SetText(text);
+                        InteractTriggerUI.SetActive(true);*/
+            if (_initiatedDialog)
+            {
+                foreach (ItemClickHandler handler in handlers)
+                {
+                    handler.active = true;
+                }
+            }
         }
     }
 
     private void OnTriggerExit(Collider collision)
     {
-        if(collision.CompareTag("Player") && collision.gameObject.name == gameObject.tag && _metadata.getCurPlayer().name == collision.gameObject.name)
+        if (collision.CompareTag("Player") && collision.gameObject.name == gameObject.tag && _metadata.getCurPlayer().name == collision.gameObject.name)
         {
             SetActiveNPC(false);
             textObj.GetComponent<TextMeshProUGUI>().SetText("");
             InteractTriggerUI.SetActive(false);
+
+            if (_initiatedDialog)
+            {
+                foreach (ItemClickHandler handler in handlers)
+                {
+                    handler.active = false;
+                }
+            }
         }
     }
 
