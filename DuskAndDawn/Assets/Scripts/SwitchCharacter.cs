@@ -20,6 +20,7 @@ public class SwitchCharacter : MonoBehaviour
     Image fadeImage;
 
     private GameObject _duskInventoryGameObject, _dawnInventoryGameObject;
+    private SkyboxControllerShader skyboxCtrl;
 
     private NPC[] _allNPCs;
     private List<NPC> _dawnNPCs = new List<NPC>(), _duskNPCs = new List<NPC>();
@@ -31,6 +32,7 @@ public class SwitchCharacter : MonoBehaviour
     GameObject _currentCharacter;
 
     private HUD dawnInventoryHud, duskInventoryHud;
+    public 
 
     // Start is called before the first frame update
     void Start()
@@ -59,6 +61,8 @@ public class SwitchCharacter : MonoBehaviour
             }
 
         }
+
+        skyboxCtrl = GameObject.FindObjectOfType<SkyboxControllerShader>();
     }
 
 
@@ -77,6 +81,7 @@ public class SwitchCharacter : MonoBehaviour
             if (_currentCharacter == _dusk)
             {
                 disableDusk();
+                skyboxCtrl.DuskToDawn();
                 fadeIn();
                 StartCoroutine(enableDawnAfterTime(_transitionTime));
                 
@@ -85,6 +90,7 @@ public class SwitchCharacter : MonoBehaviour
             else
             {
                 disableDawn();
+                skyboxCtrl.DawnToDusk();
                 fadeIn();
                 StartCoroutine(enableDuskAfterTime(_transitionTime));
             }
@@ -164,7 +170,6 @@ public class SwitchCharacter : MonoBehaviour
 
     private void disableDawn()
     {
-        Debug.Log("1");
         _dawn.GetComponent<ThreeDMovement>().enabled = false;
         _dawn.GetComponent<NPCInteract>().enabled = false;
         
@@ -174,7 +179,6 @@ public class SwitchCharacter : MonoBehaviour
         _dawnInventory.toggleHud(false);
         _dawnInventoryGameObject.SetActive(false);
 
-        Debug.Log("2");
         //Disable all NPCs for Dawn
         npcListSetter(_dawnNPCs, false);
     }
@@ -205,10 +209,8 @@ public class SwitchCharacter : MonoBehaviour
 
     private void npcListSetter(List<NPC> npcList, bool isEnabled)
     {
-        Debug.Log("3");
         foreach (NPC npc in npcList)
         {
-            Debug.Log("4");
             npc.enabled = isEnabled;
             if (isEnabled == false)
             {

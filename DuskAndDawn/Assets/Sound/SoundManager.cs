@@ -6,7 +6,7 @@ using Hellmade.Sound;
 public class SoundManager : MonoBehaviour
 {
     [SerializeField]
-    List<AudioClip> soundEffects = new List<AudioClip>(), backgroundMusic = new List<AudioClip>();
+    List<AudioClip> soundEffects , backgroundMusic ;
 
     [Range(0,1)]
     public float volume;
@@ -31,10 +31,9 @@ public class SoundManager : MonoBehaviour
         backgroundMusicID = EazySoundManager.PlayMusic(_soundManager.backgroundMusic[index], 0.5f, true, false, 1, 1);
     }
 
-    public static void oneShotSoundFX(int index)
+    public static void oneShotSoundFX(int index, float volume)
     {
-        Debug.Log("Play1shot");
-        EazySoundManager.PlaySound(_soundManager.soundEffects[index], .5f, false, null);
+        EazySoundManager.PlaySound(_soundManager.soundEffects[index], volume, false, null);
     }
 
 }

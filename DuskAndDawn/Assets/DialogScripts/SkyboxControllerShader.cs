@@ -9,9 +9,8 @@ public class SkyboxControllerShader : MonoBehaviour
 	// float lerpTime = 1f;
     // float currentLerpTime = 0f;
 
-    bool isDusk = true;
     bool Dusk2Dawn = false;
-    bool Dawn2Dusk = true;
+    bool Dawn2Dusk = false;
 
     public float blend = 0f;
 
@@ -23,22 +22,22 @@ public class SkyboxControllerShader : MonoBehaviour
     }
 
     // Update is called once per frame
+    public void DuskToDawn()
+    {
+        Dusk2Dawn = true;
+        Debug.Log("dusktodawn");
+    }
+
+    public void DawnToDusk()
+    {
+        Dawn2Dusk = true;
+        Debug.Log("dawntodusk");
+    }
+
     void Update()
     {
-        if (Input.GetKeyDown("r")) {
-            if (isDusk)
-            {
-                Dusk2Dawn = true;
-                isDusk = false;
-            }
-            else
-            {
-                Dawn2Dusk = true;
-                isDusk = true;
-            }
-        }
  		
- 		if (Dusk2Dawn)
+ 		if (Dawn2Dusk)
  		{
             if (blend <= 1f)
             {
@@ -48,11 +47,11 @@ public class SkyboxControllerShader : MonoBehaviour
 
             if (blend >= 1f)
             {
-                Dusk2Dawn = false;
+                Dawn2Dusk = false;
             }
 	    }
 
-        if (Dawn2Dusk)
+        if (Dusk2Dawn)
         {
             if (blend >= 0f)
             {
@@ -62,7 +61,7 @@ public class SkyboxControllerShader : MonoBehaviour
 
             if (blend <= 0f)
             {
-                Dawn2Dusk = false;
+                Dusk2Dawn = false;
             }
         }
 

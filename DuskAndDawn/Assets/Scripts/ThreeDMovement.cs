@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using Hellmade.Sound;
 
 public class ThreeDMovement : MonoBehaviour
 {
@@ -9,16 +10,12 @@ public class ThreeDMovement : MonoBehaviour
     [SerializeField]
     UpdateRespawnPoint respawnPoint;
 
-    //TEMPORARY
-/*    [SerializeField]
-    int walkSoundNumber = 0, stepTimeInSeconds = 1;
-    [SerializeField]
-    bool isWalking = false;*/
-
     private float _moveSpeed;
 
     Vector3 velocity;
     bool isGrounded;
+
+    public bool playWalkSound;
     
 
     public Transform groundCheck;
@@ -50,7 +47,16 @@ public class ThreeDMovement : MonoBehaviour
             _moveSpeed = jumpMoveSpeed;
         }
 
+
         var targetVector = new Vector3(Input.GetAxisRaw("HorizontalKey"), 0f, Input.GetAxisRaw("VerticalKey")).normalized;
+
+        if (isGrounded && targetVector.magnitude > 0)
+        {
+            playWalkSound = true;
+        } else
+        {
+            playWalkSound = false;
+        }
 
         var movementVector = MoveTowardTarget(targetVector);
 

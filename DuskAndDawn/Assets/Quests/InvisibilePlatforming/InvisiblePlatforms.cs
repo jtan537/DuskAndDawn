@@ -12,7 +12,7 @@ public class InvisiblePlatforms : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        _platforms = GameObject.FindGameObjectsWithTag("DawnInvisiblePlatform");
+        _platforms = GameObject.FindGameObjectsWithTag("DuskInvisiblePlatform");
         _metadata = GameObject.FindObjectOfType<Metadata>().GetComponent<Metadata>();
     }
 
