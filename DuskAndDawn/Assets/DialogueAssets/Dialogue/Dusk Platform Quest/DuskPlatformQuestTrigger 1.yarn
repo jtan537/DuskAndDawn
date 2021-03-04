@@ -1,0 +1,37 @@
+title: Dusk.Platform.Start
+tags: 
+colorID: 0
+position: 931,146
+---
+<<if visited("Dusk.Platform.In.Progress") is true>>
+[[Waiting.For.Dawn]]
+<<endif>>
+Dusk: Hmm, I see a platform with a chest over there.
+Dusk: I don't see anyway I can get there myself though.
+Dusk: What a pain...
+Dawn: Really? I think I can see that there's platforms you can jump across.
+Dusk: What are you talking about? I can't see anything.
+Dawn: It must be.... 
+Dawn: TOO DARK OUT FOR YOU !!
+Dawn: ...
+Dusk: ...
+Dawn: Ok, someone's not up for jokes. Got it.
+Dusk: *sighs*
+Dawn: I'll just check it out from my end.
+Dusk: (I should wait for Dawn to check it out from her end...)
+[[Dusk.Platform.In.Progress]]
+===
+title: Waiting.For.Dawn
+tags: 
+colorID: 0
+position: 772,-140
+---
+Dusk: (I should wait for Dawn to check it out from her end...)
+===
+title: Dusk.Platform.In.Progress
+tags: 
+colorID: 0
+position: 1064,-128
+---
+<<set $dusk_platform_quest_activated to true>>
+===

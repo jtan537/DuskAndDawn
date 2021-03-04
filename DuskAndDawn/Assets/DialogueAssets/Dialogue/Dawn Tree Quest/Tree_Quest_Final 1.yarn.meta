@@ -1,0 +1,84 @@
+fileFormatVersion: 2
+guid: 13617c3202326fb419910fe8c2c61eac
+ScriptedImporter:
+  internalIDToNameTable: []
+  externalObjects: {}
+  serializedVersion: 2
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+  script: {fileID: 11500000, guid: 94073015eacc34c1d8fc6786e43d60ca, type: 3}
+  baseLanguageID: en-CA
+  stringIDs:
+  - Tree_Quest_Final 1-Tree.Start-0
+  - Tree_Quest_Final 1-Tree.Start-1
+  - Tree_Quest_Final 1-Tree.Start-2
+  - Tree_Quest_Final 1-Tree.Start-3
+  - Tree_Quest_Final 1-Tree.Start-4
+  - Tree_Quest_Final 1-Tree.Start-5
+  - Tree_Quest_Final 1-Tree.Start-6
+  - Tree_Quest_Final 1-Tree.Start-7
+  - Tree_Quest_Final 1-Tree.Start-8
+  - Tree_Quest_Final 1-Tree.Start-9
+  - Tree_Quest_Final 1-Tree.Start-10
+  - Tree_Quest_Final 1-Tree.Start-11
+  - Tree_Quest_Final 1-Tree.Start-12
+  - Tree_Quest_Final 1-Tree.Start-13
+  - Tree_Quest_Final 1-Tree.Start-14
+  - Tree_Quest_Final 1-Final.Dialogue-15
+  - Tree_Quest_Final 1-Final.Dialogue-16
+  - Tree_Quest_Final 1-Final.Dialogue-17
+  - Tree_Quest_Final 1-Final.Dialogue-18
+  - Tree_Quest_Final 1-Final.Dialogue-19
+  - Tree_Quest_Final 1-Final.Dialogue-20
+  - Tree_Quest_Final 1-Final.Dialogue-21
+  - Tree_Quest_Final 1-Final.Dialogue-22
+  - Tree_Quest_Final 1-Final.Dialogue-23
+  - Tree_Quest_Final 1-Final.Dialogue-24
+  - Tree_Quest_Final 1-DuringQuest-25
+  - Tree_Quest_Final 1-Sad.Tree.Asks.Again-26
+  - Tree_Quest_Final 1-Sad.Tree.Asks.Again-27
+  - Tree_Quest_Final 1-Sad.Tree.Asks.Again-28
+  - Tree_Quest_Final 1-TreeQuest.Activates-29
+  - Tree_Quest_Final 1-TreeQuest.Activates-30
+  - Tree_Quest_Final 1-Dialogue.Ends-31
+  - Tree_Quest_Final 1-Dialogue.Ends-32
+  - Tree_Quest_Final 1-DD_Interaction-33
+  - Tree_Quest_Final 1-DD_Interaction-34
+  - Tree_Quest_Final 1-DD_Interaction-35
+  - Tree_Quest_Final 1-DD_Interaction-36
+  - Tree_Quest_Final 1-DD_Interaction-37
+  - Tree_Quest_Final 1-DD_Interaction-38
+  - Tree_Quest_Final 1-DD_Interaction-39
+  - Tree_Quest_Final 1-DD_Interaction-40
+  - Tree_Quest_Final 1-DD_Interaction-41
+  - Tree_Quest_Final 1-DD_Interaction-42
+  - Tree_Quest_Final 1-DD_Interaction-43
+  - Tree_Quest_Final 1-DD_Interaction-44
+  - Tree_Quest_Final 1-DD_Interaction-45
+  - Tree_Quest_Final 1-DD_Interaction-46
+  - Tree_Quest_Final 1-DD_Interaction-47
+  - Tree_Quest_Final 1-DD_Interaction-48
+  - Tree_Quest_Final 1-DD_Interaction-49
+  - Tree_Quest_Final 1-DD_Interaction-50
+  - Tree_Quest_Final 1-DD_Interaction-51
+  - Tree_Quest_Final 1-DD_Interaction-52
+  - Tree_Quest_Final 1-DD_Interaction-53
+  - Tree_Quest_Final 1-DD_Interaction-54
+  - Tree_Quest_Final 1-DD_Interaction-55
+  - Tree_Quest_Final 1-DD_Interaction-56
+  - Tree_Quest_Final 1-DD_Interaction-57
+  - Tree_Quest_Final 1-DD_Interaction-58
+  - Tree_Quest_Final 1-DD_Interaction-59
+  - Tree_Quest_Final 1-DD_Interaction-60
+  - Tree_Quest_Final 1-DD_Interaction-61
+  - Tree_Quest_Final 1-DD_Interaction-62
+  - Tree_Quest_Final 1-DD_Interaction-63
+  - Tree_Quest_Final 1-DD_Interaction-64
+  - Tree_Quest_Final 1-Last.Tree.Dialogue-65
+  compilationStatus: 1
+  isSuccesfullyCompiled: 1
+  compilationErrorMessage: 
+  baseLanguage: {fileID: 7128917941130120860, guid: 13617c3202326fb419910fe8c2c61eac,
+    type: 3}
+  localizations: []

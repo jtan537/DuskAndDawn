@@ -1,0 +1,32 @@
+fileFormatVersion: 2
+guid: ae02e4d3a9874f94bbc67b4f8690a8c4
+ScriptedImporter:
+  internalIDToNameTable: []
+  externalObjects: {}
+  serializedVersion: 2
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+  script: {fileID: 11500000, guid: 94073015eacc34c1d8fc6786e43d60ca, type: 3}
+  baseLanguageID: en-CA
+  stringIDs:
+  - DuskPlatformQuestTrigger 1-Dusk.Platform.Start-0
+  - DuskPlatformQuestTrigger 1-Dusk.Platform.Start-1
+  - DuskPlatformQuestTrigger 1-Dusk.Platform.Start-2
+  - DuskPlatformQuestTrigger 1-Dusk.Platform.Start-3
+  - DuskPlatformQuestTrigger 1-Dusk.Platform.Start-4
+  - DuskPlatformQuestTrigger 1-Dusk.Platform.Start-5
+  - DuskPlatformQuestTrigger 1-Dusk.Platform.Start-6
+  - DuskPlatformQuestTrigger 1-Dusk.Platform.Start-7
+  - DuskPlatformQuestTrigger 1-Dusk.Platform.Start-8
+  - DuskPlatformQuestTrigger 1-Dusk.Platform.Start-9
+  - DuskPlatformQuestTrigger 1-Dusk.Platform.Start-10
+  - DuskPlatformQuestTrigger 1-Dusk.Platform.Start-11
+  - DuskPlatformQuestTrigger 1-Dusk.Platform.Start-12
+  - DuskPlatformQuestTrigger 1-Waiting.For.Dawn-13
+  compilationStatus: 1
+  isSuccesfullyCompiled: 1
+  compilationErrorMessage: 
+  baseLanguage: {fileID: 7128917941130120860, guid: ae02e4d3a9874f94bbc67b4f8690a8c4,
+    type: 3}
+  localizations: []

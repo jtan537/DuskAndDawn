@@ -1,0 +1,60 @@
+fileFormatVersion: 2
+guid: a2c9f5dd18a5374498892492d0cd45a5
+ScriptedImporter:
+  internalIDToNameTable: []
+  externalObjects: {}
+  serializedVersion: 2
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+  script: {fileID: 11500000, guid: 94073015eacc34c1d8fc6786e43d60ca, type: 3}
+  baseLanguageID: 
+  stringIDs:
+  - Flower_Quest[4] 1-Cat.Start-0
+  - Flower_Quest[4] 1-Cat.Start-1
+  - Flower_Quest[4] 1-Cat.Start-2
+  - Flower_Quest[4] 1-Cat.Start-3
+  - Flower_Quest[4] 1-Cat.Start-4
+  - Flower_Quest[4] 1-Cat.Start-5
+  - Flower_Quest[4] 1-Cat.Start-6
+  - Flower_Quest[4] 1-Cat.Start-7
+  - Flower_Quest[4] 1-Cat.Start-8
+  - Flower_Quest[4] 1-Cat.Start-9
+  - Flower_Quest[4] 1-Cat.Start-10
+  - Flower_Quest[4] 1-Cat.Start-11
+  - Flower_Quest[4] 1-Quest.Ends-12
+  - Flower_Quest[4] 1-Quest.Ends-13
+  - Flower_Quest[4] 1-Quest.Ends-14
+  - Flower_Quest[4] 1-Quest.Ends-15
+  - Flower_Quest[4] 1-Quest.Ends-16
+  - Flower_Quest[4] 1-Quest.Ends-17
+  - Flower_Quest[4] 1-Quest.Ends-18
+  - Flower_Quest[4] 1-Quest.Ends-19
+  - Flower_Quest[4] 1-Quest.Ends-20
+  - Flower_Quest[4] 1-Quest.Ends-21
+  - Flower_Quest[4] 1-Quest.Ends-22
+  - Flower_Quest[4] 1-Quest.Ends-23
+  - Flower_Quest[4] 1-Quest.Ends-24
+  - Flower_Quest[4] 1-Quest.Ends-25
+  - Flower_Quest[4] 1-Quest.Ends-26
+  - Flower_Quest[4] 1-Quest.Ends-27
+  - Flower_Quest[4] 1-Quest.Ends-28
+  - Flower_Quest[4] 1-Quest.Ends-29
+  - Flower_Quest[4] 1-During.Quest-30
+  - Flower_Quest[4] 1-During.Quest-31
+  - Flower_Quest[4] 1-Talk.To.Cat.Again-32
+  - Flower_Quest[4] 1-Talk.To.Cat.Again-33
+  - Flower_Quest[4] 1-Talk.To.Cat.Again-34
+  - Flower_Quest[4] 1-Quest.Activates-35
+  - Flower_Quest[4] 1-Quest.Activates-36
+  - Flower_Quest[4] 1-Quest.Activates-37
+  - Flower_Quest[4] 1-Quest.Activates-38
+  - Flower_Quest[4] 1-Quest.Declined-39
+  - Flower_Quest[4] 1-Flower.Talk-40
+  - Flower_Quest[4] 1-Flower.Visited-41
+  - Flower_Quest[4] 1-Flower.Visited-42
+  compilationStatus: 1
+  isSuccesfullyCompiled: 1
+  compilationErrorMessage: 
+  baseLanguage: {instanceID: 0}
+  localizations: []
