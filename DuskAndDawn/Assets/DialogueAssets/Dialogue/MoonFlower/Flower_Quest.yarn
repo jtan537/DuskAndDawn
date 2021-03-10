@@ -1,0 +1,108 @@
+title: Dusk.Cat.Start
+tags: 
+colorID: 0
+position: -36,-36
+---
+<<if doneFlowerQuest() is true>>
+[[Quest.Ends]]
+<<endif>>
+<<if visited("Quest.Activates") is true>> 
+[[During.Quest]]<<endif>>
+<<if visited("Quest.Declined") is true>>    
+[[Talk.To.Cat.Again]]
+<<else>>
+Cat: Sigh
+Dusk: What's wrong?
+Cat: I...I'm trying to find a flower. 
+Cat: My mother told me of a secret flower she found years ago. 
+Cat: But the path to it seems impossible?
+Cat: She says the flowers are important.
+Dusk: Why don't you ask her how to get to it?  
+Cat: ...
+Dusk: ...   
+Dusk: Oh. 
+[[ "I can help you" |Quest.Activates]]
+[[ "Hope you find it one day"|Quest.Declined]]
+<<endif>>
+===
+title: Quest.Ends
+tags: 
+colorID: 0
+position: 85,-249
+---
+Cat: How did you find it?! 
+Dusk: Magic.
+Cat: Haha, that's what my mom used to say too.
+Cat: Wow, thank you for the photo.
+Cat: How was it? Seeing it in person? 
+Dusk: It really was beautiful. 
+Dusk: I'm not sure if the photo fully captured it's beauty.
+Dusk: I wish I got to show you.
+Cat: This photo will do. 
+Cat: I feel at ease looking at the photo. 
+Cat: It fills me up with an emotion I quite can't describe
+Cat: But, I'm happy. 
+Cat: I miss my mom.
+Cat: She loved these flowers.
+Cat: *sniffs*
+Cat: Anyways, thank you.
+Cat: I hope this gem is of use to you.
+Cat: I'm gonna think for a bit.
+===
+title: During.Quest
+tags: 
+colorID: 0
+position: 305,-248
+---
+Cat: I wonder where she could have planted it...
+Cat: No way it could be on a secret platform, right?",
+===
+title: Talk.To.Cat.Again
+tags: 
+colorID: 0
+position: 526,-247
+---
+Cat:Hmm, where could this flower be?
+[[ "I can try to help look" |Quest.Activates]]
+[[ "Good luck" |Quest.Declined]]
+===
+title: Quest.Activates
+tags: 
+colorID: 0
+position: 745,-247
+---
+Cat: That will be really useful !
+Cat: She told me if I ever found it though
+Cat: to not pluck it out or else it will wilt.
+Cat: You should take a photo of it. 
+<<set $FlowerQuest_activated to true>>
+===
+title: Quest.Declined
+tags: 
+colorID: 0
+position: 967,-247
+---
+Cat: Yeah, I hope so too..
+===
+title: Flower.Talk
+tags: 
+colorID: 0
+position: -463,-245
+---
+//runs when the player interacts with the Flower
+
+<< if visited ("Quest.Activates") is true >>
+[[Flower.Visited]]
+//<<endif>>
+<<else>>
+Dusk: This is a strange looking flower.
+<<endif>>
+===
+title: Flower.Visited
+tags: 
+colorID: 0
+position: -443,87
+---
+Dusk: This gotta be the Moon flower.
+Dusk: I have to take a photo...
+===

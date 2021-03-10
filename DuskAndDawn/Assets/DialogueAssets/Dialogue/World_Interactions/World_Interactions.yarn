@@ -1,18 +1,18 @@
-title: House.Start
+title: Dawn.House.Start
 tags: 
 colorID: 0
 position: 434,275
 ---
 Seems like no one's home...
 ===
-title: Box.Hint
+title: Dawn.Box.Hint
 tags: 
 colorID: 0
 position: 820,380
 ---
 Maybe I can jump on these boxes...
 ===
-title: Graveyard.Start
+title: Dusk.Graveyard.Start
 tags: 
 colorID: 0
 position: 535,598

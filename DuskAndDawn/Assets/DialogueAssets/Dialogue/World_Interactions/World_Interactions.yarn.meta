@@ -8,15 +8,16 @@ ScriptedImporter:
   assetBundleName: 
   assetBundleVariant: 
   script: {fileID: 11500000, guid: 94073015eacc34c1d8fc6786e43d60ca, type: 3}
-  baseLanguageID: 
+  baseLanguageID: en-CA
   stringIDs:
-  - World_Interactions-House.Start-0
-  - World_Interactions-Box.Hint-1
-  - World_Interactions-Graveyard.Start-2
-  - World_Interactions-Graveyard.Start-3
-  - World_Interactions-Graveyard.Start-4
+  - World_Interactions-Dawn.House.Start-0
+  - World_Interactions-Dawn.Box.Hint-1
+  - World_Interactions-Dusk.Graveyard.Start-2
+  - World_Interactions-Dusk.Graveyard.Start-3
+  - World_Interactions-Dusk.Graveyard.Start-4
   compilationStatus: 1
   isSuccesfullyCompiled: 1
   compilationErrorMessage: 
-  baseLanguage: {instanceID: 0}
+  baseLanguage: {fileID: 7128917941130120860, guid: 614bb7465916ed640ae389128b1a6bdc,
+    type: 3}
   localizations: []

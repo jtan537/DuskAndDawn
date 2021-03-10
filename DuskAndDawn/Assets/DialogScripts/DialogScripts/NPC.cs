@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
 using Yarn.Unity;
+using System;
 
 public class NPC : MonoBehaviour
 {
@@ -29,7 +30,14 @@ public class NPC : MonoBehaviour
     private void Start()
     {
         _metadata = GameObject.FindObjectOfType<Metadata>().GetComponent<Metadata>();
-        DialogUI.Instance.dialogueRunner.Add(yarnDialog);
+        try
+        {
+            DialogUI.Instance.dialogueRunner.Add(yarnDialog);
+        } catch (Exception e)
+        {
+            print("Readding Yarn dialog: " + yarnDialog.name);
+        }
+        
         InteractTriggerUI.SetActive(false);
 
         _varStorage = GameObject.FindObjectOfType<VariableStorageBehaviour>().GetComponent<VariableStorageBehaviour>();
