@@ -2,12 +2,12 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Footsteps : MonoBehaviour
+public class PlayerAudioControl : MonoBehaviour
 {
 	public float stepRate = 0.5f;
 	public float stepCoolDown;
-	public int footStepInd;
-	public float volume = 0.2f, topRange = 0.01f, bottomRange = -0.025f;
+	public int footStepInd, jumpStepInd = 5;
+	public float footStepVolume = 0.2f, topRange = 0.01f, bottomRange = -0.025f, jumpVolume = 0.1f;
 
 	ThreeDMovement movement;
 
@@ -23,8 +23,14 @@ public class Footsteps : MonoBehaviour
 		stepCoolDown -= Time.deltaTime;
 		if (movement.playWalkSound &&  stepCoolDown < 0f)
 		{
-			SoundManager.oneShotSoundFX(footStepInd, volume + Random.Range(bottomRange, topRange));
+			SoundManager.oneShotSoundFX(footStepInd, footStepVolume + Random.Range(bottomRange, topRange));
 			stepCoolDown = stepRate;
+		}
+
+		if (movement.playJumpSound)
+        {
+			SoundManager.oneShotSoundFX(jumpStepInd, jumpVolume);
+			movement.playJumpSound = false;
 		}
 	}
 }

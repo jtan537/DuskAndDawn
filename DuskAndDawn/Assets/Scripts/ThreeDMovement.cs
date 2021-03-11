@@ -16,7 +16,8 @@ public class ThreeDMovement : MonoBehaviour
     bool isGrounded;
 
     public bool playWalkSound;
-    
+    public bool playJumpSound;
+
 
     public Transform groundCheck;
     public float groundCheckRadius = 0.4f;
@@ -34,6 +35,7 @@ public class ThreeDMovement : MonoBehaviour
     private void OnDisable()
     {
         playWalkSound = false;
+        playJumpSound = false;
         anim.SetBool("isRunning", false);
     }
 
@@ -72,13 +74,14 @@ public class ThreeDMovement : MonoBehaviour
 
         if (Input.GetButtonDown("Jump") )
         {
-            GetComponent<AudioSource>().Play();
             if (isGrounded)
             {
                 // Velocity needed to jump some height h: v = sqrt(h * -2 * gravity)
                 velocity.y = Mathf.Sqrt(jumpHeight * -2f * gravity);
+                playJumpSound = true;
             }
         }
+        
         // Apply Gravity (gravity * t^2 = velocity)
         velocity.y += gravity * Time.deltaTime;
         controller.Move(velocity * Time.deltaTime);

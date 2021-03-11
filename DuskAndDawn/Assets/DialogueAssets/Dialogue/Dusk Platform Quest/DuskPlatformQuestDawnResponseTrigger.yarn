@@ -4,7 +4,7 @@ colorID: 2
 position: 951,182
 ---
 <<if $dusk_platform_quest_activated is true>>
-    <<if visited("Dusk.Platform.Dusk.Response.Middle") is true>>
+    <<if visited("Dusk.Platform.Dawn.Response.Middle") is true>>
         [[Dusk.Platform.Dawn.Response.Waiting]]
     <<endif>>
     Dawn: Yea, It's like I said.
