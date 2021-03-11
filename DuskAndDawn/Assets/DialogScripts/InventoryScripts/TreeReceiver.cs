@@ -5,8 +5,10 @@ using TMPro;
 
 public class TreeReceiver : MonoBehaviour
 {
+    private AudioSource treeAudio;
     public Animator ani;
     public GameObject gem;
+
 
     TreeQuest quest;
 

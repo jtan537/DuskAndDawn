@@ -91,6 +91,7 @@ public class Inventory : MonoBehaviour
                 if (ItemRemoved != null)
                 {
                     ItemRemoved(this, new InventoryEventArgs(item));
+                    GetComponent<AudioSource>().Play();
                 }
                 break;
             }

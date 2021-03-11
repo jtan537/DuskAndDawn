@@ -76,6 +76,7 @@ public class SwitchCharacter : MonoBehaviour
         // Don't allow switching when in dialog or while transitioning
         if (Input.GetKeyDown("r") && !_metadata.dawnInDialog && !_metadata.duskInDialog && !isTransitioning)
         {
+            GetComponent<AudioSource>().Play();
             isTransitioning = true;
             // Switch to Dawn
             if (_currentCharacter == _dusk)

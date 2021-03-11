@@ -10,6 +10,7 @@ public class DuskChest : MonoBehaviour
     private Animator _anim;
 
     public GameObject gem;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -23,6 +24,8 @@ public class DuskChest : MonoBehaviour
         _recieveGem = _varStorage.GetValue("$dusk_received_chest_gem").AsBool;
         if (_recieveGem && !_done)
         {
+
+            GetComponent<AudioSource>().Play();
             _anim.SetBool("isOpen", true);
             GiveGem();
         }
