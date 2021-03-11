@@ -24,23 +24,20 @@ public class ActivateDuskHighlightsOnPlatform : MonoBehaviour
 
     private void OnTriggerStay(Collider other)
     {
-        // Override dusks seethrough script
-        duskMesh.GetComponent<SeeThroughColor>().enabled = false;
+        
         if (other.CompareTag("Player") && other.gameObject.name == "Dusk")
         {
             
             if (dawnInZone)
             {
+                // Override dusks seethrough script
+                duskMesh.GetComponent<SeeThroughColor>().enabled = false;
                 foreach (Material _mat in duskMesh.GetComponent<SkinnedMeshRenderer>().materials)
                 {
                     _mat.SetShaderPassEnabled("Always", true);
                 }
-            } else
-            {
-                foreach (Material _mat in duskMesh.GetComponent<SkinnedMeshRenderer>().materials)
-                {
-                    _mat.SetShaderPassEnabled("Always", false);
-                }
+            } else {
+                duskMesh.GetComponent<SeeThroughColor>().enabled = true;
             }
            
         }
