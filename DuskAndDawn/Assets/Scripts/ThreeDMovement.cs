@@ -30,6 +30,13 @@ public class ThreeDMovement : MonoBehaviour
         
     }
 
+
+    private void OnDisable()
+    {
+        playWalkSound = false;
+        anim.SetBool("isRunning", false);
+    }
+
     private void Update()
     {
         // Create sphere and check if it collides with the ground layer.
@@ -50,6 +57,7 @@ public class ThreeDMovement : MonoBehaviour
 
         var targetVector = new Vector3(Input.GetAxisRaw("HorizontalKey"), 0f, Input.GetAxisRaw("VerticalKey")).normalized;
 
+        // Play sound if current player and is walking
         if (isGrounded && targetVector.magnitude > 0)
         {
             playWalkSound = true;

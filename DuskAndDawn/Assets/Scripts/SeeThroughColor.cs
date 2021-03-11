@@ -21,6 +21,8 @@ public class SeeThroughColor : MonoBehaviour
     void Update()
     {
         _curPlayerName = GameObject.FindObjectOfType<Metadata>().getCurPlayer().name;
+
+
         if (_curPlayerName == gameObject.tag)
         {
             //Enable see through
@@ -28,8 +30,9 @@ public class SeeThroughColor : MonoBehaviour
             {
                 _mat.SetShaderPassEnabled("Always", true);
             }
-            
-        } else
+
+        }
+        else
         {
             //Disable see through when character is swapped, avoiding seeing the seethrough animation as Dawn while playing as Dusk.
             foreach (Material _mat in renderer.materials)
@@ -37,8 +40,5 @@ public class SeeThroughColor : MonoBehaviour
                 _mat.SetShaderPassEnabled("Always", false);
             }
         }
-
-
     }
-
 }
