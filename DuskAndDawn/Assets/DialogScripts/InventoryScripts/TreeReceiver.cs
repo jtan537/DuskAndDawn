@@ -39,7 +39,8 @@ public class TreeReceiver : MonoBehaviour
             InteractTriggerUI.SetActive(false);
             ani.SetBool("received", true);
             gem.SetActive(true);
-            DialogUI.Instance.dialogueRunner.StartDialogue(NPC.ActiveNPC.YarnStartNode);
+
+            GameObject.Find("Dawn").GetComponent<NPCInteract>().Interact();
             quest.numRequiredSuns = -1;
         }
     }

@@ -16,7 +16,11 @@ public class NPCInteract : MonoBehaviour
         // If in dialog - early out
         if (isInDialog) return;
 
-        Interact();
+        // Check input
+        if (Input.GetKeyDown(KeyCode.F))
+        {
+            Interact();
+        }
     }
 
     public void OnDialogEnd()
@@ -28,20 +32,16 @@ public class NPCInteract : MonoBehaviour
         }
     }
 
-    void Interact()
+    public void Interact()
     {
-        // Check input
-        if (Input.GetKeyDown(KeyCode.F))
+        // Check if NPC is active and not already talking
+        if(NPC.ActiveNPC && !isInDialog)
         {
-            // Check if NPC is active and not already talking
-            if(NPC.ActiveNPC && !isInDialog)
-            {
-                InteractTriggerUI.SetActive(false);
-                // Start dialog
-                isInDialog = true;
-                gameObject.transform.GetComponent<ThreeDMovement>().enabled = false;
-                DialogUI.Instance.dialogueRunner.StartDialogue(NPC.ActiveNPC.YarnStartNode);
-            }
+            InteractTriggerUI.SetActive(false);
+            // Start dialog
+            isInDialog = true;
+            gameObject.transform.GetComponent<ThreeDMovement>().enabled = false;
+            DialogUI.Instance.dialogueRunner.StartDialogue(NPC.ActiveNPC.YarnStartNode);
         }
     }
 }
