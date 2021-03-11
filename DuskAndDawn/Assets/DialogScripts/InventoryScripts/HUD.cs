@@ -36,6 +36,7 @@ public class HUD : MonoBehaviour
 
         if (Input.GetKeyDown("b") && !_metadata.duskInDialog && !_metadata.dawnInDialog && gameObject.tag == metadata.curPlayer.name)
         {
+            GetComponent<AudioSource>().Play();
             show = !show;
             canvas.enabled = show;
         }

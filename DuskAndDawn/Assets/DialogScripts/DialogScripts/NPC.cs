@@ -52,6 +52,7 @@ public class NPC : MonoBehaviour
     {
         if (collision.CompareTag("Player") && collision.gameObject.name == gameObject.tag && _metadata.getCurPlayer().name == collision.gameObject.name)
         {
+            GetComponent<AudioSource>().Play();
             SetActiveNPC(true);
             textObj.GetComponent<TextMeshProUGUI>().SetText(text);
             InteractTriggerUI.SetActive(true);
