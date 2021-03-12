@@ -34,9 +34,9 @@ public class MoonFlowerCollid : MonoBehaviour
 
     void Update()
     {
-    	if (canTakePhoto && Input.GetKeyDown(KeyCode.G))
+    	if (canTakePhoto && Input.GetKeyDown(KeyCode.F))
     	{
-            textObj.GetComponent<TextMeshProUGUI>().SetText("");
+           // textObj.GetComponent<TextMeshProUGUI>().SetText("");
             InteractTriggerUI.SetActive(false);
     		IInventoryItem item = gameObject.GetComponent<IInventoryItem>();
     		inventory.AddItem(item);
@@ -47,13 +47,14 @@ public class MoonFlowerCollid : MonoBehaviour
     {
         if (collision.CompareTag("Player"))
         {
-            // if (cat._initiatedDialog)
-            // {
-            //     textObj.GetComponent<TextMeshProUGUI>().SetText(text);
-            //     InteractTriggerUI.SetActive(true);
-            //     canTakePhoto = true;
-            // }
-            DialogUI.Instance.dialogueRunner.StartDialogue(yarnStartNode);
+             if (cat._initiatedDialog)
+             {
+                 //          GetComponent<AudioSource>().Play();
+              //   textObj.GetComponent<TextMeshProUGUI>().SetText(text);
+                 InteractTriggerUI.SetActive(true);
+                 canTakePhoto = true;
+             }
+         //   DialogUI.Instance.dialogueRunner.StartDialogue(yarnStartNode);
         }
     }
 
@@ -61,7 +62,7 @@ public class MoonFlowerCollid : MonoBehaviour
     {
         if (collision.CompareTag("Player"))
         {
-            textObj.GetComponent<TextMeshProUGUI>().SetText("");
+          //  textObj.GetComponent<TextMeshProUGUI>().SetText("");
             InteractTriggerUI.SetActive(false);
         }
     }
@@ -70,7 +71,7 @@ public class MoonFlowerCollid : MonoBehaviour
     {
         if (nodeName == "Flower.Visited")
         {
-            textObj.GetComponent<TextMeshProUGUI>().SetText(text);
+          //  textObj.GetComponent<TextMeshProUGUI>().SetText(text);
             InteractTriggerUI.SetActive(true);
             canTakePhoto = true;
         }
