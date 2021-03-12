@@ -26,6 +26,7 @@ public class TreeReceiver : MonoBehaviour
 
     public void Inventory_ItemUsed(object sender, InventoryEventArgs e)
     {
+        Debug.Log("Tree Quest");
     	IInventoryItem item = e.Item;
 
         if (item.Name == "Sun")

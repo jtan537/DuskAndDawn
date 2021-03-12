@@ -22,6 +22,7 @@ public class CatReceiver : MonoBehaviour
 
     public void Inventory_ItemUsed(object sender, InventoryEventArgs e)
     {
+        Debug.Log("Cat quest");
         IInventoryItem item = e.Item;
 
         if (item.Name == "MoonFlower")
@@ -30,12 +31,15 @@ public class CatReceiver : MonoBehaviour
             inventory.RemoveItem(item);
         }
 
+        Debug.Log("Here");
+
         if (quest.numRequiredFlowers == 0)
         {
+            Debug.Log("1");
             textObj.GetComponent<TextMeshProUGUI>().SetText("");
             InteractTriggerUI.SetActive(false);
             gem.SetActive(true);
-            DialogUI.Instance.dialogueRunner.StartDialogue(NPC.ActiveNPC.YarnStartNode);
+            GameObject.Find("Dusk").GetComponent<NPCInteract>().Interact();
             quest.numRequiredFlowers = -1;
         }
     }

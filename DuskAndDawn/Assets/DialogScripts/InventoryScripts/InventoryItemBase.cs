@@ -24,9 +24,8 @@ public class InventoryItemBase : MonoBehaviour, IInventoryItem
         get; set;
     }
 
-    public virtual void OnPickup()
+    public virtual void OnPickup(Collider collider)
     {
-    	gameObject.SetActive(false);
     }
 
     public virtual void OnDelete(Transform trans)

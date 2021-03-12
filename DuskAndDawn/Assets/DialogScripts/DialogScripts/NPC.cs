@@ -25,7 +25,7 @@ public class NPC : MonoBehaviour
     private Metadata _metadata;
 
     VariableStorageBehaviour _varStorage;
-    bool _initiatedDialog;
+    public bool _initiatedDialog;
     public ItemClickHandler[] handlers;
     private void Start()
     {
@@ -56,8 +56,10 @@ public class NPC : MonoBehaviour
             SetActiveNPC(true);
             textObj.GetComponent<TextMeshProUGUI>().SetText(text);
             InteractTriggerUI.SetActive(true);
+            Debug.Log("Before initial");
             if (_initiatedDialog)
             {
+                Debug.Log("Active");
                 foreach (ItemClickHandler handler in handlers)
                 {
                     handler.active = true;

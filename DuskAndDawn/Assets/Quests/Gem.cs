@@ -5,8 +5,9 @@ using UnityEngine;
 public class Gem : InventoryItemBase
 {
 
-    public override void OnPickup()
+    public override void OnPickup(Collider collider)
     {
+        collider.enabled = false;
         gameObject.SetActive(false);
     }
 

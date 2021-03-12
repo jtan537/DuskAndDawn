@@ -17,8 +17,9 @@ public class Sun : InventoryItemBase
         quest.numRequiredSuns -= 1;
     }
 
-    public override void OnPickup()
+    public override void OnPickup(Collider collider)
     {
+        collider.enabled = false;
         gameObject.SetActive(false);
     }
 
