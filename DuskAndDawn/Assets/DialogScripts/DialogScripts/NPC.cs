@@ -27,6 +27,7 @@ public class NPC : MonoBehaviour
     VariableStorageBehaviour _varStorage;
     public bool _initiatedDialog;
     public ItemClickHandler[] handlers;
+
     private void Start()
     {
         _metadata = GameObject.FindObjectOfType<Metadata>().GetComponent<Metadata>();

@@ -1,7 +1,9 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 using TMPro;
+using System;
 
 public class CatReceiver : MonoBehaviour
 {
@@ -14,6 +16,13 @@ public class CatReceiver : MonoBehaviour
     public GameObject InteractTriggerUI;
     public GameObject textObj;
 
+    public TaskList taskList;
+    Task task;
+    public string taskName;
+    public int assignee;
+
+    bool istaskAdded = false;
+
     void Start()
     {
         quest = GameObject.FindObjectOfType<CatQuest>();
@@ -22,7 +31,6 @@ public class CatReceiver : MonoBehaviour
 
     public void Inventory_ItemUsed(object sender, InventoryEventArgs e)
     {
-        Debug.Log("Cat quest");
         IInventoryItem item = e.Item;
 
         if (item.Name == "MoonFlower")
@@ -31,16 +39,35 @@ public class CatReceiver : MonoBehaviour
             inventory.RemoveItem(item);
         }
 
-        Debug.Log("Here");
-
         if (quest.numRequiredFlowers == 0)
         {
-            Debug.Log("1");
             textObj.GetComponent<TextMeshProUGUI>().SetText("");
             InteractTriggerUI.SetActive(false);
             gem.SetActive(true);
+            taskList.UpdateTask(task, taskList);
+            taskList.RefreshDisplay();
             GameObject.Find("Dusk").GetComponent<NPCInteract>().Interact();
             quest.numRequiredFlowers = -1;
+        }
+    }
+
+    private void CreateTask()
+    {
+        task = new Task();
+        task.taskName = taskName;
+        task.status = 0;
+        task.assignee = assignee;
+    }
+
+    public void OnNodeComplete(String s)
+    {
+        if (s == "Quest.Activates" && !istaskAdded)
+        {
+            CreateTask();
+
+            taskList.AddTask(task, taskList);
+
+            istaskAdded = true;
         }
     }
 }
