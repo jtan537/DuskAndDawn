@@ -14,7 +14,7 @@ public class ItemClickHandler : MonoBehaviour
 
     	IInventoryItem item = dragHandler.Item;
 
-    	if (active)
+    	if (item != null && active)
         {
             inventory.UseItem(item);
         }

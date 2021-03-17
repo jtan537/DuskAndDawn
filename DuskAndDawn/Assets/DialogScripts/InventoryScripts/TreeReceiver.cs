@@ -26,23 +26,26 @@ public class TreeReceiver : MonoBehaviour
 
     public void Inventory_ItemUsed(object sender, InventoryEventArgs e)
     {
-        Debug.Log("Tree Quest");
+        
     	IInventoryItem item = e.Item;
 
-        if (item.Name == "Sun")
+        if (NPC.ActiveNPC.name == "Tree" && item.Name == "Sun")
         {
+            Debug.Log("Tree Quest");
             item.OnUse();
             inventory.RemoveItem(item);
-        }
-        if (quest.numRequiredSuns == 0)
-        {
-            textObj.GetComponent<TextMeshProUGUI>().SetText("");
-            InteractTriggerUI.SetActive(false);
-            ani.SetBool("received", true);
-            gem.SetActive(true);
 
-            GameObject.Find("Dawn").GetComponent<NPCInteract>().Interact();
-            quest.numRequiredSuns = -1;
+            if (quest.numRequiredSuns == 0)
+            {
+                textObj.GetComponent<TextMeshProUGUI>().SetText("");
+                InteractTriggerUI.SetActive(false);
+                ani.SetBool("received", true);
+                gem.SetActive(true);
+
+                GameObject.Find("Dawn").GetComponent<NPCInteract>().Interact();
+                quest.numRequiredSuns = -1;
+            }
         }
+        
     }
 }

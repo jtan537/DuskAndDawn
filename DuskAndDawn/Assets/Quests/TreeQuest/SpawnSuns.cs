@@ -19,7 +19,7 @@ public class SpawnSuns : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        _initiatedDialog = _varStorage.GetValue("$quest_activated").AsBool;
+        _initiatedDialog = _varStorage.GetValue("$tree_quest_activated").AsBool;
         if (!_spawned && _initiatedDialog)
         {
             ActivateSuns();

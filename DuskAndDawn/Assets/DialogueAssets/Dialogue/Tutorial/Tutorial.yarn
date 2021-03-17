@@ -1,0 +1,160 @@
+title: Dawn.Elder.Start
+tags: 
+colorID: 0
+position: 634,-57
+---
+<<if visited("Dusk.Elder.Start") is true>>
+    Mouse: Good luck on your journey, Dawn.
+    Mouse: I'm excited to see this year's Twilight!!
+    <<stop>>
+<<endif>>
+
+<<if visited("Dawn.Elder.Elixir") is true>>
+    Mouse: You can now communicate with Dusk. Press ‘R’ to switch to Dusk.
+    <<stop>>
+<<endif>>
+
+<<if visited("Dawn.Elder.Gem") is true>>
+    Mouse: Press ‘B’ to open your inventory. Click on the item using your mouse to drink it
+    <<stop>>
+<<endif>>
+
+<<if $give_dawn_tutorial_gem is true>>
+    Mouse: Pick up the Sun gem by moving on top of the gem.
+    <<stop>>
+<<endif>>
+
+
+
+Mouse Elder: You have been chosen as Dawn this year. You must journey to the top of the tower.
+Dawn: I’m so excited!!!! I’ve heard stories of how beautiful twilight is.
+Mouse: You need 4 sun gems. I have the first 1 for you. Go and pick it up.
+<<set $give_dawn_tutorial_gem to true>>
+<<stop>>
+===
+title: Dawn.Elder.Gem
+tags: 
+colorID: 0
+position: 860,-55
+---
+Mouse: You have your first gem out of four!
+Mouse: Don’t forget on this tower, Dawn can only interact with 2 sides and Dusk with the other 2 sides.
+Dawn: Yea, yea I’ve got it! 
+Mouse: Work with Dusk to journey up the tower. Here is the Elixir of Twilight.
+Mouse: Press ‘B’ to open your inventory. Click on the item using your mouse to drink it.
+<<set $give_dawn_elixir to true>>
+===
+title: Dawn.Elder.Elixir
+tags: 
+colorID: 0
+position: 1096,-56
+---
+Mouse: You can now communicate with Dusk. Press ‘R’ to switch to Dusk.
+===
+title: Dusk.Elder.Start
+tags: 
+colorID: 0
+position: 629,213
+---
+<<if visited("Dusk.Elder.Gem") is true>>
+    Elder: Good luck on your Journey Dusk.
+    Elder: Open yourself up and rely on others.
+    <<stop>>
+<<endif>>
+
+<<if visited("Dusk.Elder.Elixir") is true>>
+    Elder: You need PRESS 'R' to switch to Dawn to get this gem.
+    Elder: Maybe there's a switch on Dawn's side you need to activate.
+    <<stop>>
+<<endif>>
+
+<<if $give_dusk_elixir is true>>
+    Elder: Press 'B' to open your inventory and click on the Elixir with your mouse button to drink it.
+    <<stop>>
+<<endif>>
+
+Elder: You are the chosen Dusk this year --
+Dusk: Yea Yea Ive got it. Just gimme the Gem and Elixir and let’s get this over with.
+Elder: ... Very well, here's the elixir. Try to cooperate with Dawn, you cannot do everything alone Dusk.
+Dusk: Whatever. 
+Elder: Don't forget you need to press 'B' to open up your inventory then click on the Elixir with your mouse button.
+
+<<set $give_dusk_elixir to true>>
+<<set $enable_dusk_tutorial_switch to true>>
+<<stop>>
+===
+title: Dawn.Tutorial.Switch
+tags: 
+colorID: 0
+position: 257,-56
+---
+<<if visited("Dusk.Elder.Gem") is true>>
+    Dawn: That's all the switch does, I think I helped out Dusk! We're going to work SOOOOO well together, I can feel it!!
+    <<stop>>
+<<endif>>
+<<if visited("Dusk.Elder.Start") is true>>
+    <<if $turned_on_switch is true>>
+        Dawn: I should switch back to Dusk.
+        <<stop>>
+    <<endif>>
+    Dawn: Here's a switch, this should help dusk if I press it.
+    [[ Press Switch |Dawn.Tutorial.Press]]
+    [[ Ignore Switch |Dawn.Tutorial.Ignore]]
+<<else>>
+    Dawn: This appears to be a switch, but it doesn't appear to do anything on MY SIDE?
+<<endif>>
+===
+title: Dusk.Elder.Gem
+tags: 
+colorID: 0
+position: 1097,204
+---
+Dusk: Finally got the gem...
+Elder: Well? Like I said Dusk, you need to work with Dawn sometimes!
+Elder: If a path seems unpassable TRY SWITCHING TO DAWN. Maybe you need her to help you. And maybe she needs your help!
+Dusk: Gotcha gotcha... (This whole twilight thing better be worth it)
+===
+title: Dusk.Elder.Elixir
+tags: 
+colorID: 0
+position: 863,213
+---
+Elder: You can now communicate with Dawn.
+Elder: and... HERE'S THE GEM! Try to get this by yourself!
+<<set $give_dusk_tutorial_gem to true>>
+Elder: You need PRESS 'R' to switch to Dawn to get this gem, It's too high up for you to jump to!
+Dusk: ... Are you serious??
+Elder: Of course I am! 'Teamwork makes the dream work', as they say
+===
+title: Tutorial.Greeting
+tags: 
+colorID: 0
+position: 252,189
+---
+Dusk: Hey, so I guess your Dawn huh?
+Dawn: HEYYY! NICE TO MEEET YOU!!!!
+Dusk: Uhh yea, nice to meet you to
+Dawn: IM SO EXCITED TO GO ON THIS JOURNEY, IVE ONLY HEARD STORIES OF HOW BEAUTIFUL TWILIGHT IS!!!!
+Dusk: same, uhh so listen this Old Frog wants me to ask you for help.
+Dawn: OOOH OK! What can I do to help you though?? Were on different sides of the tower.
+Dusk: Im not sure, I think there's a SWITCH on your side of the tower though. Activating it should do something to help me.
+Dusk: Ok! Ill look for the switch then.
+
+<<stop>>
+===
+title: Dawn.Tutorial.Press
+tags: 
+colorID: 0
+position: -58,-381
+---
+Dusk: Oh! A platform appeared on my side!
+Dawn: YAYYY! (I should switch back to Dusk.)
+<<set $turned_on_switch to true>>
+===
+title: Dawn.Tutorial.Ignore
+tags: 
+colorID: 0
+position: 513,-392
+---
+Dawn: Guess I'll ignore it for now.
+===
