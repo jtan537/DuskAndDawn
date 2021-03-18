@@ -19,7 +19,7 @@ public class TempDoneTutorial : MonoBehaviour
     private void Update()
     {
         bool doneTutorial = _varStorage.GetValue("$done_tutorial").AsBool;
-        if (doneTutorial)
+        if (doneTutorial || (GameObject.FindObjectOfType<SwitchCharacter>().dawn_elixir_drunk && GameObject.FindObjectOfType<SwitchCharacter>().dusk_elixir_drunk))
         {
             dusk.GetComponent<CharacterController>().enabled = false;
             dawn.GetComponent<CharacterController>().enabled = false;
