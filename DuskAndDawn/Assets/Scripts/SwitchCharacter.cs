@@ -35,7 +35,7 @@ public class SwitchCharacter : MonoBehaviour
     private HUD dawnInventoryHud, duskInventoryHud;
     
     // Normally disable switching of chracters unless Dawn and Dusk finish tutorial
-    public static bool dusk_elixir_drunk = true, dawn_elixir_drunk = true;
+    public bool dusk_elixir_drunk = false, dawn_elixir_drunk = false;
 
     // Start is called before the first frame update
     void Start()

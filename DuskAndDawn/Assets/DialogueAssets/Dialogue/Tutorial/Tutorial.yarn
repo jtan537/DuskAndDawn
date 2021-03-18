@@ -113,6 +113,7 @@ Dusk: Finally got the gem...
 Elder: Well? Like I said Dusk, you need to work with Dawn sometimes!
 Elder: If a path seems unpassable TRY SWITCHING TO DAWN. Maybe you need her to help you. And maybe she needs your help!
 Dusk: Gotcha gotcha... (This whole twilight thing better be worth it)
+<<set $done_tutorial to true>>
 ===
 title: Dusk.Elder.Elixir
 tags: 

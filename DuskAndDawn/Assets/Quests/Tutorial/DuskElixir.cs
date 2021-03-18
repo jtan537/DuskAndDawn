@@ -9,7 +9,7 @@ public class DuskElixir : InventoryItemBase
     public override void OnUse()
     {
         print("used dusk elixir");
-        SwitchCharacter.dusk_elixir_drunk = true;
+        GameObject.FindObjectOfType<SwitchCharacter>().dusk_elixir_drunk = true;
     }
 
     public override void OnPickup(Collider collider)

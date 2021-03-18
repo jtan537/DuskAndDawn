@@ -9,7 +9,7 @@ public class DawnElixir : InventoryItemBase
     public override void OnUse()
     {
         print("used dawn elixir");
-        SwitchCharacter.dawn_elixir_drunk = true;
+        GameObject.FindObjectOfType<SwitchCharacter>().dawn_elixir_drunk = true;
     }
 
     public override void OnPickup(Collider collider)
