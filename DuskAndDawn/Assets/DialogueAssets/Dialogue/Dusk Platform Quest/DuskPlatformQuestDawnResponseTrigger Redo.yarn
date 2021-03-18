@@ -1,0 +1,40 @@
+title: Dusk.Platform.Dawn.Response.Start
+tags: 
+colorID: 2
+position: 949,180
+---
+<<if $dusk_platform_quest_activated is true>>
+    <<if visited("Dusk.Platform.Dawn.Response.Middle") is true>>
+        [[Dusk.Platform.Dawn.Response.Waiting]]
+    <<endif>>
+    Dawn: Yep, it's like I said. I can see the platforms.
+    Dusk: This better not be some kind of prank...because you do realize that I'd be jumping to nothing, right?
+    Dawn: I'm not lying, I promise!
+    Dawn: I can let you know where the platforms are!!
+    <<wait .50>>
+    Dawn: If you say please. 
+    Dusk: (you've got to be kiddng me right now)
+    Dusk: Fine, can you PLEASE help me out Dawn?
+    Dawn: Of course! 
+    Dusk: You owe me one later. 
+    [[Dusk.Platform.Dawn.Response.Middle]]
+<<else>>
+Dawn: Those platforms on Dusk's side look kinda funny.
+<<endif>>
+===
+title: Dusk.Platform.Dawn.Response.Waiting
+tags: 
+colorID: 0
+position: 806,-164
+---
+Dawn: (I need to tell Dusk where the platforms are.)
+Dawn: (If I stay here and LOOK AT THE PLATFORMS ON HER SIDE, AND THEN SWITCH TO HER...)
+Dawn: (I should be able to help her...)
+===
+title: Dusk.Platform.Dawn.Response.Middle
+tags: 
+colorID: 0
+position: 1070,-140
+---
+<<set $dusk_platform_quest_activated to true>>
+===

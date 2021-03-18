@@ -1,0 +1,31 @@
+fileFormatVersion: 2
+guid: 8e55e5e5a7c98f344b02e8fac5634071
+ScriptedImporter:
+  internalIDToNameTable: []
+  externalObjects: {}
+  serializedVersion: 2
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+  script: {fileID: 11500000, guid: 94073015eacc34c1d8fc6786e43d60ca, type: 3}
+  baseLanguageID: en-CA
+  stringIDs:
+  - DuskPlatformQuestDawnResponseTrigger Redo-Dusk.Platform.Dawn.Response.Start-0
+  - DuskPlatformQuestDawnResponseTrigger Redo-Dusk.Platform.Dawn.Response.Start-1
+  - DuskPlatformQuestDawnResponseTrigger Redo-Dusk.Platform.Dawn.Response.Start-2
+  - DuskPlatformQuestDawnResponseTrigger Redo-Dusk.Platform.Dawn.Response.Start-3
+  - DuskPlatformQuestDawnResponseTrigger Redo-Dusk.Platform.Dawn.Response.Start-4
+  - DuskPlatformQuestDawnResponseTrigger Redo-Dusk.Platform.Dawn.Response.Start-5
+  - DuskPlatformQuestDawnResponseTrigger Redo-Dusk.Platform.Dawn.Response.Start-6
+  - DuskPlatformQuestDawnResponseTrigger Redo-Dusk.Platform.Dawn.Response.Start-7
+  - DuskPlatformQuestDawnResponseTrigger Redo-Dusk.Platform.Dawn.Response.Start-8
+  - DuskPlatformQuestDawnResponseTrigger Redo-Dusk.Platform.Dawn.Response.Start-9
+  - DuskPlatformQuestDawnResponseTrigger Redo-Dusk.Platform.Dawn.Response.Waiting-10
+  - DuskPlatformQuestDawnResponseTrigger Redo-Dusk.Platform.Dawn.Response.Waiting-11
+  - DuskPlatformQuestDawnResponseTrigger Redo-Dusk.Platform.Dawn.Response.Waiting-12
+  compilationStatus: 1
+  isSuccesfullyCompiled: 1
+  compilationErrorMessage: 
+  baseLanguage: {fileID: 7128917941130120860, guid: 8e55e5e5a7c98f344b02e8fac5634071,
+    type: 3}
+  localizations: []

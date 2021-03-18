@@ -9,11 +9,13 @@ public class DuskChest : MonoBehaviour
     bool _recieveGem, _done = false;
     private Animator _anim;
 
+
     public GameObject gem;
 
     // Start is called before the first frame update
     void Start()
     {
+     
         _anim = gameObject.GetComponent<Animator>();
         _varStorage = GameObject.FindObjectOfType<VariableStorageBehaviour>().GetComponent<VariableStorageBehaviour>();
     }

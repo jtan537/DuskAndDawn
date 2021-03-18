@@ -21,3 +21,16 @@ There's a gravestone here.
 Engraved is no name, but a note.
 "I hope these flowers make you feel less lonely."
 ===
+title: Dawn.Igloo.Start
+tags: 
+colorID: 0
+position: 87,731
+---
+There's an opening to the igloo...Reach your hand in there?
+-> Yes
+    You reach your hand in there..
+    MYSTERIOUS VOICE: HEY, EVER HEARD OF SOME PRIVACY?
+    You feel a painful bite onto your hand.
+-> No
+    Yet the interest continues to linger in your head...
+===
