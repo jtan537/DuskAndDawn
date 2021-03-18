@@ -1,7 +1,9 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 using TMPro;
+using System;
 
 public class TreeReceiver : MonoBehaviour
 {
@@ -18,6 +20,13 @@ public class TreeReceiver : MonoBehaviour
     public GameObject textObj;
 
     public GameObject DawnItemDetails;
+
+    public string taskName;
+    public int assignee;
+    public TaskList taskList;
+    Task task;
+
+    bool istaskAdded = false;
 
     void Start()
     {
@@ -45,10 +54,32 @@ public class TreeReceiver : MonoBehaviour
                 gem.SetActive(true);
                 DawnItemDetails.SetActive(false);
 
+                taskList.UpdateTask(task, taskList);
+                taskList.RefreshDisplay();
+
                 GameObject.Find("Dawn").GetComponent<NPCInteract>().Interact();
                 quest.numRequiredSuns = -1;
             }
+        }   
+    }
+
+    private void CreateTask()
+    {
+        task = new Task();
+        task.taskName = taskName;
+        task.status = 0;
+        task.assignee = assignee;
+    }
+
+    public void OnNodeComplete(String s)
+    {
+        if (s == "TreeQuest.Activates" && !istaskAdded)
+        {
+            CreateTask();
+
+            taskList.AddTask(task, taskList);
+
+            istaskAdded = true;
         }
-        
     }
 }

@@ -1,7 +1,9 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 using TMPro;
+using System;
 
 public class CatReceiver : MonoBehaviour
 {
@@ -15,6 +17,13 @@ public class CatReceiver : MonoBehaviour
     public GameObject textObj;
 
     public GameObject DuskItemDetails;
+
+    public TaskList taskList;
+    Task task;
+    public string taskName;
+    public int assignee;
+
+    bool istaskAdded = false;
 
     void Start()
     {
@@ -33,20 +42,37 @@ public class CatReceiver : MonoBehaviour
             item.OnUse();
             inventory.RemoveItem(item);
 
-            Debug.Log("Here");
-
             if (quest.numRequiredFlowers == 0)
             {
-                Debug.Log("1");
                 textObj.GetComponent<TextMeshProUGUI>().SetText("");
                 InteractTriggerUI.SetActive(false);
                 gem.SetActive(true);
                 DuskItemDetails.SetActive(false);
+                taskList.UpdateTask(task, taskList);
+                taskList.RefreshDisplay();
                 GameObject.Find("Dusk").GetComponent<NPCInteract>().Interact();
                 quest.numRequiredFlowers = -1;
             }
         }
+    }
 
-        
+    private void CreateTask()
+    {
+        task = new Task();
+        task.taskName = taskName;
+        task.status = 0;
+        task.assignee = assignee;
+    }
+
+    public void OnNodeComplete(String s)
+    {
+        if (s == "Quest.Activates" && !istaskAdded)
+        {
+            CreateTask();
+
+            taskList.AddTask(task, taskList);
+
+            istaskAdded = true;
+        }
     }
 }
