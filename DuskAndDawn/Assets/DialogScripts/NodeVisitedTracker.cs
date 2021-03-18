@@ -13,7 +13,7 @@ public class NodeVisitedTracker : MonoBehaviour
     [SerializeField] Yarn.Unity.DialogueRunner dialogueRunner;
 #pragma warning restore 0649
 
-    public HashSet<string> _visitedNodes = new HashSet<string>();
+    public static HashSet<string> _visitedNodes = new HashSet<string>();
 
     void Start()
     {
@@ -25,6 +25,11 @@ public class NodeVisitedTracker : MonoBehaviour
             return _visitedNodes.Contains(nodeName.AsString);
         });
 
+    }
+
+    public static bool visited (string node)
+    {
+        return _visitedNodes.Contains(node);
     }
 
     // Called by the Dialogue Runner to notify us that a node finished

@@ -26,13 +26,16 @@ public class SwitchCharacter : MonoBehaviour
     private List<NPC> _dawnNPCs = new List<NPC>(), _duskNPCs = new List<NPC>();
 
     private bool isTransitioning = false;
+    public static bool switchedToDawn = false;
 
 
     CinemachineVirtualCamera _currentduskCamera, _currentdawnCamera;
     GameObject _currentCharacter;
 
     private HUD dawnInventoryHud, duskInventoryHud;
-    public 
+    
+    // Normally disable switching of chracters unless Dawn and Dusk finish tutorial
+    public bool dusk_elixir_drunk = false, dawn_elixir_drunk = false;
 
     // Start is called before the first frame update
     void Start()
@@ -76,20 +79,24 @@ public class SwitchCharacter : MonoBehaviour
         // Don't allow switching when in dialog or while transitioning
         if (Input.GetKeyDown("r") && !_metadata.dawnInDialog && !_metadata.duskInDialog && !isTransitioning)
         {
-            GetComponent<AudioSource>().Play();
-            isTransitioning = true;
-            // Switch to Dawn
-            if (_currentCharacter == _dusk)
+            
+            
+            // Switch to Dawn if tutorial for Dusk is done
+            if (_currentCharacter == _dusk && dusk_elixir_drunk)
             {
+                isTransitioning = true;
+                GetComponent<AudioSource>().Play();
                 disableDusk();
                 skyboxCtrl.DuskToDawn();
                 fadeIn();
                 StartCoroutine(enableDawnAfterTime(_transitionTime));
                 
             }
-            // Switch to Dusk
-            else
+            // Switch to Dusk if tutorial for Dawn is done
+            else if (_currentCharacter == _dawn && dawn_elixir_drunk)
             {
+                isTransitioning = true;
+                GetComponent<AudioSource>().Play();
                 disableDawn();
                 skyboxCtrl.DawnToDusk();
                 fadeIn();
@@ -113,12 +120,14 @@ public class SwitchCharacter : MonoBehaviour
         {
             yield return new WaitForSeconds(time);
             enableDawn();
+            switchedToDawn = true;
             isTransitioning = false;
         }
         fadeOut();
         StartCoroutine(activateDawn(_transitionTime));
     }
 
+    public 
     
 
     IEnumerator enableDuskAfterTime(float time)

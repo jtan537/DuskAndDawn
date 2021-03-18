@@ -74,7 +74,7 @@ position: 1367,247
 ---
 Tree: REALLY?! That means so much.
 Tree: I hope it goes well and good luck!
-<<set $quest_activated to true>>
+<<set $tree_quest_activated to true>>
 ===
 title: Dialogue.Ends
 tags: 

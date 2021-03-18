@@ -47,7 +47,7 @@ public class MoonFlowerCollid : MonoBehaviour
     {
         if (collision.CompareTag("Player"))
         {
-             if (cat._initiatedDialog)
+             if (cat.activatedQuest)
              {
                  //          GetComponent<AudioSource>().Play();
               //   textObj.GetComponent<TextMeshProUGUI>().SetText(text);

@@ -9,6 +9,8 @@ public interface IInventoryItem
 
 	Sprite Image { get; }
 
+	string Description { get; }
+
 	void OnPickup(Collider collider);
 
 	void OnDelete(Transform trans);

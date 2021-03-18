@@ -44,4 +44,19 @@ public class NPCInteract : MonoBehaviour
             DialogUI.Instance.dialogueRunner.StartDialogue(NPC.ActiveNPC.YarnStartNode);
         }
     }
+
+
+    //Overload Interact with other start node
+    public void Interact(string yarnStartNode)
+    {
+        // Check if not already talking (Dont need to be in range of npc)
+        if (!isInDialog)
+        {
+            InteractTriggerUI.SetActive(false);
+            // Start dialog
+            isInDialog = true;
+            gameObject.transform.GetComponent<ThreeDMovement>().enabled = false;
+            DialogUI.Instance.dialogueRunner.StartDialogue(yarnStartNode);
+        }
+    }
 }

@@ -1,7 +1,9 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 using TMPro;
+using System;
 
 public class CatReceiver : MonoBehaviour
 {
@@ -14,6 +16,15 @@ public class CatReceiver : MonoBehaviour
     public GameObject InteractTriggerUI;
     public GameObject textObj;
 
+    public GameObject DuskItemDetails;
+
+    public TaskList taskList;
+    Task task;
+    public string taskName;
+    public int assignee;
+
+    bool istaskAdded = false;
+
     void Start()
     {
         quest = GameObject.FindObjectOfType<CatQuest>();
@@ -22,25 +33,46 @@ public class CatReceiver : MonoBehaviour
 
     public void Inventory_ItemUsed(object sender, InventoryEventArgs e)
     {
-        Debug.Log("Cat quest");
+        
         IInventoryItem item = e.Item;
 
-        if (item.Name == "MoonFlower")
+        if (NPC.ActiveNPC.name == "Cat" && item.Name == "MoonFlower")
         {
+            Debug.Log("Cat quest");
             item.OnUse();
             inventory.RemoveItem(item);
+
+            if (quest.numRequiredFlowers == 0)
+            {
+                textObj.GetComponent<TextMeshProUGUI>().SetText("");
+                InteractTriggerUI.SetActive(false);
+                gem.SetActive(true);
+                DuskItemDetails.SetActive(false);
+                taskList.UpdateTask(task, taskList);
+                taskList.RefreshDisplay();
+                GameObject.Find("Dusk").GetComponent<NPCInteract>().Interact();
+                quest.numRequiredFlowers = -1;
+            }
         }
+    }
 
-        Debug.Log("Here");
+    private void CreateTask()
+    {
+        task = new Task();
+        task.taskName = taskName;
+        task.status = 0;
+        task.assignee = assignee;
+    }
 
-        if (quest.numRequiredFlowers == 0)
+    public void OnNodeComplete(String s)
+    {
+        if (s == "Quest.Activates" && !istaskAdded)
         {
-            Debug.Log("1");
-            textObj.GetComponent<TextMeshProUGUI>().SetText("");
-            InteractTriggerUI.SetActive(false);
-            gem.SetActive(true);
-            GameObject.Find("Dusk").GetComponent<NPCInteract>().Interact();
-            quest.numRequiredFlowers = -1;
+            CreateTask();
+
+            taskList.AddTask(task, taskList);
+
+            istaskAdded = true;
         }
     }
 }
