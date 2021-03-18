@@ -15,6 +15,8 @@ public class HUD : MonoBehaviour
     private bool show = false;
     private Metadata metadata;
 
+    public GameObject detail;
+
     void Start()
     {
         metadata = GameObject.FindObjectOfType<Metadata>().GetComponent<Metadata>();
@@ -39,6 +41,11 @@ public class HUD : MonoBehaviour
             GetComponent<AudioSource>().Play();
             show = !show;
             canvas.enabled = show;
+
+            if (!show)
+            {
+                detail.SetActive(false);
+            }
         }
     }
 

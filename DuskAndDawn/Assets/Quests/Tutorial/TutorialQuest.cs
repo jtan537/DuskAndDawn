@@ -20,6 +20,10 @@ public class TutorialQuest : MonoBehaviour
     [SerializeField] string gemDialogueNode = "Start",  elixirDialogueNode = "Start";
 
     bool _triggered_next_dialogue = false, _triggered_dusk_gem_dialogue = false;
+
+    public GameObject DawnItemDetails;
+    public GameObject DuskItemDetails;
+
     private void Start()
     {
         gem.SetActive(false);
@@ -94,6 +98,7 @@ public class TutorialQuest : MonoBehaviour
 
             if (item.Name == "DawnElixir")
             {
+                DawnItemDetails.SetActive(false);
                 item.OnUse();
                 GameObject.Find("Dawn").GetComponent<NPCInteract>().Interact(elixirDialogueNode);
                 inventory.RemoveItem(item);
@@ -104,6 +109,7 @@ public class TutorialQuest : MonoBehaviour
 
             if (item.Name == "DuskElixir")
             {
+                DuskItemDetails.SetActive(false);
                 item.OnUse();
                 GameObject.Find("Dusk").GetComponent<NPCInteract>().Interact(elixirDialogueNode);
                 inventory.RemoveItem(item);

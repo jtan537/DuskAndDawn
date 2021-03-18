@@ -12,6 +12,14 @@ public class InventoryItemBase : MonoBehaviour, IInventoryItem
     	}
     }
 
+    public virtual string Description
+    {
+        get
+        {
+            return "_base item description_";
+        }
+    }
+
     public Sprite _Image;
 
     public Sprite Image

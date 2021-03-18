@@ -17,6 +17,8 @@ public class TreeReceiver : MonoBehaviour
     public GameObject InteractTriggerUI;
     public GameObject textObj;
 
+    public GameObject DawnItemDetails;
+
     void Start()
     {
         ani.SetBool("received", false);
@@ -41,6 +43,7 @@ public class TreeReceiver : MonoBehaviour
                 InteractTriggerUI.SetActive(false);
                 ani.SetBool("received", true);
                 gem.SetActive(true);
+                DawnItemDetails.SetActive(false);
 
                 GameObject.Find("Dawn").GetComponent<NPCInteract>().Interact();
                 quest.numRequiredSuns = -1;

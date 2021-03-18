@@ -14,6 +14,8 @@ public class CatReceiver : MonoBehaviour
     public GameObject InteractTriggerUI;
     public GameObject textObj;
 
+    public GameObject DuskItemDetails;
+
     void Start()
     {
         quest = GameObject.FindObjectOfType<CatQuest>();
@@ -39,6 +41,7 @@ public class CatReceiver : MonoBehaviour
                 textObj.GetComponent<TextMeshProUGUI>().SetText("");
                 InteractTriggerUI.SetActive(false);
                 gem.SetActive(true);
+                DuskItemDetails.SetActive(false);
                 GameObject.Find("Dusk").GetComponent<NPCInteract>().Interact();
                 quest.numRequiredFlowers = -1;
             }
