@@ -172,12 +172,12 @@ Cat:Hmm, where could this flower be?
 title: Quest.Activates
 tags: 
 colorID: 0
-position: 743,-249
+position: 743,-252
 ---
 Cat: That will be really useful !
 Cat: She told me if I ever found it though to not pluck it out or else it will wilt.
 Cat: You should take a photo of it. 
-<<set $quest_activated to true>>
+<<set $cat_quest_activated to true>>
 ===
 title: Quest.Declined
 tags: 
