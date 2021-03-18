@@ -9,6 +9,9 @@ public class TempDoneTutorial : MonoBehaviour
     [SerializeField]
     GameObject dawnStartPoint, duskStartPoint, tutorial_plane;
     GameObject dusk, dawn;
+
+    [SerializeField]
+    bool skipTutorial = false;
     void Start()
     {
         _varStorage = GameObject.FindObjectOfType<VariableStorageBehaviour>().GetComponent<VariableStorageBehaviour>();
@@ -19,7 +22,7 @@ public class TempDoneTutorial : MonoBehaviour
     private void Update()
     {
         bool doneTutorial = _varStorage.GetValue("$done_tutorial").AsBool;
-        if (doneTutorial || (GameObject.FindObjectOfType<SwitchCharacter>().dawn_elixir_drunk && GameObject.FindObjectOfType<SwitchCharacter>().dusk_elixir_drunk))
+        if (doneTutorial || (skipTutorial))
         {
             dusk.GetComponent<CharacterController>().enabled = false;
             dawn.GetComponent<CharacterController>().enabled = false;
