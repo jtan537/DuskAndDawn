@@ -23,4 +23,11 @@ public class DawnElixir : InventoryItemBase
             return "DawnElixir";
         }
     }
+    public override string Description
+    {
+        get
+        {
+            return "A potion that holds special powers, allowing you to communicate with whoever drinks the same potion";
+        }
+    }
 }

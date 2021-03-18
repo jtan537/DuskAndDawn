@@ -29,4 +29,11 @@ public class MoonFlower : InventoryItemBase
     		return "MoonFlower";
     	}
     }
+    public override string Description
+    {
+        get
+        {
+            return "A keepsake for the Cat. A photo of the rare moonflower that her late mother used to plant.";
+        }
+    }
 }
