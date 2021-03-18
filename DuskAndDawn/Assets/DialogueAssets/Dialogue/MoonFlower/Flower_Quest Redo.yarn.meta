@@ -8,7 +8,7 @@ ScriptedImporter:
   assetBundleName: 
   assetBundleVariant: 
   script: {fileID: 11500000, guid: 94073015eacc34c1d8fc6786e43d60ca, type: 3}
-  baseLanguageID: 
+  baseLanguageID: en-CA
   stringIDs:
   - Flower_Quest Redo-Dusk.Cat.Start-0
   - Flower_Quest Redo-Dusk.Cat.Start-1
@@ -64,23 +64,23 @@ ScriptedImporter:
   - Flower_Quest Redo-Quest.Ends-51
   - Flower_Quest Redo-Quest.Ends-52
   - Flower_Quest Redo-Quest.Ends-53
-  - Flower_Quest Redo-Quest.Ends-54
+  - Flower_Quest Redo-During.Quest-54
   - Flower_Quest Redo-During.Quest-55
-  - Flower_Quest Redo-During.Quest-56
+  - Flower_Quest Redo-Talk.To.Cat.Again-56
   - Flower_Quest Redo-Talk.To.Cat.Again-57
   - Flower_Quest Redo-Talk.To.Cat.Again-58
-  - Flower_Quest Redo-Talk.To.Cat.Again-59
+  - Flower_Quest Redo-Quest.Activates-59
   - Flower_Quest Redo-Quest.Activates-60
   - Flower_Quest Redo-Quest.Activates-61
-  - Flower_Quest Redo-Quest.Activates-62
-  - Flower_Quest Redo-Quest.Declined-63
-  - Flower_Quest Redo-Flower.Talk-64
+  - Flower_Quest Redo-Quest.Declined-62
+  - Flower_Quest Redo-Flower.Talk-63
+  - Flower_Quest Redo-Flower.Visited-64
   - Flower_Quest Redo-Flower.Visited-65
-  - Flower_Quest Redo-Flower.Visited-66
-  - Flower_Quest Redo-Flower.Completed-67
-  - Flower_Quest Redo-Last.Cat.Dialogue-68
+  - Flower_Quest Redo-Flower.Completed-66
+  - Flower_Quest Redo-Last.Cat.Dialogue-67
   compilationStatus: 1
   isSuccesfullyCompiled: 1
   compilationErrorMessage: 
-  baseLanguage: {instanceID: 0}
+  baseLanguage: {fileID: 7128917941130120860, guid: 3e6436cf819b02244a5d179c23af74ba,
+    type: 3}
   localizations: []

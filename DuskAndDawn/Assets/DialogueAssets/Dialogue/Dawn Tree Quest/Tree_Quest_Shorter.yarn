@@ -71,7 +71,7 @@ position: 1366,246
 ---
 Tree: REALLY?! I think I need THREE sun energies.
 Tree: They should be beyond the bridge. 
-<<set $quest_activated to true>>
+<<set $tree_quest_activated to true>>
 ===
 title: Dialogue.Ends
 tags: 

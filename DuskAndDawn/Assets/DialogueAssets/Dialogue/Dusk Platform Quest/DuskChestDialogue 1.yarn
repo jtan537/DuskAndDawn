@@ -1,7 +1,7 @@
 title: Dusk.Chest.Start
 tags: 
 colorID: 0
-position: 931,-271
+position: 931,-272
 ---
 <<if visited("Dusk.chest.complete") is true>>
 [[Dusk.chest.final.dialogue]]
@@ -16,9 +16,10 @@ Dusk: (The flowers here are quite pretty...)
 title: Dusk.chest.final.dialogue
 tags: 
 colorID: 0
-position: 630,-537
+position: 629,-537
 ---
-Dusk: (It's an empty chest)
+I see you have returned to the chest. Are you that greedy for more gems? It's empty...
+Because you took the gem, silly.
 ===
 title: Dusk.chest.complete
 tags: 
