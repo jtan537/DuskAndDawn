@@ -27,4 +27,11 @@ public class Gem : InventoryItemBase
     		return "Gem";
     	}
     }
+    public override string Description
+    {
+        get
+        {
+            return "A gem that is extremely valuable. Rumours have it that collecting four of them will unlock something special.";
+        }
+    }
 }

@@ -30,4 +30,11 @@ public class Sun : InventoryItemBase
     		return "Sun";
     	}
     }
+    public override string Description
+    {
+        get
+        {
+            return "A raw core of the sun. It is said when you collect three of them, it can help revive the dead.";
+        }
+    }
 }
