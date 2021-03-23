@@ -26,6 +26,8 @@ public class ThreeDMovement : MonoBehaviour
     public CharacterController controller;
     public Animator anim;
 
+    private bool _jumpedAnimPlayed = false;
+
     private void Start()
     {
         
@@ -37,6 +39,7 @@ public class ThreeDMovement : MonoBehaviour
         playWalkSound = false;
         playJumpSound = false;
         anim.SetBool("isRunning", false);
+        anim.SetBool("jumped", false);
     }
 
     private void Update()
@@ -72,6 +75,11 @@ public class ThreeDMovement : MonoBehaviour
 
         RotateTowardMovementVector(movementVector);
 
+        if (isGrounded)
+        {
+            anim.SetBool("jumped", false);
+            _jumpedAnimPlayed = false;
+        }
         if (Input.GetButtonDown("Jump") )
         {
             if (isGrounded)
@@ -79,8 +87,19 @@ public class ThreeDMovement : MonoBehaviour
                 // Velocity needed to jump some height h: v = sqrt(h * -2 * gravity)
                 velocity.y = Mathf.Sqrt(jumpHeight * -2f * gravity);
                 playJumpSound = true;
-            }
+                anim.SetBool("jumped", true);
+                if (!_jumpedAnimPlayed)
+                {
+                    anim.Play("Jump");
+                    _jumpedAnimPlayed = true;
+                }
+                
+
+            } 
         }
+
+        
+
         
         // Apply Gravity (gravity * t^2 = velocity)
         velocity.y += gravity * Time.deltaTime;

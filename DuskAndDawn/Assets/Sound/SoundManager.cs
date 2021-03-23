@@ -12,24 +12,38 @@ public class SoundManager : MonoBehaviour
     public float volume;
     static SoundManager _soundManager;
 
+    Metadata _metadata;
+
+    Audio _dawnBGM, _duskBGM;
+    int _dawnBGMId, _duskBGMId;
+
     static int backgroundMusicID = 0;
     // Start is called before the first frame update
     void Start()
     {
+        _metadata = GameObject.FindObjectOfType<Metadata>();
         EazySoundManager.GlobalMusicVolume = volume;
         _soundManager = GameObject.Find("SoundManager").GetComponent<SoundManager>();
-        playBackgroundMusic(0);
+        _dawnBGMId = EazySoundManager.PrepareMusic(_soundManager.backgroundMusic[0], 0.5f, true, false, 1, 1);
+        _duskBGMId = EazySoundManager.PrepareMusic(_soundManager.backgroundMusic[1], 0.5f, true, false, 1, 1);
+        EazySoundManager.GetAudio(_dawnBGMId).Play();
+        EazySoundManager.GetAudio(_duskBGMId).Play();
     }
 
     private void Update()
     {
+        if (_metadata.curPlayer.name == "Dawn")
+        {
+            EazySoundManager.GetAudio(_dawnBGMId).SetVolume(volume);
+            EazySoundManager.GetAudio(_duskBGMId).SetVolume(0);
+        } else
+        {
+            EazySoundManager.GetAudio(_dawnBGMId).SetVolume(0);
+            EazySoundManager.GetAudio(_duskBGMId).SetVolume(volume);
+        }
         EazySoundManager.GlobalMusicVolume = volume;
     }
 
-    public static void playBackgroundMusic(int index)
-    {
-        backgroundMusicID = EazySoundManager.PlayMusic(_soundManager.backgroundMusic[index], 0.5f, true, false, 1, 1);
-    }
 
     public static void oneShotSoundFX(int index, float volume)
     {
