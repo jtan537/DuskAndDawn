@@ -13,12 +13,21 @@ public class PlayerController : MonoBehaviour
     [SerializeField]
     private LayerMask obstacleMask;
 
+    [SerializeField]
+    Animator _anim;
+
     public bool isSliding = false;
+
 
     void Start()
     {
         movePoint.parent = null; // Detach partent
         attemptedPosition = movePoint.position;
+    }
+
+    private void OnDisable()
+    {
+        _anim.SetBool("isRunning", false);
     }
 
     void Update()
@@ -32,9 +41,11 @@ public class PlayerController : MonoBehaviour
         {
             transform.rotation = Quaternion.Euler(0, 0, rotationZ);
             isSliding = true;
+            _anim.SetBool("isRunning", true);
         } else
         {
             isSliding = false;
+            _anim.SetBool("isRunning", false);
         }
        
 

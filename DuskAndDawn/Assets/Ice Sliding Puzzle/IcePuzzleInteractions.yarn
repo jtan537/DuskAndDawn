@@ -1,0 +1,80 @@
+title: IceSliding.Start
+tags: 
+colorID: 0
+position: 520,-9
+---
+<<if visited("IceSliding.ThirdConvo")>>
+[[IceSliding.FourthConvo]]
+<<endif>>
+<<if visited("IceSliding.SecondConvo")>>
+[[IceSliding.ThirdConvo]]
+<<endif>>
+
+<<if $done_initial_meet is true>>
+    [[IceSliding.SecondConvo]]
+<<endif>>
+
+Dawn: SO THIS IS WHAT YOU LOOK LIKE!!!! YOUR DRESS IS SO COOL!!!!!
+Dusk: Uhh yea.
+Dusk: You look cute too
+Dawn: ???? DID YOU SAY I LOOKED COOL?
+Dusk: No, but let's go with that.
+Dawn: LET'S GOOOOOOOOOOOOOOOOOO
+Dusk: We should probably try to reach the exit. I'm sure everyone's waiting for this year's twilight.
+Dawn: YEA!
+<<set $done_initial_meet to true>>
+===
+title: IceSliding.SecondConvo
+tags: 
+colorID: 0
+position: 816,-324
+---
+Dawn: I'm getting a feeling that we may need to help each other to reach our exits ...
+Dusk: Yea. Let me see, it seems like I NEED TO GET INTO POSITION SOMEHWHERE, THAT WAY YOU CAN COLLIDE WITH ME TO STOP?
+Dawn: OHHH!
+Dawn: Good idea, let's try that!
+===
+title: IceSliding.FourthConvo
+tags: 
+colorID: 0
+position: 195,-300
+---
+Dawn: We've been stuck for a while huh.
+Dusk: Yea, let's just keep trying.
+===
+title: IceSliding.ThirdConvo
+tags: 
+colorID: 0
+position: 523,-315
+---
+Dawn: SOOOOO, LIKE, what's it like on your side????
+Dusk: It's cool.
+Dawn: OH! Like, what's cool about it?
+Dusk: Well, there's this cheeky frog geezer who preaches to me a lot, but he's a cool dude. Also the village I'm from is nice and quiet. I'm quite excited to see what this whole twilight thing is about, and especially to see my village's reaction. 
+Dawn: Wow...
+Dusk: What?
+Dawn: That's the most you've said to me ever!
+Dusk: ... won't happen again.
+Dawn: !!!
+Dawn: That's a good thing!! This talk was so fun!!!
+Dawn: Now that we're this far, I guess I can say were friends huh??
+Dusk: ... yea I guess you say that.
+Dawn: YAYYYYYY
+===
+title: IceSliding.OnSceneEnter
+tags: 
+colorID: 0
+position: -15,-24
+---
+Dawn: WOW! So this is what inside the tower looks like! ... BRRRR its kinda chilly here
+Dusk: Yea, it looks like the floor is pretty slippery.
+Dawn: You're right! It looks like if I move in a direction, I'm gonna keep sliding til I hit something that stops me!
+Dusk: We're in the final stretch. It looks like I need to get to the right side, and you need to get to the left side.
+Dawn: OKEY DOKEY CAPTAIN!!
+Dusk: captain??
+Dawn: I was role playing dusk, get with the program GodFather.
+Dusk: GodFather??
+Dawn: It's from a movie! I always wanted to be a mafia henchman...
+Dusk: Anyways.... don't forget, we can press SPACE to reset our positions if we make a wrong move.
+Dawn: Yes GodFather.
+===

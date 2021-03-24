@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using Yarn.Unity;
 
 public class IceSlidingInteract : MonoBehaviour
 {
@@ -9,6 +10,8 @@ public class IceSlidingInteract : MonoBehaviour
     public GameObject InteractTriggerUI;
     public ItemDropHandler[] handlers;
     public IceSlideMetadata info;
+
+    DialogUI dialogUI;
 
     // Update is called once per frame
     void Update()
@@ -21,6 +24,8 @@ public class IceSlidingInteract : MonoBehaviour
         {
             Interact();
         }
+
+        dialogUI = GameObject.FindObjectOfType<DialogUI>();
     }
 
     public void OnDialogEnd()
@@ -40,8 +45,8 @@ public class IceSlidingInteract : MonoBehaviour
             InteractTriggerUI.SetActive(false);
             // Start dialog
             isInDialog = true;
-            gameObject.transform.GetComponent<PlayerController>().enabled = false;
-            DialogUI.Instance.dialogueRunner.StartDialogue(IceSlidingNPC.ActiveNPC.YarnStartNode);
+            gameObject.GetComponent<PlayerController>().enabled = false;
+            dialogUI.dialogueRunner.StartDialogue(IceSlidingNPC.ActiveNPC.YarnStartNode);
         }
     }
 
@@ -56,7 +61,7 @@ public class IceSlidingInteract : MonoBehaviour
             // Start dialog
             isInDialog = true;
             gameObject.transform.GetComponent<PlayerController>().enabled = false;
-            DialogUI.Instance.dialogueRunner.StartDialogue(yarnStartNode);
+            dialogUI.dialogueRunner.StartDialogue(yarnStartNode);
         }
     }
 }

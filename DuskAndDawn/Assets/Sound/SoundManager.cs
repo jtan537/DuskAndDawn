@@ -17,6 +17,9 @@ public class SoundManager : MonoBehaviour
     Audio _dawnBGM, _duskBGM;
     int _dawnBGMId, _duskBGMId;
 
+    [SerializeField]
+    bool adaptiveMusic = false;
+
     static int backgroundMusicID = 0;
     // Start is called before the first frame update
     void Start()
@@ -26,21 +29,34 @@ public class SoundManager : MonoBehaviour
         _soundManager = GameObject.Find("SoundManager").GetComponent<SoundManager>();
         _dawnBGMId = EazySoundManager.PrepareMusic(_soundManager.backgroundMusic[0], 0.5f, true, false, 1, 1);
         _duskBGMId = EazySoundManager.PrepareMusic(_soundManager.backgroundMusic[1], 0.5f, true, false, 1, 1);
-        EazySoundManager.GetAudio(_dawnBGMId).Play();
-        EazySoundManager.GetAudio(_duskBGMId).Play();
+
+        if (adaptiveMusic)
+        {
+            EazySoundManager.GetAudio(_dawnBGMId).Play();
+            EazySoundManager.GetAudio(_duskBGMId).Play();
+        } else
+        {
+            EazySoundManager.GetAudio(_dawnBGMId).Play();
+        }
+        
     }
 
     private void Update()
     {
-        if (_metadata.curPlayer.name == "Dawn")
+        if (adaptiveMusic)
         {
-            EazySoundManager.GetAudio(_dawnBGMId).SetVolume(volume);
-            EazySoundManager.GetAudio(_duskBGMId).SetVolume(0);
-        } else
-        {
-            EazySoundManager.GetAudio(_dawnBGMId).SetVolume(0);
-            EazySoundManager.GetAudio(_duskBGMId).SetVolume(volume);
+            if (_metadata.curPlayer.name == "Dawn")
+            {
+                EazySoundManager.GetAudio(_dawnBGMId).SetVolume(volume);
+                EazySoundManager.GetAudio(_duskBGMId).SetVolume(0);
+            }
+            else
+            {
+                EazySoundManager.GetAudio(_dawnBGMId).SetVolume(0);
+                EazySoundManager.GetAudio(_duskBGMId).SetVolume(volume);
+            }
         }
+        
         EazySoundManager.GlobalMusicVolume = volume;
     }
 
@@ -49,5 +65,7 @@ public class SoundManager : MonoBehaviour
     {
         EazySoundManager.PlaySound(_soundManager.soundEffects[index], volume, false, null);
     }
+
+
 
 }

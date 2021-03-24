@@ -34,14 +34,14 @@ public class NPCInteract : MonoBehaviour
 
     public void Interact()
     {
-        // Check if NPC is active and not already talking
-        if(NPC.ActiveNPC && !isInDialog)
+        // Check if NPC is active and not already talking and active NPC is for current player
+        if(NPC.ActiveNPC && !isInDialog && NPC.ActiveNPC.gameObject.tag == gameObject.name)
         {
             InteractTriggerUI.SetActive(false);
             // Start dialog
             isInDialog = true;
             gameObject.transform.GetComponent<ThreeDMovement>().enabled = false;
-            DialogUI.Instance.dialogueRunner.StartDialogue(NPC.ActiveNPC.YarnStartNode);
+            GameObject.FindObjectOfType<DialogUI>().dialogueRunner.StartDialogue(NPC.ActiveNPC.YarnStartNode);
         }
     }
 
@@ -56,7 +56,7 @@ public class NPCInteract : MonoBehaviour
             // Start dialog
             isInDialog = true;
             gameObject.transform.GetComponent<ThreeDMovement>().enabled = false;
-            DialogUI.Instance.dialogueRunner.StartDialogue(yarnStartNode);
+            GameObject.FindObjectOfType<DialogUI>().dialogueRunner.StartDialogue(yarnStartNode);
         }
     }
 }

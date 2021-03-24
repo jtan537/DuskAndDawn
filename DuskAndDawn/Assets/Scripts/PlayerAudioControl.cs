@@ -7,7 +7,7 @@ public class PlayerAudioControl : MonoBehaviour
 	public float stepRate = 0.5f;
 	public float stepCoolDown;
 	public int footStepInd, jumpStepInd = 5;
-	public float footStepVolume = 0.2f, topRange = 0.01f, bottomRange = -0.025f, jumpVolume = 0.1f;
+	public float footStepVolume = 0.2f, topRange = 0.01f, bottomRange = -0.025f, jumpVolume = 1f;
 
 	ThreeDMovement movement;
 
@@ -27,9 +27,15 @@ public class PlayerAudioControl : MonoBehaviour
 			stepCoolDown = stepRate;
 		}
 
-		if (movement.playJumpSound)
+		if (movement.playJumpSound && gameObject.name == "Dawn")
         {
-			SoundManager.oneShotSoundFX(jumpStepInd, jumpVolume);
+			SoundManager.oneShotSoundFX(Random.Range(5, 7), jumpVolume);
+			movement.playJumpSound = false;
+		}
+
+		if (movement.playJumpSound && gameObject.name == "Dusk")
+		{
+			SoundManager.oneShotSoundFX(Random.Range(7, 9), jumpVolume);
 			movement.playJumpSound = false;
 		}
 	}

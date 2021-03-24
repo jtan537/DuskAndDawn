@@ -26,12 +26,14 @@ public class IceSlidingNPC : MonoBehaviour
     // Ex: Tree quest.cs sets this to true if player accepted tree quest
     public bool activatedQuest;
     public ItemClickHandler[] handlers;
+
+    bool enteredTrigger = false;
     private void Start()
     {
         _metadata = GameObject.FindObjectOfType<IceSlideMetadata>().GetComponent<IceSlideMetadata>();
         try
         {
-            DialogUI.Instance.dialogueRunner.Add(yarnDialog);
+            GameObject.FindObjectOfType<DialogUI>().dialogueRunner.Add(yarnDialog);
         }
         catch (Exception e)
         {
@@ -41,34 +43,22 @@ public class IceSlidingNPC : MonoBehaviour
         InteractTriggerUI.SetActive(false);
     }
 
-    private void OnTriggerEnter(Collider collision)
-    {
-        if (collision.CompareTag("Player") && collision.gameObject.name == gameObject.tag && _metadata.curPlayer.name == collision.gameObject.name)
-        {
-            GetComponent<AudioSource>().Play();
-            SetActiveNPC(true);
-            textObj.GetComponent<TextMeshProUGUI>().SetText(text);
-            InteractTriggerUI.SetActive(true);
-            Debug.Log("Before initial");
-            if (activatedQuest)
-            {
-                Debug.Log("Active");
-                foreach (ItemClickHandler handler in handlers)
-                {
-                    handler.active = true;
-                }
-            }
-        }
-    }
-
     private void OnTriggerStay(Collider collision)
     {
-        if (collision.CompareTag("Player") && collision.gameObject.name == gameObject.tag && _metadata.curPlayer.name == collision.gameObject.name)
+        if (collision.CompareTag("Player") && collision.gameObject.name == gameObject.tag && _metadata.curPlayer.name == collision.gameObject.name
+            && !GameObject.Find(gameObject.tag).GetComponent<PlayerController>().isSliding)
         {
+            if (!enteredTrigger)
+            {
+                GetComponent<AudioSource>().Play();
+                enteredTrigger = true;
+                InteractTriggerUI.SetActive(true);
+                SetActiveNPC(true);
+            }
+            
             print(collision.gameObject.name);
-            SetActiveNPC(true);
-            /*            textObj.GetComponent<TextMeshProUGUI>().SetText(text);
-                        InteractTriggerUI.SetActive(true);*/
+            textObj.GetComponent<TextMeshProUGUI>().SetText(text);
+            
             if (activatedQuest)
             {
                 foreach (ItemClickHandler handler in handlers)
@@ -83,6 +73,7 @@ public class IceSlidingNPC : MonoBehaviour
     {
         if (collision.CompareTag("Player") && collision.gameObject.name == gameObject.tag && _metadata.curPlayer.name == collision.gameObject.name)
         {
+            enteredTrigger = false;
             SetActiveNPC(false);
             textObj.GetComponent<TextMeshProUGUI>().SetText("");
             InteractTriggerUI.SetActive(false);

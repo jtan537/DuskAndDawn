@@ -5,7 +5,7 @@ using UnityEngine.UI;
 using TMPro;
 using Yarn.Unity;
 
-public class DialogUI : Singleton<DialogUI>
+public class DialogUI : MonoBehaviour
 {
 	public DialogueRunner dialogueRunner;
 	
@@ -18,4 +18,7 @@ public class DialogUI : Singleton<DialogUI>
     {
         gameObject.SetActive(false);
     }
+
+
+
 }

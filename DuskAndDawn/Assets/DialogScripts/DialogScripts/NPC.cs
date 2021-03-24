@@ -33,7 +33,7 @@ public class NPC : MonoBehaviour
         _metadata = GameObject.FindObjectOfType<Metadata>().GetComponent<Metadata>();
         try
         {
-            DialogUI.Instance.dialogueRunner.Add(yarnDialog);
+            GameObject.FindObjectOfType<DialogUI>().dialogueRunner.Add(yarnDialog);
         } catch (Exception e)
         {
             print("Readding Yarn dialog: " + yarnDialog.name);

@@ -3,6 +3,8 @@ using System.Collections.Generic;
 using Cinemachine;
 using UnityEngine;
 
+using UnityEngine.SceneManagement;
+
 public class Metadata : MonoBehaviour
 {
     // Start is called before the first frame update
@@ -19,10 +21,22 @@ public class Metadata : MonoBehaviour
     public CinemachineVirtualCamera dawnCurrentCamera;
     public GameObject curPlayer;
 
+    int countIceHack = 0;
+
     private void Update()
     {
         dawnInDialog = dawnNPCInteract.isInDialog;
         duskInDialog = duskNPCInteract.isInDialog;
+
+        if (Input.GetKeyDown("l"))
+        {
+            countIceHack += 1;
+        }
+
+        if (countIceHack >= 3)
+        {
+            SceneManager.LoadScene(sceneName: "IceSlidingPuzzle");
+        }
     }
 
     public CinemachineVirtualCamera getDuskCam(int camNumber)
@@ -64,4 +78,6 @@ public class Metadata : MonoBehaviour
     {
         dawnCurrentCamera = virtualCamera;
     }
+
+
 }
