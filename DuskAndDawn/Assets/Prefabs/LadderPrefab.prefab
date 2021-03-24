@@ -1,5 +1,35 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
+--- !u!1 &4066454651223248773
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 4148974118711822834}
+  m_Layer: 0
+  m_Name: TeleportPosition
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &4148974118711822834
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4066454651223248773}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 4.46, y: 14.73, z: 1.65}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 8327291213713573904}
+  m_RootOrder: 1
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &8327291213430168104
 GameObject:
   m_ObjectHideFlags: 0
@@ -91,7 +121,7 @@ MeshCollider:
   m_GameObject: {fileID: 8327291213430168104}
   m_Material: {fileID: 0}
   m_IsTrigger: 0
-  m_Enabled: 1
+  m_Enabled: 0
   serializedVersion: 4
   m_Convex: 0
   m_CookingOptions: 30
@@ -109,7 +139,7 @@ GameObject:
   - component: {fileID: 8327291213713573907}
   m_Layer: 0
   m_Name: LadderPrefab
-  m_TagString: Untagged
+  m_TagString: Dawn
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -126,9 +156,10 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 8327291214006182275}
+  - {fileID: 4148974118711822834}
   m_Father: {fileID: 0}
   m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: -1.351, y: 0, z: 0.112}
 --- !u!65 &8327291213713573906
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -140,8 +171,8 @@ BoxCollider:
   m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 3.4744606, y: 1, z: 3.060943}
-  m_Center: {x: 0, y: 0, z: 0}
+  m_Size: {x: 3.2478914, y: 1.000002, z: 3.0609796}
+  m_Center: {x: 1.0337057, y: -3.5000548, z: 0.000000003587402}
 --- !u!114 &8327291213713573907
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -154,7 +185,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bafae0ceb7fefbf41bfed6e98d1aed4b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  player: {fileID: 0}
 --- !u!1 &8327291214857270676
 GameObject:
   m_ObjectHideFlags: 0

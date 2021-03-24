@@ -18,7 +18,6 @@ public class PlayerController : MonoBehaviour
 
     public bool isSliding = false;
 
-
     void Start()
     {
         movePoint.parent = null; // Detach partent

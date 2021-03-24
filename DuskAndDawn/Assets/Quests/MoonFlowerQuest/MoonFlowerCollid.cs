@@ -9,6 +9,7 @@ public class MoonFlowerCollid : MonoBehaviour
 {
 	public NPC cat;
 	bool canTakePhoto = false;
+    bool takenPhoto = false;
 
 	public string yarnStartNode = "Start";
     public YarnProgram yarnDialog;
@@ -34,13 +35,15 @@ public class MoonFlowerCollid : MonoBehaviour
 
     void Update()
     {
-    	if (canTakePhoto && Input.GetKeyDown(KeyCode.F))
+    	if (!takenPhoto && canTakePhoto && Input.GetKeyDown(KeyCode.F))
     	{
            // textObj.GetComponent<TextMeshProUGUI>().SetText("");
             InteractTriggerUI.SetActive(false);
     		IInventoryItem item = gameObject.GetComponent<IInventoryItem>();
     		inventory.AddItem(item);
-    	}
+            takenPhoto = true;
+
+        }
     }
 
     private void OnTriggerEnter(Collider collision)

@@ -13,6 +13,11 @@ public class IceSlidingInteract : MonoBehaviour
 
     DialogUI dialogUI;
 
+    private void Awake()
+    {
+        dialogUI = GameObject.FindObjectOfType<DialogUI>();
+    }
+
     // Update is called once per frame
     void Update()
     {
@@ -25,7 +30,7 @@ public class IceSlidingInteract : MonoBehaviour
             Interact();
         }
 
-        dialogUI = GameObject.FindObjectOfType<DialogUI>();
+        
     }
 
     public void OnDialogEnd()

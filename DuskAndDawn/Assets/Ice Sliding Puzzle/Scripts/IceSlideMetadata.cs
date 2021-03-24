@@ -40,7 +40,10 @@ public class IceSlideMetadata : MonoBehaviour
 
         dawnInDialog = dawnNPCInteract.isInDialog;
         duskInDialog = duskNPCInteract.isInDialog;
+
+        GameObject.Find("Dawn").GetComponent<IceSlidingInteract>().Interact("IceSliding.OnSceneEnter");
     }
+
 
     // Update is called once per frame
     void Update()
@@ -60,18 +63,25 @@ public class IceSlideMetadata : MonoBehaviour
                 _dusk.GetComponent<PlayerController>().enabled = true;
             }
         }
-
-        checkWinCondition();
+        if (!dawnController.isSliding && !duskController.isSliding)
+        {
+            checkWinCondition();
+        }
 
     }
 
     void checkWinCondition()
     {
+        if (Input.GetKeyDown(KeyCode.F) && solvedPuzzle == true)
+        {
+            solvedPuzzle = false;
+        }
         if (dawnMovePoint.transform.position.x == dawnExitX && dawnMovePoint.transform.position.y == dawnExitY && !dawnController.isSliding
             && duskMovePoint.transform.position.x == duskExitX && duskMovePoint.transform.position.y == duskExitY && !duskController.isSliding
             && !solvedPuzzle)
         {
             Debug.Log("Solved Puzzle!");
+            GameObject.Find("Dawn").GetComponent<IceSlidingInteract>().Interact("IceSliding.DonePuzzle");
             solvedPuzzle = true;
         }
     }

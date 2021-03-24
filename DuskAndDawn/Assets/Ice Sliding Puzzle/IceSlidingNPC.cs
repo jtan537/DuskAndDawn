@@ -28,7 +28,7 @@ public class IceSlidingNPC : MonoBehaviour
     public ItemClickHandler[] handlers;
 
     bool enteredTrigger = false;
-    private void Start()
+    private void Awake()
     {
         _metadata = GameObject.FindObjectOfType<IceSlideMetadata>().GetComponent<IceSlideMetadata>();
         try

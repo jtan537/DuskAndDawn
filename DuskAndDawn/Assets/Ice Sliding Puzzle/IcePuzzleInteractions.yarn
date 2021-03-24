@@ -37,7 +37,7 @@ Dawn: Good idea, let's try that!
 title: IceSliding.FourthConvo
 tags: 
 colorID: 0
-position: 195,-300
+position: 201,-330
 ---
 Dawn: We've been stuck for a while huh.
 Dusk: Yea, let's just keep trying.
@@ -77,4 +77,34 @@ Dusk: GodFather??
 Dawn: It's from a movie! I always wanted to be a mafia henchman...
 Dusk: Anyways.... don't forget, we can press SPACE to reset our positions if we make a wrong move.
 Dawn: Yes GodFather.
+===
+title: IceSliding.DonePuzzle
+tags: 
+colorID: 0
+position: 775,304
+---
+Dawn: WE DID IT!
+Dusk: Yep, just the final stretch til we meet at the top of the tower.
+Dawn: The view must be amazing!
+Dusk: Let's do this Dawn.
+Dawn: YEA! LETS DO THIS DUSK!!
+[[Continue to top of tower|IceSliding.EnterTop]]
+[[Stay In Ice Tower|IceSliding.Stay]]
+===
+title: IceSliding.EnterTop
+tags: 
+colorID: 0
+position: 930,-50
+---
+Dawn: LETS GOOOOOOOO!
+<<set $enter_tower_top to true>>
+===
+title: IceSliding.Stay
+tags: 
+colorID: 0
+position: 1218,332
+---
+Dawn: Let's go to the top later!
+Dusk: There's nothing else do do here though?
+Dawn: YEA BUT SLIDING AROUND IS SO FUN!!
 ===
