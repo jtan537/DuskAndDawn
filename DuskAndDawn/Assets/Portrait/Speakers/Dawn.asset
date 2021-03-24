@@ -1,0 +1,22 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 733d76b5b0a084dde826ce24ada0b29c, type: 3}
+  m_Name: Dawn
+  m_EditorClassIdentifier: 
+  speakerName: Dawn
+  portraitNeutral: {fileID: 21300000, guid: 31ece512d913f465e96329865c97c06a, type: 3}
+  portraitSad: {fileID: 21300000, guid: aef046b8a9dcb4180bcf2ba1119cfa55, type: 3}
+  portraitHappy: {fileID: 21300000, guid: bcceb595f55854b20a50c172f767c917, type: 3}
+  portraitPlayful: {fileID: 21300000, guid: e4f034560035d465e886b4fe35facd57, type: 3}
+  portraitSigh: {fileID: 21300000, guid: 31ece512d913f465e96329865c97c06a, type: 3}
+  portraitWithLeaves: {fileID: 21300000, guid: 31ece512d913f465e96329865c97c06a, type: 3}
+  portraitShocked: {fileID: 21300000, guid: 31ece512d913f465e96329865c97c06a, type: 3}
