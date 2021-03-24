@@ -48,20 +48,36 @@ public class IceSlideMetadata : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
-        if (Input.GetKeyDown("r") && !dawnController.isSliding && !duskController.isSliding)
+        dawnInDialog = dawnNPCInteract.isInDialog;
+        duskInDialog = duskNPCInteract.isInDialog;
+
+        if (!dawnController.isSliding && !duskController.isSliding
+            && !dawnInDialog && !duskInDialog)
         {
-            if (curPlayer == _dusk)
+            if (Input.GetKeyDown("r"))
             {
-                curPlayer = _dawn;
-                _dusk.GetComponent<PlayerController>().enabled = false;
-                _dawn.GetComponent<PlayerController>().enabled = true;
-            } else
-            {
-                curPlayer = _dusk;
-                _dawn.GetComponent<PlayerController>().enabled = false;
-                _dusk.GetComponent<PlayerController>().enabled = true;
+                if (curPlayer == _dusk)
+                {
+                    curPlayer = _dawn;
+                    _dusk.GetComponent<PlayerController>().enabled = false;
+                    _dawn.GetComponent<PlayerController>().enabled = true;
+                }
+                else
+                {
+                    curPlayer = _dusk;
+                    _dawn.GetComponent<PlayerController>().enabled = false;
+                    _dusk.GetComponent<PlayerController>().enabled = true;
+                }
             }
+
+            if (Input.GetKeyDown(KeyCode.Space))
+            {
+                _dawn.transform.position = new Vector3(dawnEntranceX, dawnEntranceY, _dawn.transform.position.z);
+                dawnMovePoint.transform.position = _dawn.transform.position;
+                _dusk.transform.position = new Vector3(duskEntranceX, duskEntranceY, _dusk.transform.position.z);
+                duskMovePoint.transform.position = _dusk.transform.position;
+            }
+                
         }
         if (!dawnController.isSliding && !duskController.isSliding)
         {
