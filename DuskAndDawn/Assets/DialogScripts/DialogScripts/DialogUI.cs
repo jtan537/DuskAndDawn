@@ -19,7 +19,10 @@ public class DialogUI : Singleton<DialogUI>
     private void Awake()
     {
         Runner = GetComponent<DialogueRunner>();
-        Runner.AddCommandHandler("SetSpeaker", SetSpeakerInfo);
+        if (Runner != null)
+        {
+            Runner.AddCommandHandler("SetSpeaker", SetSpeakerInfo);
+        }
     }
 
     public void AddSpeaker(SpeakerData data)

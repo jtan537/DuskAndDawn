@@ -12,15 +12,16 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 733d76b5b0a084dde826ce24ada0b29c, type: 3}
   m_Name: Tree
   m_EditorClassIdentifier: 
-  speakerName: 
-  portraitNeutral: {fileID: 0}
-  portraitSad: {fileID: 0}
-  portraitHappy: {fileID: 0}
+  speakerName: Tree
+  portraitNeutral: {fileID: 21300000, guid: 83df6e19694774ad9bfa265ebaf2426e, type: 3}
+  portraitSad: {fileID: 21300000, guid: abfea1f24eced4650940c00069b33ae5, type: 3}
+  portraitHappy: {fileID: 21300000, guid: 16fe4c743d8df4b089b1fa2b38dc2668, type: 3}
   portraitPlayful: {fileID: 0}
   portraitFrustrated: {fileID: 0}
   portraitSigh: {fileID: 0}
-  portraitWithLeaves: {fileID: 0}
-  portraitShocked: {fileID: 0}
+  portraitSmug: {fileID: 0}
+  portraitWithLeaves: {fileID: 21300000, guid: 89288f05b8b664b068a8062d4078fce5, type: 3}
+  portraitShocked: {fileID: 21300000, guid: 67dafa2800647469d8185282698c7007, type: 3}
   portraitSurprised: {fileID: 0}
   portraitThankful: {fileID: 0}
   portraitThinking: {fileID: 0}

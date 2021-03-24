@@ -17,6 +17,11 @@ MonoBehaviour:
   portraitSad: {fileID: 21300000, guid: aef046b8a9dcb4180bcf2ba1119cfa55, type: 3}
   portraitHappy: {fileID: 21300000, guid: bcceb595f55854b20a50c172f767c917, type: 3}
   portraitPlayful: {fileID: 21300000, guid: e4f034560035d465e886b4fe35facd57, type: 3}
-  portraitSigh: {fileID: 21300000, guid: 31ece512d913f465e96329865c97c06a, type: 3}
-  portraitWithLeaves: {fileID: 21300000, guid: 31ece512d913f465e96329865c97c06a, type: 3}
-  portraitShocked: {fileID: 21300000, guid: 31ece512d913f465e96329865c97c06a, type: 3}
+  portraitFrustrated: {fileID: 0}
+  portraitSigh: {fileID: 0}
+  portraitSmug: {fileID: 0}
+  portraitWithLeaves: {fileID: 0}
+  portraitShocked: {fileID: 0}
+  portraitSurprised: {fileID: 0}
+  portraitThankful: {fileID: 0}
+  portraitThinking: {fileID: 0}
