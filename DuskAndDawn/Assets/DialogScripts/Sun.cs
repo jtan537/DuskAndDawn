@@ -19,8 +19,10 @@ public class Sun : InventoryItemBase
 
     public override void OnPickup(Collider collider)
     {
+        GetComponent<AudioSource>().Play();
         collider.enabled = false;
-        gameObject.SetActive(false);
+        gameObject.GetComponent<MeshRenderer>().enabled = false;
+        gameObject.GetComponent<BoxCollider>().enabled = false;
     }
 
     public override string Name

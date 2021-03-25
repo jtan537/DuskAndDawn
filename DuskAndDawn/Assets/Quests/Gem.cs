@@ -7,6 +7,8 @@ public class Gem : InventoryItemBase
     [SerializeField]
     GameObject _shadow;
 
+    AudioSource audioClip;
+
     public bool pickedUp = false;
     public override void OnPickup(Collider collider)
     {
@@ -18,6 +20,7 @@ public class Gem : InventoryItemBase
         {
             _shadow.SetActive(false);
         }
+        GetComponent<AudioSource>().Play();
     }
 
     public override string Name
