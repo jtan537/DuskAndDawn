@@ -1,0 +1,27 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 733d76b5b0a084dde826ce24ada0b29c, type: 3}
+  m_Name: Cat
+  m_EditorClassIdentifier: 
+  speakerName: Cat
+  portraitNeutral: {fileID: 21300000, guid: 2c66c606fa023430099a2a636c98874c, type: 3}
+  portraitSad: {fileID: 0}
+  portraitHappy: {fileID: 21300000, guid: 4905bf7380d694b8791e828da445ee67, type: 3}
+  portraitPlayful: {fileID: 0}
+  portraitFrustrated: {fileID: 0}
+  portraitSigh: {fileID: 0}
+  portraitSmug: {fileID: 0}
+  portraitWithLeaves: {fileID: 0}
+  portraitShocked: {fileID: 0}
+  portraitSurprised: {fileID: 21300000, guid: ca05cd6fe01a64cba8dd78dc96334999, type: 3}
+  portraitThankful: {fileID: 21300000, guid: 3c75327453a4042c08099e7242d1633c, type: 3}
+  portraitThinking: {fileID: 21300000, guid: afc26f86f0b8547a18e791badf5d0bff, type: 3}

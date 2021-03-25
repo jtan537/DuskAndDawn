@@ -4,35 +4,44 @@ colorID: 0
 position: 630,-61
 ---
 <<if visited("Dusk.Elder.Start") is true>>
+    <<SetSpeaker Rat>>
     MOUSE: Good luck on your journey, Dawn. Keep my words in mind. Remember, take your time.
+    <<SetSpeaker Dawn>>    
     DAWN: Yes! Thank you, Elderly!
     <<stop>>
 <<endif>>
 
 <<if visited("Dawn.Elder.Elixir") is true>>
+    <<SetSpeaker Rat>>
     MOUSE: You can now communicate with Dusk. Press ‘R’ to SWITCH to Dusk.
     <<stop>>
 <<endif>>
 
 <<if visited("Dawn.Elder.Gem") is true>>
+    <<SetSpeaker Rat>>    
     MOUSE: Press ‘B’ to OPEN your inventory. CLICK on the item using your mouse to drink it.
     <<stop>>
 <<endif>>
 
 <<if $give_dawn_tutorial_gem is true>>
+    <<SetSpeaker Rat>>
     MOUSE: Pick up the sun gem by moving on top of the gem.
     <<stop>>
 <<endif>>
 
 
-
+<<SetSpeaker Rat>>
 MOUSE ELDERLY: Dawn, you're the Chosen this year. You must journey to the top of the tower.
+<<SetSpeaker Dawn happy>>
 DAWN: I'm honoured to have this experience. I've dreamt of being a Chosen ever since I've heard stories of how beautiful twilight is.
-Dawn: I've read the books you've written about twilight, Elderly. 
-Dawn:It feels like a dream...witnessing something so unreal. I can't wait!
+DAWN: I've read the books you've written about twilight, Elderly. 
+DAWN:It feels like a dream...witnessing something so unreal. I can't wait!
+<<SetSpeaker Rat happy>>
 MOUSE: Haha, as eager as ever, Dawn. However, pace yourself, for haste leads to poor decisions. 
 MOUSE: Slow and steady, young Dawn. Remember, this is a moment that you must walk slowly and focus on your surroundings other than yourself.
+<<SetSpeaker Dawn>>
 DAWN: I see...I guess I was too eager. I shall follow your advice. 
+<<SetSpeaker Rat>>
 MOUSE: Listen well, you need FOUR sun gems. I have the first 1 for you. Go and pick it up.
 <<set $give_dawn_tutorial_gem to true>>
 <<stop>>

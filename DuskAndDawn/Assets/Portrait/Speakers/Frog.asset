@@ -1,0 +1,27 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 733d76b5b0a084dde826ce24ada0b29c, type: 3}
+  m_Name: Frog
+  m_EditorClassIdentifier: 
+  speakerName: Frog
+  portraitNeutral: {fileID: 21300000, guid: b96e9b08aeb2648f3a9960abdb4ebb8c, type: 3}
+  portraitSad: {fileID: 0}
+  portraitHappy: {fileID: 21300000, guid: 08c33f318722e4da090b89f02e350170, type: 3}
+  portraitPlayful: {fileID: 0}
+  portraitFrustrated: {fileID: 0}
+  portraitSigh: {fileID: 21300000, guid: a227dee549b554c268cbce7d45896ee1, type: 3}
+  portraitSmug: {fileID: 21300000, guid: bf0718b85e29f49c790c2542b9f4899b, type: 3}
+  portraitWithLeaves: {fileID: 0}
+  portraitShocked: {fileID: 0}
+  portraitSurprised: {fileID: 0}
+  portraitThankful: {fileID: 0}
+  portraitThinking: {fileID: 0}

@@ -10,6 +10,15 @@ public class NPCInteract : MonoBehaviour
     public ItemDropHandler[] handlers;
     public Metadata info;
 
+// #pragma warning disable 0649
+//     [SerializeField] SpeakerData speakerData;
+// #pragma warning restore 0649
+
+    // void Start()
+    // {
+    //     GameObject.FindObjectOfType<DialogUI>().AddSpeaker(speakerData);
+    // }
+
     // Update is called once per frame
     void Update()
     {
