@@ -1,4 +1,5 @@
 using UnityEngine;
+#if UNITY_EDITOR
 using UnityEditor;
 public class FindMissingScripts : EditorWindow
 {
@@ -58,3 +59,4 @@ public class FindMissingScripts : EditorWindow
         }
     }
 }
+#endif

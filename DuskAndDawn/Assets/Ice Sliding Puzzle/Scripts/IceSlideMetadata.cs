@@ -35,6 +35,15 @@ public class IceSlideMetadata : MonoBehaviour
     [SerializeField]
     GameObject videoRawImage;
 
+    [SerializeField]
+    GameObject _dawnLighting, _duskLighting;
+
+    [SerializeField]
+    GameObject[] _walls;
+
+    [SerializeField]
+    Material _duskColor, _dawnColor;
+
 
     // Start is called before the first frame update
     void Start()
@@ -55,7 +64,12 @@ public class IceSlideMetadata : MonoBehaviour
         _varStorage = GameObject.FindObjectOfType<VariableStorageBehaviour>().GetComponent<VariableStorageBehaviour>();
         GameObject.Find("Dawn").GetComponent<IceSlidingInteract>().Interact("IceSliding.OnSceneEnter");
 
-        
+        _dawnLighting.SetActive(true);
+        _duskLighting.SetActive(false);
+        foreach(GameObject wall in _walls)
+        {
+            wall.gameObject.GetComponent<MeshRenderer>().material = _dawnColor;
+        }
     }
 
 
@@ -75,12 +89,26 @@ public class IceSlideMetadata : MonoBehaviour
                     curPlayer = _dawn;
                     _dusk.GetComponent<PlayerController>().enabled = false;
                     _dawn.GetComponent<PlayerController>().enabled = true;
+
+                    _dawnLighting.SetActive(true);
+                    _duskLighting.SetActive(false);
+                    foreach (GameObject wall in _walls)
+                    {
+                        wall.gameObject.GetComponent<MeshRenderer>().material = _dawnColor;
+                    }
                 }
                 else
                 {
                     curPlayer = _dusk;
                     _dawn.GetComponent<PlayerController>().enabled = false;
                     _dusk.GetComponent<PlayerController>().enabled = true;
+
+                    _dawnLighting.SetActive(false);
+                    _duskLighting.SetActive(true);
+                    foreach (GameObject wall in _walls)
+                    {
+                        wall.gameObject.GetComponent<MeshRenderer>().material = _duskColor;
+                    }
                 }
             }
 

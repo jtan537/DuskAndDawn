@@ -17,6 +17,7 @@ public class PlayerController : MonoBehaviour
     Animator _anim;
 
     public bool isSliding = false;
+    public bool playSlideSound = false;
 
     void Start()
     {
@@ -40,10 +41,12 @@ public class PlayerController : MonoBehaviour
         {
             transform.rotation = Quaternion.Euler(0, 0, rotationZ);
             isSliding = true;
+            playSlideSound = true;
             _anim.SetBool("isRunning", true);
         } else
         {
             isSliding = false;
+            playSlideSound = false;
             _anim.SetBool("isRunning", false);
         }
        
@@ -52,14 +55,14 @@ public class PlayerController : MonoBehaviour
         {
             if (Mathf.Abs(Input.GetAxisRaw("Horizontal")) == 1f)
             {
-                GetComponent<AudioSource>().Play();
+
                 attemptedPosition = movePoint.position;
                 movePoint.position = Move(new Vector3(Input.GetAxisRaw("Horizontal"), 0, 0));
              
             }
             else if (Mathf.Abs(Input.GetAxisRaw("Vertical")) == 1f)
             {
-                GetComponent<AudioSource>().Play();
+
                 attemptedPosition = movePoint.position;
                 movePoint.position = Move(new Vector3(0, Input.GetAxisRaw("Vertical"), 0));
             

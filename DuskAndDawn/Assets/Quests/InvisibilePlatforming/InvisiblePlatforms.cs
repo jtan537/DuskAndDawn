@@ -8,7 +8,7 @@ public class InvisiblePlatforms : MonoBehaviour
     private Metadata _metadata;
     private GameObject _curPlayer;
 
-
+    bool enteredShowPlatformZone = false;
     // Start is called before the first frame update
     void Start()
     {
@@ -20,7 +20,8 @@ public class InvisiblePlatforms : MonoBehaviour
     void Update()
     {
         _curPlayer = _metadata.getCurPlayer();
-        if (gameObject.tag == _curPlayer.name)
+        enteredShowPlatformZone = gameObject.GetComponent<EnableDuskPlatforms>().enteredShowPlatformZone;
+        if (!enteredShowPlatformZone && gameObject.tag == _curPlayer.name)
         {
             foreach (GameObject platform in _platforms)
             {
