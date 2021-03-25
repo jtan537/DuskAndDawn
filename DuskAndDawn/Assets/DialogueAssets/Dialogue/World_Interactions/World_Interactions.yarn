@@ -1,8 +1,9 @@
 title: Dawn.House.Start
 tags: 
 colorID: 0
-position: 434,275
+position: 434,274
 ---
+<<SetSpeaker Dawn>>
 Seems like no one's home...
 ===
 title: Dawn.Box.Hint
@@ -10,6 +11,7 @@ tags:
 colorID: 0
 position: 820,380
 ---
+<<SetSpeaker Dawn>>
 Maybe I can jump on these boxes...
 ===
 title: Dusk.Graveyard.Start
@@ -17,8 +19,10 @@ tags:
 colorID: 0
 position: 535,598
 ---
+<<SetSpeaker Dusk>>
 There's a gravestone here.
 Engraved is no name, but a note.
+<<SetSpeaker Dusk sad>>
 "I hope these flowers make you feel less lonely."
 ===
 title: Dawn.Igloo.Start
@@ -26,11 +30,15 @@ tags:
 colorID: 0
 position: 87,731
 ---
+<<SetSpeaker Dawn>>
 There's an opening to the igloo...Reach your hand in there?
 -> Yes
+    <<SetSpeaker Dawn>>
     You reach your hand in there..
     MYSTERIOUS VOICE: HEY, EVER HEARD OF SOME PRIVACY?
+    <<SetSpeaker Dawn sad>>
     You feel a painful bite onto your hand.
 -> No
+    <<SetSpeaker Dawn sad>>
     Yet the interest continues to linger in your head...
 ===

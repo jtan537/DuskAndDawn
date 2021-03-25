@@ -6,9 +6,12 @@ position: 931,-272
 <<if visited("Dusk.chest.complete") is true>>
 [[Dusk.chest.final.dialogue]]
 <<endif>>
+<<SetSpeaker Dusk frustrated>>
 Dusk: Finally, I'm here.
+<<SetSpeaker Dusk>>
 Dusk: There's a gem inside. 
 Dusk: (Can't believe I had to BEG Dawn for help)
+<<SetSpeaker Dusk sad>>
 Dusk: (Hm?)
 Dusk: (The flowers here are quite pretty...)
 [[Dusk.chest.complete]]

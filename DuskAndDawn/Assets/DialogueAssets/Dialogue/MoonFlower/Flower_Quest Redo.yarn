@@ -1,30 +1,3 @@
-title: Dusk.Cat.Start
-tags: 
-colorID: 0
-position: -36,-36
----
-<<if doneFlowerQuest() is true>>
-[[Quest.Ends]]
-<<endif>>
-<<if visited("Quest.Activates") is true>> 
-[[During.Quest]]<<endif>>
-<<if visited("Quest.Declined") is true>>    
-[[Talk.To.Cat.Again]]
-<<else>>
-Cat: Sigh
-Dusk: What's wrong?
-Cat: I...I'm trying to find a flower. 
-Cat: My mother told me of a secret flower she found years ago. However, the path to it seems impossible?
-Cat: She says the flowers are important.
-Dusk: Why don't you ask her how to get to it?  
-Cat: ...
-Dusk: ...   
-<<wait .50>>
-Dusk: Oh. 
-[[ "I can help you" |Quest.Activates]]
-[[ "Hope you find it one day"|Quest.Declined]]
-<<endif>>
-===
 title: Quest.Ends
 tags: 
 colorID: 0
@@ -109,7 +82,7 @@ Dusk: She must've worked hard to take care of all these flowers.
 title: Dusk.Cat.Start
 tags: 
 colorID: 0
-position: -38,-37
+position: -92,47
 ---
 <<if visited ("Quest.Ends") is true>> 
 [[Last.Cat.Dialogue]]
@@ -122,15 +95,22 @@ position: -38,-37
 <<if visited("Quest.Declined") is true>>    
 [[Talk.To.Cat.Again]]
 <<else>>
+<<SetSpeaker Cat>>
 Cat: Sigh
+<<SetSpeaker Dusk>>
 Dusk: What's wrong?
+<<SetSpeaker Cat>>
 Cat: I...I'm trying to find a flower. 
 Cat: My mother told me of a secret flower she found years ago. However, the path to it seems impossible?
 Cat: She says the flowers are important.
-Dusk: Why don't you ask her how to get to it?  
+<<SetSpeaker Dusk>>
+Dusk: Why don't you ask her how to get to it? 
+<<SetSpeaker Cat>>
 Cat: ...
+<<SetSpeaker Dusk>>
 Dusk: ...   
 <<wait .50>>
+<<SetSpeaker Dusk sad>>
 Dusk: Oh. 
 [[ "I can help you" |Quest.Activates]]
 [[ "Hope you find it one day"|Quest.Declined]]
@@ -139,23 +119,31 @@ Dusk: Oh.
 title: Quest.Ends
 tags: 
 colorID: 0
-position: 83,-250
+position: 83,-251
 ---
-Cat: How did you find it?! 
+<<SetSpeaker Cat surprised>>
+Cat: How did you find it?!
+<<SetSpeaker Dusk happy>>
 Dusk: Magic.
+<<SetSpeaker Cat happy>>
 Cat: Haha, that's what my mom used to say too.
 Cat: How was it? Seeing it in person? 
+<<SetSpeaker Dusk happy>>
 Dusk: It really was beautiful. I wish you got to see it in person.
+<<SetSpeaker Cat>>
 Cat: This photo will do. I feel at ease looking at the photo. 
+<<SetSpeaker Cat thankful>>
 Cat: It fills me up with an emotion I quite can't describe but, I'm happy. 
 Cat: Anyways, thank you. I hope this gem is of use to you.
+<<SetSpeaker Cat happy>>
 Cat: I'm gonna think for a bit.
 ===
 title: During.Quest
 tags: 
 colorID: 0
-position: 304,-248
+position: 303,-248
 ---
+<<SetSpeaker Cat thinking>>
 Cat: I wonder where she could have planted it...
 Cat: No way it could be on a secret platform, right?
 ===
@@ -164,6 +152,7 @@ tags:
 colorID: 0
 position: 525,-248
 ---
+<<SetSpeaker Cat thinking>>
 Cat:Hmm, where could this flower be?
 [[ "I can try to help look" |Quest.Activates]]
 [[ "Good luck" |Quest.Declined]]
@@ -173,7 +162,9 @@ tags:
 colorID: 0
 position: 743,-252
 ---
+<<SetSpeaker Cat surprised>>
 Cat: That will be really useful !
+<<SetSpeaker Cat>>
 Cat: She told me if I ever found it though to not pluck it out or else it will wilt.
 Cat: You should take a photo of it. 
 <<set $cat_quest_activated to true>>
@@ -181,8 +172,9 @@ Cat: You should take a photo of it.
 title: Quest.Declined
 tags: 
 colorID: 0
-position: 967,-247
+position: 967,-248
 ---
+<<SetSpeaker Cat>>
 Cat: Yeah, I hope so too..
 ===
 title: Flower.Talk
@@ -198,6 +190,7 @@ position: -463,-245
 << if visited ("Quest.Activates") is true >>
 [[Flower.Visited]]
 <<else>>
+<<SetSpeaker Dusk>>
 Dusk: This is a strange looking flower.
 <<endif>>
 ===
@@ -206,6 +199,7 @@ tags:
 colorID: 0
 position: -444,86
 ---
+<<SetSpeaker Dusk>>
 Dusk: This should be the Moon flower.
 Dusk: * snaps a photo *
 ===
@@ -214,12 +208,14 @@ tags:
 colorID: 0
 position: -124,-465
 ---
+<<SetSpeaker Dusk sad>>
 Dusk: She must've worked hard to take care of all these flowers.
 ===
 title: Last.Cat.Dialogue
 tags: 
 colorID: 0
-position: 370,147
+position: 370,146
 ---
+<<SetSpeaker Cat happy>>
 Cat: I'm gonna think for a bit...
 ===

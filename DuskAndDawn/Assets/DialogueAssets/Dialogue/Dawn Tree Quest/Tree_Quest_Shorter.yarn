@@ -15,13 +15,20 @@ position: 546,265
 <<if visited("Dialogue.Ends") is true>> 
 [[Sad.Tree.Asks.Again]]
 <<else>>
+<<SetSpeaker Tree>>
     Tree: Hello there... 
+<<SetSpeaker Dawn>>
     Dawn: WHAT, a talking tree?!
+<<SetSpeaker Tree sad>>
     Tree: Well, that's a bit rude!
+<<SetSpeaker Dawn sad>>
     Dawn: S-sorry...
     <<wait .75>>
+<<SetSpeaker Tree sad>>
     Tree:Is it really that strange? 
+<<SetSpeaker Dawn happy>>
     Dawn: N-no, not at all ! I was just a bit startled...
+<<SetSpeaker Tree sad>>
     Tree: I guess that makes sense. Out of the many trees, I'm leafless all year round.
     Tree: Will you help me? 
     [["I can try to." |TreeQuest.Activates]]
@@ -33,10 +40,14 @@ tags:
 colorID: 0
 position: 372,-43
 ---
+<<SetSpeaker Tree shocked>>
 Tree: It worked?! I've grown leaves! 
+<<SetSpeaker Dawn happy>>
 Dawn: WOW ! They're lovely.
+<<SetSpeaker Tree with leaves>>
 Tree: Thank you so much, Dawn. This feels like a miracle. 
 <<wait .75>>
+<<SetSpeaker Tree with leaves>>
 Tree: Oh, this was hanging on one of my leaves?
 Tree: It's a gem. 
 Tree: I think this would be most useful for you.
@@ -49,17 +60,20 @@ tags:
 colorID: 0
 position: 634,-112
 ---
+<<SetSpeaker Tree>>
 Tree: I need three sun energies. Have you found them yet?
 -> Yes
     Tree: You should be able to open your inventory (B) and use them on me.
 -> No
-    Tree: Okay :(
+<<SetSpeaker Tree sad>>
+    Tree: Okay...They should just be beyond the bridge near the waterfall.
 ===
 title: Sad.Tree.Asks.Again
 tags: 
 colorID: 0
 position: 901,-232
 ---
+<<SetSpeaker Tree>>
 Tree: So have you reconsidered?
 [[ "I can try to." |TreeQuest.Activates]]
 [[ Refuse request. |Dialogue.Ends]]
@@ -67,9 +81,11 @@ Tree: So have you reconsidered?
 title: TreeQuest.Activates
 tags: 
 colorID: 0
-position: 1366,246
+position: 1365,245
 ---
+<<SetSpeaker Tree shocked>>
 Tree: REALLY?! I think I need THREE sun energies.
+<<SetSpeaker Tree happy>>
 Tree: They should be beyond the bridge. 
 <<set $tree_quest_activated to true>>
 ===
@@ -78,6 +94,7 @@ tags:
 colorID: 0
 position: 1009,429
 ---
+<<SetSpeaker Tree sad>>
 Tree: Yeah...that's what I thought. 
 Tree: Everyone always back out...
 ===
@@ -124,5 +141,6 @@ tags:
 colorID: 0
 position: 36,258
 ---
+<<SetSpeaker Tree with leaves>>
 Tree: I have leaves !!
 ===

@@ -8,7 +8,7 @@ ScriptedImporter:
   assetBundleName: 
   assetBundleVariant: 
   script: {fileID: 11500000, guid: 94073015eacc34c1d8fc6786e43d60ca, type: 3}
-  baseLanguageID: en-CA
+  baseLanguageID: 
   stringIDs:
   - DuskPlatformQuestTrigger Redo-Dusk.Platform.Start-0
   - DuskPlatformQuestTrigger Redo-Dusk.Platform.Start-1
@@ -23,6 +23,5 @@ ScriptedImporter:
   compilationStatus: 1
   isSuccesfullyCompiled: 1
   compilationErrorMessage: 
-  baseLanguage: {fileID: 7128917941130120860, guid: de01ae4f41e01f3448fdbdf8d29e8170,
-    type: 3}
+  baseLanguage: {instanceID: 0}
   localizations: []

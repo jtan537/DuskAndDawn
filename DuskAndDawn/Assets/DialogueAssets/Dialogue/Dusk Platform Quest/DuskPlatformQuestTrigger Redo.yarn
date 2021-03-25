@@ -6,15 +6,22 @@ position: 930,146
 <<if visited("Dusk.Platform.In.Progress") is true>>
 [[Waiting.For.Dawn]]
 <<endif>>
+<<SetSpeaker Dusk>>
 Dusk: Hmm, I see a platform with a chest over there.
 Dusk: But there's no path to it...
+<<SetSpeaker Dawn sad>>
 Dawn: Really? I can see that there's platforms you can jump across.
+<<SetSpeaker Dusk>>
 Dusk: What are you talking about? I can't see anything.
-Dawn: It must be.... 
+<<SetSpeaker Dawn>>
+Dawn: It must be....
+<<SetSpeaker Dawn playful>>
 Dawn: TOO DARK OUT FOR YOU !!
 <<wait 1>>
+<<SetSpeaker Dawn sad>>
 Dawn: Ok, someone's not up for jokes. Got it.
 Dawn: I'll just check it out from my end.
+<<SetSpeaker Dusk>>
 Dusk: (I should wait for Dawn to check it out from her end...)
 [[Dusk.Platform.In.Progress]]
 ===
@@ -23,6 +30,7 @@ tags:
 colorID: 0
 position: 771,-140
 ---
+<<SetSpeaker Dusk>>
 Dusk: (I should wait for Dawn to check it out from her end...)
 ===
 title: Dusk.Platform.In.Progress

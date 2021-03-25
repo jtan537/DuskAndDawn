@@ -7,18 +7,26 @@ position: 949,180
     <<if visited("Dusk.Platform.Dawn.Response.Middle") is true>>
         [[Dusk.Platform.Dawn.Response.Waiting]]
     <<endif>>
+<<SetSpeaker Dawn>>
     Dawn: Yep, it's like I said. I can see the platforms.
+<<SetSpeaker Dusk frustrated>>
     Dusk: This better not be some kind of prank...because you do realize that I'd be jumping to nothing, right?
+<<SetSpeaker Dawn happy>>
     Dawn: I'm not lying, I promise!
     Dawn: I can let you know where the platforms are!!
     <<wait .50>>
+<<SetSpeaker Dawn playful>>
     Dawn: If you say please. 
+<<SetSpeaker Dusk frustrated>>
     Dusk: (you've got to be kiddng me right now)
     Dusk: Fine, can you PLEASE help me out Dawn?
+<<SetSpeaker Dawn>>
     Dawn: Of course! 
+<<SetSpeaker Dusk>>
     Dusk: You owe me one later. 
     [[Dusk.Platform.Dawn.Response.Middle]]
 <<else>>
+<<SetSpeaker Dawn>>
 Dawn: Those platforms on Dusk's side look kinda funny.
 <<endif>>
 ===
@@ -27,6 +35,7 @@ tags:
 colorID: 0
 position: 806,-164
 ---
+<<SetSpeaker Dawn>>
 Dawn: (I need to tell Dusk where the platforms are.)
 Dawn: (If I stay here and LOOK AT THE PLATFORMS ON HER SIDE, AND THEN SWITCH TO HER...)
 Dawn: (I should be able to help her...)
