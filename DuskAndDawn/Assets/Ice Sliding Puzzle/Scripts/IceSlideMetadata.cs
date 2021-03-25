@@ -1,6 +1,8 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Video;
+using Yarn.Unity;
 
 public class IceSlideMetadata : MonoBehaviour
 {
@@ -25,6 +27,14 @@ public class IceSlideMetadata : MonoBehaviour
 
     PlayerController dawnController, duskController;
     bool solvedPuzzle = false;
+    bool doneGame = false;
+
+    VideoPlayer videoPlayer;
+    VariableStorageBehaviour _varStorage;
+
+    [SerializeField]
+    GameObject videoRawImage;
+
 
     // Start is called before the first frame update
     void Start()
@@ -37,11 +47,15 @@ public class IceSlideMetadata : MonoBehaviour
 
         dawnController = _dawn.GetComponent<PlayerController>();
         duskController = _dusk.GetComponent<PlayerController>();
-
+        
         dawnInDialog = dawnNPCInteract.isInDialog;
         duskInDialog = duskNPCInteract.isInDialog;
-
+        videoRawImage.SetActive(false);
+        videoPlayer = GameObject.Find("VideoPlayer").GetComponent<VideoPlayer>();
+        _varStorage = GameObject.FindObjectOfType<VariableStorageBehaviour>().GetComponent<VariableStorageBehaviour>();
         GameObject.Find("Dawn").GetComponent<IceSlidingInteract>().Interact("IceSliding.OnSceneEnter");
+
+        
     }
 
 
@@ -51,7 +65,7 @@ public class IceSlideMetadata : MonoBehaviour
         dawnInDialog = dawnNPCInteract.isInDialog;
         duskInDialog = duskNPCInteract.isInDialog;
 
-        if (!dawnController.isSliding && !duskController.isSliding
+        if (!doneGame && !dawnController.isSliding && !duskController.isSliding
             && !dawnInDialog && !duskInDialog)
         {
             if (Input.GetKeyDown("r"))
@@ -84,6 +98,8 @@ public class IceSlideMetadata : MonoBehaviour
             checkWinCondition();
         }
 
+        checkSelectedDoneDialogue();
+
     }
 
     void checkWinCondition()
@@ -100,5 +116,19 @@ public class IceSlideMetadata : MonoBehaviour
             GameObject.Find("Dawn").GetComponent<IceSlidingInteract>().Interact("IceSliding.DonePuzzle");
             solvedPuzzle = true;
         }
+    }
+
+    void checkSelectedDoneDialogue()
+    {
+        if (!doneGame && _varStorage.GetValue("$enter_tower_top").AsBool == true)
+        {
+            doneGame = true;
+            _dusk.SetActive(false);
+            _dawn.SetActive(false);
+            GameObject.Find("SoundManager").GetComponent<SoundManager>().volume = 0;
+            videoRawImage.SetActive(true);
+            videoPlayer.Play();
+        }
+        
     }
 }
