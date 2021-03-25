@@ -1371,7 +1371,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 86710e43de46f6f4bac7c8e50813a599, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_AspectMode: 4
+  m_AspectMode: 3
   m_AspectRatio: 1.7777778
 --- !u!114 &457045798
 MonoBehaviour:
@@ -2785,7 +2785,7 @@ MonoBehaviour:
     type: 3}
   InteractTriggerUI: {fileID: 1038405719655556755}
   textObj: {fileID: 1038405719985546932}
-  text: Talk To Dawn
+  text: Talk
   npc_name: DawnNPC
   activatedQuest: 0
   handlers: []
@@ -3090,7 +3090,7 @@ MonoBehaviour:
     type: 3}
   InteractTriggerUI: {fileID: 1038405719655556755}
   textObj: {fileID: 1038405719985546932}
-  text: Talk To Dusk
+  text: Talk
   npc_name: DuskNPC
   activatedQuest: 0
   handlers: []
@@ -8192,7 +8192,7 @@ RectTransform:
   m_GameObject: {fileID: 1038405719655556755}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 0.23344448, y: 0.9924564, z: 0.8078123}
+  m_LocalScale: {x: 0.22755468, y: 0.93037796, z: 0.8078123}
   m_Children:
   - {fileID: 1038405719985546933}
   m_Father: {fileID: 1038405721272796478}
@@ -8200,7 +8200,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0}
   m_AnchorMax: {x: 0.5, y: 0}
-  m_AnchoredPosition: {x: 682, y: 178}
+  m_AnchoredPosition: {x: 664.05, y: 175.85}
   m_SizeDelta: {x: 700, y: 130}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &1038405719831772816
@@ -8373,7 +8373,7 @@ RectTransform:
   m_GameObject: {fileID: 1038405719985546932}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 4.7229743, y: 1.4148102, z: 11.840292}
+  m_LocalScale: {x: 4.7229743, y: 1.3136936, z: 11.840292}
   m_Children: []
   m_Father: {fileID: 1038405719655556758}
   m_RootOrder: 0
@@ -8603,7 +8603,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: -14, y: 0}
+  m_AnchoredPosition: {x: -24, y: 0}
   m_SizeDelta: {x: -1820, y: -980}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1038405720593146381
@@ -9147,7 +9147,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 0}
-  m_AnchoredPosition: {x: -2, y: -311}
+  m_AnchoredPosition: {x: -14, y: -311}
   m_SizeDelta: {x: 1700, y: 300}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1038405720956352726
