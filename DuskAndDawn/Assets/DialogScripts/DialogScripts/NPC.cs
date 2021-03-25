@@ -14,7 +14,7 @@ public class NPC : MonoBehaviour
 #pragma warning disable 0649
     [SerializeField] string yarnStartNode = "Start";
     [SerializeField] YarnProgram yarnDialog;
-    [SerializeField] SpeakerData speakerData;
+    // [SerializeField] SpeakerData speakerData;
 #pragma warning restore 0649
 
     public GameObject InteractTriggerUI;
@@ -40,7 +40,7 @@ public class NPC : MonoBehaviour
         }
         
         InteractTriggerUI.SetActive(false);
-        DialogUI.Instance.AddSpeaker(speakerData);
+        // GameObject.FindObjectOfType<DialogUI>().AddSpeaker(speakerData);
     }
 
     private void OnTriggerEnter(Collider collision)
