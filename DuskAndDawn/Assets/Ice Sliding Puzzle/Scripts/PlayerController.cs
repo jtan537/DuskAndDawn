@@ -52,13 +52,17 @@ public class PlayerController : MonoBehaviour
         {
             if (Mathf.Abs(Input.GetAxisRaw("Horizontal")) == 1f)
             {
+                GetComponent<AudioSource>().Play();
                 attemptedPosition = movePoint.position;
                 movePoint.position = Move(new Vector3(Input.GetAxisRaw("Horizontal"), 0, 0));
+             
             }
             else if (Mathf.Abs(Input.GetAxisRaw("Vertical")) == 1f)
             {
+                GetComponent<AudioSource>().Play();
                 attemptedPosition = movePoint.position;
                 movePoint.position = Move(new Vector3(0, Input.GetAxisRaw("Vertical"), 0));
+            
             }
         }
     }

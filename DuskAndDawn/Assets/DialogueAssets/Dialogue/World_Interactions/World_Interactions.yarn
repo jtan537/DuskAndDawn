@@ -42,3 +42,25 @@ There's an opening to the igloo...Reach your hand in there?
     <<SetSpeaker Dawn sad>>
     Yet the interest continues to linger in your head...
 ===
+title: Dusk.Frog.Home
+tags: 
+colorID: 0
+position: 130,264
+---
+<<SetSpeaker Frog>>
+Frog: You shouldn't go trying to break in my house...
+<<SetSpeaker Frog smug>>
+Frog: There's absolutely nothing secretive in there...
+===
+title: Dusk.Frog.Wife
+tags: 
+colorID: 0
+position: 834,123
+---
+<<SetSpeaker Dusk sad>>
+There's a tomb near the frog's home...on top it is a letter and various mementos ...
+In the center is a photo of another frog. 
+<<SetSpeaker Dusk sad>>
+Dusk: ...
+Dusk: Best not to bring it up.
+===

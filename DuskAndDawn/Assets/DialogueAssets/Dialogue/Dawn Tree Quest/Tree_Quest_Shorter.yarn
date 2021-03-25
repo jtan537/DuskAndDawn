@@ -1,7 +1,7 @@
 title: Tree.Start
 tags: 
 colorID: 0
-position: 546,265
+position: 544,264
 ---
 <<if visited("Final.Dialogue") is true>>
 [[Last.Tree.Dialogue]]
@@ -38,16 +38,16 @@ position: 546,265
 title: Final.Dialogue
 tags: 
 colorID: 0
-position: 372,-43
+position: 369,-46
 ---
 <<SetSpeaker Tree shocked>>
 Tree: It worked?! I've grown leaves! 
 <<SetSpeaker Dawn happy>>
 Dawn: WOW ! They're lovely.
-<<SetSpeaker Tree with leaves>>
+<<SetSpeaker Tree with_leaves>>
 Tree: Thank you so much, Dawn. This feels like a miracle. 
 <<wait .75>>
-<<SetSpeaker Tree with leaves>>
+<<SetSpeaker Tree with_leaves>>
 Tree: Oh, this was hanging on one of my leaves?
 Tree: It's a gem. 
 Tree: I think this would be most useful for you.
@@ -58,14 +58,13 @@ Tree: I think this would be most useful for you.
 title: DuringQuest
 tags: 
 colorID: 0
-position: 634,-112
+position: 631,-113
 ---
 <<SetSpeaker Tree>>
 Tree: I need three sun energies. Have you found them yet?
 -> Yes
     Tree: You should be able to open your inventory (B) and use them on me.
 -> No
-<<SetSpeaker Tree sad>>
     Tree: Okay...They should just be beyond the bridge near the waterfall.
 ===
 title: Sad.Tree.Asks.Again
@@ -139,8 +138,47 @@ Dusk: (She's so transparent...and she talks too much)
 title: Last.Tree.Dialogue
 tags: 
 colorID: 0
-position: 36,258
+position: 35,257
 ---
-<<SetSpeaker Tree with leaves>>
+<<SetSpeaker Tree with_leaves>>
 Tree: I have leaves !!
+===
+title: DD_InteractionBonfire
+tags: 
+colorID: 0
+position: 544,551
+---
+<<if visited ("TreeQuest.Activates") is true>>
+[[DD_InteractionTree]]
+<<else>>
+<<SetSpeaker Dawn>>
+Dawn: This bonfire feels nice...
+<<endif>>
+===
+title: DD_InteractionTree
+tags: 
+colorID: 0
+position: 820,700
+---
+<<SetSpeaker Dusk>>
+Dusk: So...you're helping a dead tree?
+<<SetSpeaker Dawn>>
+Dawn: Yeah, what about it?
+<<SetSpeaker Dusk>>
+Dusk:Nothing really...just didn't really expect a talking tree..
+Dusk:You're willing to help anybody, aren't you?
+<<SetSpeaker Dawn>>
+Dawn: Yeah, I guess so.
+Dawn: I like helping others out. 
+<<SetSpeaker Dusk>>
+Dusk: Even if it puts you at risk? What about yourself?
+<<SetSpeaker Dawn happy>>
+Dawn: I'll think about that when the time comes, but for now, there's no harm in helping a tree...
+Dawn: Besides, imagine when the tree grows leaves! It'll be so happy. 
+<<SetSpeaker Dusk sad>>
+Dusk: ...and if he doesn't?
+<<SetSpeaker Dawn>>
+Dawn: Hm? Did you say something?
+<<SetSpeaker Dusk>>
+Dusk: No, nothing. Get along with your quest.
 ===

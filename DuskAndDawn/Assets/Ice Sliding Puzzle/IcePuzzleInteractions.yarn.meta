@@ -8,7 +8,7 @@ ScriptedImporter:
   assetBundleName: 
   assetBundleVariant: 
   script: {fileID: 11500000, guid: 94073015eacc34c1d8fc6786e43d60ca, type: 3}
-  baseLanguageID: en-CA
+  baseLanguageID: 
   stringIDs:
   - IcePuzzleInteractions-IceSliding.Start-0
   - IcePuzzleInteractions-IceSliding.Start-1
@@ -17,13 +17,13 @@ ScriptedImporter:
   - IcePuzzleInteractions-IceSliding.Start-4
   - IcePuzzleInteractions-IceSliding.Start-5
   - IcePuzzleInteractions-IceSliding.Start-6
-  - IcePuzzleInteractions-IceSliding.Start-7
+  - IcePuzzleInteractions-IceSliding.SecondConvo-7
   - IcePuzzleInteractions-IceSliding.SecondConvo-8
   - IcePuzzleInteractions-IceSliding.SecondConvo-9
   - IcePuzzleInteractions-IceSliding.SecondConvo-10
-  - IcePuzzleInteractions-IceSliding.SecondConvo-11
+  - IcePuzzleInteractions-IceSliding.FourthConvo-11
   - IcePuzzleInteractions-IceSliding.FourthConvo-12
-  - IcePuzzleInteractions-IceSliding.FourthConvo-13
+  - IcePuzzleInteractions-IceSliding.ThirdConvo-13
   - IcePuzzleInteractions-IceSliding.ThirdConvo-14
   - IcePuzzleInteractions-IceSliding.ThirdConvo-15
   - IcePuzzleInteractions-IceSliding.ThirdConvo-16
@@ -36,7 +36,7 @@ ScriptedImporter:
   - IcePuzzleInteractions-IceSliding.ThirdConvo-23
   - IcePuzzleInteractions-IceSliding.ThirdConvo-24
   - IcePuzzleInteractions-IceSliding.ThirdConvo-25
-  - IcePuzzleInteractions-IceSliding.ThirdConvo-26
+  - IcePuzzleInteractions-IceSliding.OnSceneEnter-26
   - IcePuzzleInteractions-IceSliding.OnSceneEnter-27
   - IcePuzzleInteractions-IceSliding.OnSceneEnter-28
   - IcePuzzleInteractions-IceSliding.OnSceneEnter-29
@@ -48,9 +48,21 @@ ScriptedImporter:
   - IcePuzzleInteractions-IceSliding.OnSceneEnter-35
   - IcePuzzleInteractions-IceSliding.OnSceneEnter-36
   - IcePuzzleInteractions-IceSliding.OnSceneEnter-37
+  - IcePuzzleInteractions-IceSliding.OnSceneEnter-38
+  - IcePuzzleInteractions-IceSliding.OnSceneEnter-39
+  - IcePuzzleInteractions-IceSliding.OnSceneEnter-40
+  - IcePuzzleInteractions-IceSliding.DonePuzzle-41
+  - IcePuzzleInteractions-IceSliding.DonePuzzle-42
+  - IcePuzzleInteractions-IceSliding.DonePuzzle-43
+  - IcePuzzleInteractions-IceSliding.DonePuzzle-44
+  - IcePuzzleInteractions-IceSliding.DonePuzzle-45
+  - IcePuzzleInteractions-IceSliding.DonePuzzle-46
+  - IcePuzzleInteractions-IceSliding.EnterTop-47
+  - IcePuzzleInteractions-IceSliding.Stay-48
+  - IcePuzzleInteractions-IceSliding.Stay-49
+  - IcePuzzleInteractions-IceSliding.Stay-50
   compilationStatus: 1
   isSuccesfullyCompiled: 1
   compilationErrorMessage: 
-  baseLanguage: {fileID: 7128917941130120860, guid: e50a61b5eb6cf6d42a433ed0d0d28dd2,
-    type: 3}
+  baseLanguage: {instanceID: 0}
   localizations: []

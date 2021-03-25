@@ -1,0 +1,56 @@
+title: BonfireCat.Quest
+tags: 
+colorID: 0
+position: 1285,81
+---
+// monologue between the two occurs after flower quest is complete 
+<<if visited ("Monologue.Start") is true>> 
+[[Bonfire.End]]
+<<endif>>
+<<if doneFlowerQuest() is true>>
+[[Monologue.Start]]
+<<else>>
+<<SetSpeaker Dusk>>
+The warmth of the bonfire feels nice...You feel as though you could do some reflection here when the time is right...
+<<endif>>
+===
+title: Monologue.Start
+tags: 
+colorID: 0
+position: 1482,-171
+---
+<<SetSpeaker Dawn>>
+Dawn: I wonder why the flower was hidden so secretly?
+<<SetSpeaker Dusk>>
+Dusk: Look at it, Dawn.
+Dusk: It's the only flower in this whole tower that looks like this.
+<<SetSpeaker Dawn sad>>
+Dawn: ...
+Dawn: She wanted to protect it?
+<<SetSpeaker Dusk>>
+Dusk: Exactly.
+<<SetSpeaker Dawn sad>>
+Dawn: Wow...
+Dawn: To hide something so precious from everyone...
+Dawn: Isn't that kind of selfish? She wanted to protect it but by doing so, she robbed everyone of seeing it too.
+<<SetSpeaker Dusk>>
+Dusk: Make of it what you will. I'm sure she had her reasons.
+<<SetSpeaker Dawn>>
+Dawn: Like what?
+<<SetSpeaker Dusk sad>>
+Dusk: Hmm, for example...If this flower wilts when you pull it, and if the only person you can trust to not pull it is yourself
+Dusk: then why share it with others?
+<<SetSpeaker Dawn>>
+Dawn: ...
+Dawn: (I still don't agree with it.)
+<<SetSpeaker Dusk>>
+Dusk: Let's get going.
+===
+title: Bonfire.End
+tags: 
+colorID: 0
+position: 1655,180
+---
+<<SetSpeaker Dusk>>
+The warmth of the bonfire feels nice.
+===

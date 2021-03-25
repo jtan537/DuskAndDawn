@@ -1,0 +1,35 @@
+fileFormatVersion: 2
+guid: ce1fd18d7abbd5a4db9c72cc90fc7517
+ScriptedImporter:
+  internalIDToNameTable: []
+  externalObjects: {}
+  serializedVersion: 2
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+  script: {fileID: 11500000, guid: 94073015eacc34c1d8fc6786e43d60ca, type: 3}
+  baseLanguageID: 
+  stringIDs:
+  - DD_InteractionTwo_AfterFlower-BonfireCat.Quest-0
+  - DD_InteractionTwo_AfterFlower-Monologue.Start-1
+  - DD_InteractionTwo_AfterFlower-Monologue.Start-2
+  - DD_InteractionTwo_AfterFlower-Monologue.Start-3
+  - DD_InteractionTwo_AfterFlower-Monologue.Start-4
+  - DD_InteractionTwo_AfterFlower-Monologue.Start-5
+  - DD_InteractionTwo_AfterFlower-Monologue.Start-6
+  - DD_InteractionTwo_AfterFlower-Monologue.Start-7
+  - DD_InteractionTwo_AfterFlower-Monologue.Start-8
+  - DD_InteractionTwo_AfterFlower-Monologue.Start-9
+  - DD_InteractionTwo_AfterFlower-Monologue.Start-10
+  - DD_InteractionTwo_AfterFlower-Monologue.Start-11
+  - DD_InteractionTwo_AfterFlower-Monologue.Start-12
+  - DD_InteractionTwo_AfterFlower-Monologue.Start-13
+  - DD_InteractionTwo_AfterFlower-Monologue.Start-14
+  - DD_InteractionTwo_AfterFlower-Monologue.Start-15
+  - DD_InteractionTwo_AfterFlower-Monologue.Start-16
+  - DD_InteractionTwo_AfterFlower-Bonfire.End-17
+  compilationStatus: 1
+  isSuccesfullyCompiled: 1
+  compilationErrorMessage: 
+  baseLanguage: {instanceID: 0}
+  localizations: []
