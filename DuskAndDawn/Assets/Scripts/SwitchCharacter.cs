@@ -85,6 +85,7 @@ public class SwitchCharacter : MonoBehaviour
             if (_currentCharacter == _dusk && dusk_elixir_drunk)
             {
                 isTransitioning = true;
+                _metadata.setCurPlayer(_dawn);
                 GetComponent<AudioSource>().Play();
                 disableDusk();
                 skyboxCtrl.DuskToDawn();
@@ -96,6 +97,7 @@ public class SwitchCharacter : MonoBehaviour
             else if (_currentCharacter == _dawn && dawn_elixir_drunk)
             {
                 isTransitioning = true;
+                _metadata.setCurPlayer(_dusk);
                 GetComponent<AudioSource>().Play();
                 disableDawn();
                 skyboxCtrl.DawnToDusk();
@@ -109,7 +111,7 @@ public class SwitchCharacter : MonoBehaviour
     {
         yield return new WaitForSeconds(time);
         // Setup metadata first
-        _metadata.setCurPlayer(_dawn);
+        
         _currentCharacter = _dawn;
 
         // Change lighting presets
@@ -136,7 +138,7 @@ public class SwitchCharacter : MonoBehaviour
         yield return new WaitForSeconds(time);
         // Setup metadata first
         _currentCharacter = _dusk;
-        _metadata.setCurPlayer(_dusk);
+        
 
         // Change lighting presets
         _dawnLighting.SetActive(false);

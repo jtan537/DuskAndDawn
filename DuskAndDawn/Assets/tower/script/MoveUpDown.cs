@@ -5,26 +5,24 @@ using UnityEngine;
 public class MoveUpDown : MonoBehaviour
 {
     private bool move;
-    private GameObject floor;
-    private GameObject top;
+    public GameObject floor;
+    public GameObject top;
     private int speed = 10;
 
     // Start is called before the first frame update
     void Start()
     {
         move = true;
-        floor = gameObject.transform.parent.gameObject.transform.GetChild(1).gameObject;
-        top = gameObject.transform.parent.gameObject.transform.GetChild(2).gameObject;
     }
 
     // Update is called once per frame
-    void Update()
+    void FixedUpdate()
     {
         if (move == true){
-            transform.Translate(Vector2.left * speed * Time.deltaTime);
+            transform.Translate(Vector2.up * speed * Time.deltaTime);
         }
         else if (move == false){
-            transform.Translate(Vector2.right * speed * Time.deltaTime);
+            transform.Translate(Vector2.down * speed * Time.deltaTime);
         }
         // print(Vector3.Distance(gameObject.transform.position, top.transform.position));
         if (Vector3.Distance(gameObject.transform.position, floor.transform.position) < 5){

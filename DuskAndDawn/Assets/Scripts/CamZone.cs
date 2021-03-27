@@ -11,7 +11,6 @@ public class CamZone : MonoBehaviour
     private CinemachineVirtualCamera camToSwitchTo = null;
 
     public Metadata cameras;
-    GameObject curPlayer;
     CinemachineVirtualCamera curDuskCam;
     CinemachineVirtualCamera curDawnCam;
 
@@ -20,7 +19,6 @@ public class CamZone : MonoBehaviour
     {
         curDuskCam = cameras.getDuskCurrentCamera();
         curDawnCam = cameras.getDawnCurrentCamera();
-        curPlayer = cameras.getCurPlayer();
     }
 
 
@@ -28,8 +26,7 @@ public class CamZone : MonoBehaviour
     {
         curDuskCam = cameras.getDuskCurrentCamera();
         curDawnCam = cameras.getDawnCurrentCamera();
-        curPlayer = cameras.getCurPlayer();
-        if (curPlayer.name == gameObject.tag)
+        if (other.gameObject.name == gameObject.tag)
         {
             if (other.CompareTag("Player"))
             {

@@ -11,11 +11,16 @@ public class Teleport : MonoBehaviour
     private GameObject player;
     GameObject InteractTriggerUI;
     GameObject textObj;
+
+    Metadata _metadata;
+    GameObject _curPlayer;
     // Start is called before the first frame update
     void Start()
     {
         InteractTriggerUI = GameObject.Find("Dialogue").transform.GetChild(1).gameObject;
         textObj = InteractTriggerUI.transform.GetChild(0).gameObject;
+
+        _metadata = GameObject.Find("Metadata").GetComponent<Metadata>();
 
         InteractTriggerUI.SetActive(false);
         textObj.GetComponent<TextMeshProUGUI>().SetText("Use Ladder");
@@ -34,6 +39,7 @@ public class Teleport : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        _curPlayer = _metadata.getCurPlayer();
         if (canTeleport){
             if (Input.GetKeyDown(KeyCode.F)){
                 player.GetComponent<CharacterController>().enabled = false;
@@ -45,15 +51,25 @@ public class Teleport : MonoBehaviour
                 textObj.GetComponent<TextMeshProUGUI>().SetText("");
             }
         }
+
+
     }
 
     private void OnTriggerStay(Collider other)
     {
-        print("can teleport");
-        canTeleport = true;
-        InteractTriggerUI.SetActive(true);
-        textObj.GetComponent<TextMeshProUGUI>().SetText("Use Ladder");
-
+        if (_curPlayer.name == other.gameObject.name)
+        {
+            print("can teleport");
+            canTeleport = true;
+            InteractTriggerUI.SetActive(true);
+            textObj.GetComponent<TextMeshProUGUI>().SetText("Use Ladder");
+        } else
+        {
+            print("can not teleport");
+            canTeleport = false;
+            InteractTriggerUI.SetActive(false);
+            textObj.GetComponent<TextMeshProUGUI>().SetText("");
+        }
     }
 
     private void OnTriggerExit(Collider other) 

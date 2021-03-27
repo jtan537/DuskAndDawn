@@ -4,12 +4,11 @@ using UnityEngine;
 
 public class one_platform_trick : MonoBehaviour
 {
-    public GameObject player;
     public GameObject cube;
-    private float distance;
-    private bool trigger;
-    private bool box_status;
-    public float a;
+
+    public bool trigger;
+    public bool box_status;
+    public bool isAlwaysOn = false;
 
     void Start()
     {
@@ -18,25 +17,43 @@ public class one_platform_trick : MonoBehaviour
     }
     void Update() 
     {
-        distance = Vector3.Distance(player.transform.position, gameObject.transform.position);
         box_status = cube.activeSelf;
-        if (trigger == false){
-            if (distance <= a){
-                if (box_status == false){
+        if (isAlwaysOn && box_status == true)
+        {
+            GetComponent<Collider>().enabled = false;
+        }
+        
+    }
+    private void OnTriggerEnter(Collider other)
+    {
+        if (other.gameObject.name == gameObject.tag)
+        {
+            if (trigger == false)
+            {
+                if (box_status == false)
+                {
                     cube.SetActive(true);
                     box_status = true;
                 }
-                else if (box_status == true){
+                else if (box_status == true)
+                {
                     cube.SetActive(false);
                     box_status = false;
                 }
                 trigger = true;
             }
         }
-        if (trigger == true){
-            if (distance > a){
+    }
+
+    private void OnTriggerExit(Collider other)
+    {
+        if (other.gameObject.name == gameObject.tag)
+        {
+            if (trigger == true)
+            {
                 trigger = false;
             }
+
         }
     }
 }

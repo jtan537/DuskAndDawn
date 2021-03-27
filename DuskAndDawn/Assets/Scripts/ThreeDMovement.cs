@@ -13,7 +13,8 @@ public class ThreeDMovement : MonoBehaviour
     private float _moveSpeed;
 
     Vector3 velocity;
-    bool isGrounded;
+    bool isGrounded, isMovingGrounded;
+    public bool leftMovingGround = true;
 
     public bool playWalkSound;
     public bool playJumpSound;
@@ -21,12 +22,13 @@ public class ThreeDMovement : MonoBehaviour
 
     public Transform groundCheck;
     public float groundCheckRadius = 0.4f;
-    public LayerMask groundMask;
+    public LayerMask groundMask, movingGroundMask;
 
     public CharacterController controller;
     public Animator anim;
 
     private bool _jumpedAnimPlayed = false;
+    Collider curMovingGround = null;
 
     private void Start()
     {
@@ -47,12 +49,44 @@ public class ThreeDMovement : MonoBehaviour
         // Create sphere and check if it collides with the ground layer.
         isGrounded = Physics.CheckSphere(groundCheck.position, groundCheckRadius, groundMask);
 
+        // Create sphere and check if it collides with the moving ground layer.
+        Collider[] collided = Physics.OverlapSphere(groundCheck.position, groundCheckRadius, movingGroundMask);
+        isMovingGrounded = collided.Length > 0;
+
+        if (isMovingGrounded && velocity.y <= 0)
+        {
+            curMovingGround = collided[0];
+            // Whenever grounded, update respawn position to the moving grounded's child position
+            this.transform.parent = collided[0].gameObject.transform;
+            leftMovingGround = false;
+        } else
+        {
+            
+            this.transform.parent = null;
+        }
+
+        if (!leftMovingGround)
+        {
+            respawnPoint.updateRespawnPosition(curMovingGround.gameObject.transform.GetChild(1).transform.position);
+        }
+
         if (isGrounded && velocity.y <= 0)
         {
-            // Whenever grounded, update respawn position
-            respawnPoint.updateRespawnPosition(transform.position);
-            // -2 to force the player on the ground a bit
-            velocity.y = -2f;
+            
+            // Whenever grounded, update respawn position if its static ground
+            if (!isMovingGrounded)
+            {
+                leftMovingGround = true;
+                respawnPoint.updateRespawnPosition(transform.position);
+                curMovingGround = null;
+                // -2 to force the player on the ground a bit if not on moving ground (doing this on mnoving ground bounces the player)
+                velocity.y = -2f;
+            } else
+            {
+                velocity.y = 0f;
+            }
+            
+            
             _moveSpeed = groundedMoveSpeed;
         } else
         {

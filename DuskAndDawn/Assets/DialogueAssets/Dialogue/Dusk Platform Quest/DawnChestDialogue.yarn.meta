@@ -1,0 +1,25 @@
+fileFormatVersion: 2
+guid: b3e1c94ddcb76ed45b2c53c01e5ebd97
+ScriptedImporter:
+  internalIDToNameTable: []
+  externalObjects: {}
+  serializedVersion: 2
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+  script: {fileID: 11500000, guid: 94073015eacc34c1d8fc6786e43d60ca, type: 3}
+  baseLanguageID: en-CA
+  stringIDs:
+  - DuskChestDialogue 1-Dusk.Chest.Start-0
+  - DuskChestDialogue 1-Dusk.Chest.Start-1
+  - DuskChestDialogue 1-Dusk.Chest.Start-2
+  - DuskChestDialogue 1-Dusk.Chest.Start-3
+  - DuskChestDialogue 1-Dusk.Chest.Start-4
+  - DuskChestDialogue 1-Dusk.chest.final.dialogue-5
+  - DuskChestDialogue 1-Dusk.chest.final.dialogue-6
+  compilationStatus: 1
+  isSuccesfullyCompiled: 1
+  compilationErrorMessage: 
+  baseLanguage: {fileID: 7128917941130120860, guid: 55e55bc2c9217ce499b68e938a336238,
+    type: 3}
+  localizations: []

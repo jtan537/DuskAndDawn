@@ -8,7 +8,7 @@ ScriptedImporter:
   assetBundleName: 
   assetBundleVariant: 
   script: {fileID: 11500000, guid: 94073015eacc34c1d8fc6786e43d60ca, type: 3}
-  baseLanguageID: 
+  baseLanguageID: en-CA
   stringIDs:
   - DuskChestDialogue 1-Dusk.Chest.Start-0
   - DuskChestDialogue 1-Dusk.Chest.Start-1
@@ -20,5 +20,6 @@ ScriptedImporter:
   compilationStatus: 1
   isSuccesfullyCompiled: 1
   compilationErrorMessage: 
-  baseLanguage: {instanceID: 0}
+  baseLanguage: {fileID: 7128917941130120860, guid: 55e55bc2c9217ce499b68e938a336238,
+    type: 3}
   localizations: []

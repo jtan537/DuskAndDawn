@@ -6,8 +6,10 @@ using Yarn.Unity;
 public class DawnChest : MonoBehaviour
 {
     VariableStorageBehaviour _varStorage;
-    bool _recieveGem;
+    bool _recieveGem, _done = false;
     private Animator _anim;
+
+    public GameObject gem;
     // Start is called before the first frame update
     void Start()
     {
@@ -19,8 +21,9 @@ public class DawnChest : MonoBehaviour
     void Update()
     {
         _recieveGem = _varStorage.GetValue("$dawn_received_chest_gem").AsBool;
-        if (_recieveGem)
+        if (_recieveGem && !_done)
         {
+            GetComponent<AudioSource>().Play();
             _anim.SetBool("isOpen", true);
             GiveGem();
         }
@@ -28,7 +31,8 @@ public class DawnChest : MonoBehaviour
 
     private void GiveGem()
     {
-        throw new System.NotImplementedException("Must complete function");
+        gem.SetActive(true);
+        _done = true;
     }
 
 }
