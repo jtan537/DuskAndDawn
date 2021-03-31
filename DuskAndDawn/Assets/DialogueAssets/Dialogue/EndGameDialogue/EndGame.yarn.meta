@@ -1,0 +1,85 @@
+fileFormatVersion: 2
+guid: f800c25d6f44cd849b520115b30c9b8b
+ScriptedImporter:
+  internalIDToNameTable: []
+  externalObjects: {}
+  serializedVersion: 2
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+  script: {fileID: 11500000, guid: 94073015eacc34c1d8fc6786e43d60ca, type: 3}
+  baseLanguageID: en-CA
+  stringIDs:
+  - Tutorial 1-Dawn.Elder.Start-0
+  - Tutorial 1-Dawn.Elder.Start-1
+  - Tutorial 1-Dawn.Elder.Start-2
+  - Tutorial 1-Dawn.Elder.Start-3
+  - Tutorial 1-Dawn.Elder.Start-4
+  - Tutorial 1-Dawn.Elder.Start-5
+  - Tutorial 1-Dawn.Elder.Start-6
+  - Tutorial 1-Dawn.Elder.Start-7
+  - Tutorial 1-Dawn.Elder.Start-8
+  - Tutorial 1-Dawn.Elder.Start-9
+  - Tutorial 1-Dawn.Elder.Start-10
+  - Tutorial 1-Dawn.Elder.Start-11
+  - Tutorial 1-Dawn.Elder.Start-12
+  - Tutorial 1-Dawn.Elder.Gem-13
+  - Tutorial 1-Dawn.Elder.Gem-14
+  - Tutorial 1-Dawn.Elder.Gem-15
+  - Tutorial 1-Dawn.Elder.Gem-16
+  - Tutorial 1-Dawn.Elder.Gem-17
+  - Tutorial 1-Dawn.Elder.Gem-18
+  - Tutorial 1-Dawn.Elder.Gem-19
+  - Tutorial 1-Dawn.Elder.Gem-20
+  - Tutorial 1-Dawn.Elder.Gem-21
+  - Tutorial 1-Dawn.Elder.Elixir-22
+  - Tutorial 1-Dusk.Elder.Start-23
+  - Tutorial 1-Dusk.Elder.Start-24
+  - Tutorial 1-Dusk.Elder.Start-25
+  - Tutorial 1-Dusk.Elder.Start-26
+  - Tutorial 1-Dusk.Elder.Start-27
+  - Tutorial 1-Dusk.Elder.Start-28
+  - Tutorial 1-Dusk.Elder.Start-29
+  - Tutorial 1-Dusk.Elder.Start-30
+  - Tutorial 1-Dusk.Elder.Start-31
+  - Tutorial 1-Dusk.Elder.Start-32
+  - Tutorial 1-Dusk.Elder.Start-33
+  - Tutorial 1-Dusk.Elder.Start-34
+  - Tutorial 1-Dawn.Tutorial.Switch-35
+  - Tutorial 1-Dawn.Tutorial.Switch-36
+  - Tutorial 1-Dawn.Tutorial.Switch-37
+  - Tutorial 1-Dawn.Tutorial.Switch-38
+  - Tutorial 1-Dawn.Tutorial.Switch-39
+  - Tutorial 1-Dawn.Tutorial.Switch-40
+  - Tutorial 1-Dusk.Elder.Gem-41
+  - Tutorial 1-Dusk.Elder.Gem-42
+  - Tutorial 1-Dusk.Elder.Gem-43
+  - Tutorial 1-Dusk.Elder.Gem-44
+  - Tutorial 1-Dusk.Elder.Gem-45
+  - Tutorial 1-Dusk.Elder.Gem-46
+  - Tutorial 1-Dusk.Elder.Gem-47
+  - Tutorial 1-Dusk.Elder.Elixir-48
+  - Tutorial 1-Dusk.Elder.Elixir-49
+  - Tutorial 1-Dusk.Elder.Elixir-50
+  - Tutorial 1-Dusk.Elder.Elixir-51
+  - Tutorial 1-Dusk.Elder.Elixir-52
+  - Tutorial 1-Tutorial.Greeting-53
+  - Tutorial 1-Tutorial.Greeting-54
+  - Tutorial 1-Tutorial.Greeting-55
+  - Tutorial 1-Tutorial.Greeting-56
+  - Tutorial 1-Tutorial.Greeting-57
+  - Tutorial 1-Tutorial.Greeting-58
+  - Tutorial 1-Tutorial.Greeting-59
+  - Tutorial 1-Tutorial.Greeting-60
+  - Tutorial 1-Tutorial.Greeting-61
+  - Tutorial 1-Tutorial.Greeting-62
+  - Tutorial 1-Tutorial.Greeting-63
+  - Tutorial 1-Dawn.Tutorial.Press-64
+  - Tutorial 1-Dawn.Tutorial.Press-65
+  - Tutorial 1-Dawn.Tutorial.Ignore-66
+  compilationStatus: 1
+  isSuccesfullyCompiled: 1
+  compilationErrorMessage: 
+  baseLanguage: {fileID: 7128917941130120860, guid: f800c25d6f44cd849b520115b30c9b8b,
+    type: 3}
+  localizations: []

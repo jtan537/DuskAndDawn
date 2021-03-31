@@ -1,0 +1,49 @@
+title: End.Game.Check
+tags: 
+colorID: 0
+position: 630,-12
+---
+<<if canEnterTower() is true>>
+    <<if duskAndDawnInPosition() is true>> 
+        <<SetSpeaker Dawn happy>>
+        DAWN: Looks like we can enter the tower now, using these 3 gems.
+        <<SetSpeaker Dusk>>    
+        DUSK: Yep, wanna go in now?
+        [[Enter Tower|End.Game.Yes]]
+        [[Leave for now|End.Game.No]]
+    <<else>>
+        <<SetSpeaker Dusk>>
+        DUSK: We have the gems, but we both need to be at the entrance to enter the tower.
+        <<stop>>
+    <<endif>>
+<<else>>
+    <<if visited("End.Game.No")>>
+        <<SetSpeaker Dusk>>    
+        DUSK: Wanna go in now?
+        [[Enter Tower|End.Game.Yes]]
+        [[Leave for now|End.Game.No]]
+    <<else>>
+        <<SetSpeaker Dawn >>
+        DAWN: Hm we can't enter the tower yet. Looks like were still missing some gems.
+        <<stop>>
+    <<endif>>
+<<endif>>
+===
+title: End.Game.Yes
+tags: 
+colorID: 0
+position: 392,-336
+---
+<<SetSpeaker Dawn happy>>
+DAWN: Let's go in!!
+
+<<set $entered_tower to true>>
+===
+title: End.Game.No
+tags: 
+colorID: 0
+position: 799,-331
+---
+<<SetSpeaker Dawn >>
+DAWN: Let's enter later.
+===

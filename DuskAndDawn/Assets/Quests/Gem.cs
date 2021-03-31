@@ -7,7 +7,7 @@ public class Gem : InventoryItemBase
     [SerializeField]
     GameObject _shadow;
 
-    AudioSource audioClip;
+    EnterTower enterTower;
 
     public bool pickedUp = false;
     public override void OnPickup(Collider collider)
@@ -21,6 +21,17 @@ public class Gem : InventoryItemBase
             _shadow.SetActive(false);
         }
         GetComponent<AudioSource>().Play();
+        if (gameObject.tag == "Dawn")
+        {
+            enterTower.dawnGemsPickedUp += 1;
+        } else if (gameObject.tag == "Dusk")
+        {
+            enterTower.duskGemsPickedUp += 1;
+        } else 
+        {
+            Debug.LogError("Gem must be tagged Dawn or Dusk");
+        }
+        
     }
 
     public override string Name

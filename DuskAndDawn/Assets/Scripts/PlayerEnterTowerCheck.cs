@@ -5,10 +5,13 @@ using UnityEngine;
 public class PlayerEnterTowerCheck : MonoBehaviour
 {
     public bool enteringTower = false;
+
+    [SerializeField]
+    GameObject light;
     // Start is called before the first frame update
     void Start()
     {
-        
+        light.SetActive(false);
     }
 
     // Update is called once per frame
@@ -17,11 +20,13 @@ public class PlayerEnterTowerCheck : MonoBehaviour
         if (gameObject.tag == other.gameObject.name)
         {
             enteringTower = true;
+            light.SetActive(true);
         }
     }
 
     private void OnTriggerExit(Collider other)
     {
         enteringTower = false;
+        light.SetActive(false);
     }
 }
