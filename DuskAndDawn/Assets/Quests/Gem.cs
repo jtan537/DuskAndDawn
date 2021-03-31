@@ -41,6 +41,7 @@ public class Gem : InventoryItemBase
     		return "Gem";
     	}
     }
+
     public override string Description
     {
         get
