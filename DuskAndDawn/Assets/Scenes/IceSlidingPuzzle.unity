@@ -5015,8 +5015,8 @@ GameObject:
   - component: {fileID: 1624417331}
   - component: {fileID: 1624417335}
   - component: {fileID: 1624417334}
-  - component: {fileID: 1624417333}
   - component: {fileID: 1624417332}
+  - component: {fileID: 1624417333}
   m_Layer: 5
   m_Name: ProgressDialogueButton(0 Alpha)
   m_TagString: Untagged
@@ -5033,15 +5033,15 @@ RectTransform:
   m_GameObject: {fileID: 1624417330}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 0.7941614, y: 0.5756758, z: 0.7941614}
   m_Children: []
-  m_Father: {fileID: 1038405721272796478}
-  m_RootOrder: 2
+  m_Father: {fileID: 1038405720008520421}
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 0, y: 0}
+  m_AnchorMin: {x: 0, y: 1}
+  m_AnchorMax: {x: 0, y: 1}
+  m_AnchoredPosition: {x: 152, y: -128}
+  m_SizeDelta: {x: 1920, y: 1080}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1624417332
 MonoBehaviour:
@@ -5108,11 +5108,17 @@ MonoBehaviour:
   m_GameObject: {fileID: 1624417330}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 86710e43de46f6f4bac7c8e50813a599, type: 3}
+  m_Script: {fileID: 11500000, guid: 306cc8c2b49d7114eaa3623786fc2126, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_AspectMode: 4
-  m_AspectRatio: 1.7777778
+  m_IgnoreLayout: 1
+  m_MinWidth: 1920
+  m_MinHeight: 1080
+  m_PreferredWidth: -1
+  m_PreferredHeight: -1
+  m_FlexibleWidth: -1
+  m_FlexibleHeight: -1
+  m_LayoutPriority: 1
 --- !u!114 &1624417334
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -8383,7 +8389,7 @@ RectTransform:
   m_Children:
   - {fileID: 1038405719586958842}
   m_Father: {fileID: 1038405720008520421}
-  m_RootOrder: 1
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
@@ -8447,7 +8453,7 @@ MonoBehaviour:
   m_PreferredHeight: 80
   m_FlexibleWidth: -1
   m_FlexibleHeight: -1
-  m_LayoutPriority: 1
+  m_LayoutPriority: 10
 --- !u!114 &1038405719831772823
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -8658,6 +8664,7 @@ RectTransform:
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1.25919, y: 1.737089, z: 1.25919}
   m_Children:
+  - {fileID: 1624417331}
   - {fileID: 1038405720765730021}
   - {fileID: 1038405719831772817}
   - {fileID: 1038405721273053244}
@@ -9000,7 +9007,7 @@ RectTransform:
   m_Children:
   - {fileID: 1038405719391569214}
   m_Father: {fileID: 1038405720008520421}
-  m_RootOrder: 0
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
@@ -9064,7 +9071,7 @@ MonoBehaviour:
   m_PreferredHeight: 80
   m_FlexibleWidth: -1
   m_FlexibleHeight: -1
-  m_LayoutPriority: 1
+  m_LayoutPriority: 10
 --- !u!114 &1038405720765730027
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -9567,7 +9574,6 @@ RectTransform:
   m_Children:
   - {fileID: 1038405720593146380}
   - {fileID: 1038405719655556758}
-  - {fileID: 1624417331}
   m_Father: {fileID: 0}
   m_RootOrder: 8
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -9672,7 +9678,7 @@ RectTransform:
   m_Children:
   - {fileID: 1038405721093779212}
   m_Father: {fileID: 1038405720008520421}
-  m_RootOrder: 2
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
