@@ -4,6 +4,7 @@ using UnityEngine;
 using UnityEngine.Video;
 using Yarn.Unity;
 
+using UnityEngine.SceneManagement;
 public class IceSlideMetadata : MonoBehaviour
 {
     [SerializeField]
@@ -70,6 +71,8 @@ public class IceSlideMetadata : MonoBehaviour
         {
             wall.gameObject.GetComponent<MeshRenderer>().material = _dawnColor;
         }
+
+        videoPlayer.Prepare();
     }
 
 
@@ -128,6 +131,7 @@ public class IceSlideMetadata : MonoBehaviour
 
         checkSelectedDoneDialogue();
 
+        checkDonePlaying();
     }
 
     void checkWinCondition()
@@ -150,13 +154,23 @@ public class IceSlideMetadata : MonoBehaviour
     {
         if (!doneGame && _varStorage.GetValue("$enter_tower_top").AsBool == true)
         {
+
+            videoPlayer.Play();
             doneGame = true;
             _dusk.SetActive(false);
             _dawn.SetActive(false);
             GameObject.Find("SoundManager").GetComponent<SoundManager>().volume = 0;
             videoRawImage.SetActive(true);
-            videoPlayer.Play();
+            
         }
         
+    }
+
+    void checkDonePlaying()
+    {
+        if (doneGame && !videoPlayer.isPlaying)
+        {
+            SceneManager.LoadScene(sceneName: "Menu");
+        }
     }
 }
