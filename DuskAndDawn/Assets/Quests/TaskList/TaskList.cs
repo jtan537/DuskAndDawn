@@ -17,6 +17,11 @@ public class TaskList : MonoBehaviour
 	public Transform contentPanel;
 	public SimpleObjectPool taskObjectPool;
 
+    void Start()
+    {
+        AddTasks();
+    }
+
     public void RefreshDisplay()
     {
         RemoveTasks();
@@ -47,23 +52,26 @@ public class TaskList : MonoBehaviour
 
     public void AddTask(Task taskToAdd, TaskList taskListClass)
     {
-        taskListClass.taskList.Add (taskToAdd);
-
-        Task task = taskToAdd;
-        GameObject newTask = taskObjectPool.GetObject();
-        newTask.transform.SetParent(contentPanel);
-
-        SampleTask sampleTask = newTask.GetComponent<SampleTask>();
-        sampleTask.Setup(task, this);
+        for (int i = 0; i < taskListClass.taskList.Count; i++) 
+        {
+            if (taskListClass.taskList[i].taskName == "???" &&
+                taskListClass.taskList[i].assignee == taskToAdd.assignee)
+            {
+                taskListClass.taskList[i].taskName = taskToAdd.taskName;
+                break;
+            }
+        }
+        RefreshDisplay();
     }
 
     public void UpdateTask(Task taskToUpdate, TaskList taskListClass)
     {
         for (int i = 0; i < taskList.Count; i++) 
         {
-            if (taskListClass.taskList[i] == taskToUpdate)
+            if (taskListClass.taskList[i].taskName == taskToUpdate.taskName)
             {
                 taskListClass.taskList[i].status = 1;
+                break;
             }
         }
     }
