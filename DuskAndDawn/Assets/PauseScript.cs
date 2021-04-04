@@ -7,6 +7,7 @@ public class PauseScript : MonoBehaviour
 {
     public static bool isGamePaused = false;
     [SerializeField] GameObject pauseMenu;
+    [SerializeField] GameObject controlsMenu;
 
     // Update is called once per frame
     void Update()
@@ -15,6 +16,7 @@ public class PauseScript : MonoBehaviour
         {
             if (isGamePaused)
             {
+                controlsMenu.SetActive(false);
                 ResumeGame();
             }
             else
@@ -39,6 +41,23 @@ public class PauseScript : MonoBehaviour
     {
         SceneManager.LoadScene(0);
         Time.timeScale = 1f;
+    }
+    public void BackToMenu()
+    {
+        pauseMenu.SetActive(true);
+        controlsMenu.SetActive(false);
+    }
+
+    public void DisplayControls()
+    {
+        pauseMenu.SetActive(false);
+        controlsMenu.SetActive(true);
+    }
+
+    public void StopDisplayControls()
+    {
+        pauseMenu.SetActive(true);
+        controlsMenu.SetActive(false);
     }
     public void QuitGame()
     {

@@ -32,42 +32,46 @@ public class PlayerController : MonoBehaviour
 
     void Update()
     {
-        float movementAmout = speed * Time.deltaTime;
-        transform.position = Vector3.MoveTowards(transform.position, movePoint.position, movementAmout);
-        Vector3 diff = movePoint.position - transform.position;
+        if (!PauseScript.isGamePaused)
+        {
+            float movementAmout = speed * Time.deltaTime;
+            transform.position = Vector3.MoveTowards(transform.position, movePoint.position, movementAmout);
+            Vector3 diff = movePoint.position - transform.position;
 
-        float rotationZ = Mathf.Atan2(diff.y, diff.x) * Mathf.Rad2Deg;
-        if (diff != new Vector3(0, 0, 0))
-        {
-            transform.rotation = Quaternion.Euler(0, 0, rotationZ);
-            isSliding = true;
-            playSlideSound = true;
-            _anim.SetBool("isRunning", true);
-        } else
-        {
-            isSliding = false;
-            playSlideSound = false;
-            _anim.SetBool("isRunning", false);
-        }
-       
-
-        if (Vector3.Distance(transform.position, movePoint.position) <= 0.05f)
-        {
-            if (Mathf.Abs(Input.GetAxisRaw("Horizontal")) == 1f)
+            float rotationZ = Mathf.Atan2(diff.y, diff.x) * Mathf.Rad2Deg;
+            if (diff != new Vector3(0, 0, 0))
             {
-
-                attemptedPosition = movePoint.position;
-                movePoint.position = Move(new Vector3(Input.GetAxisRaw("Horizontal"), 0, 0));
-             
+                transform.rotation = Quaternion.Euler(0, 0, rotationZ);
+                isSliding = true;
+                playSlideSound = true;
+                _anim.SetBool("isRunning", true);
             }
-            else if (Mathf.Abs(Input.GetAxisRaw("Vertical")) == 1f)
+            else
             {
-
-                attemptedPosition = movePoint.position;
-                movePoint.position = Move(new Vector3(0, Input.GetAxisRaw("Vertical"), 0));
-            
+                isSliding = false;
+                playSlideSound = false;
+                _anim.SetBool("isRunning", false);
             }
-        }
+
+
+            if (Vector3.Distance(transform.position, movePoint.position) <= 0.05f)
+            {
+                if (Mathf.Abs(Input.GetAxisRaw("Horizontal")) == 1f)
+                {
+
+                    attemptedPosition = movePoint.position;
+                    movePoint.position = Move(new Vector3(Input.GetAxisRaw("Horizontal"), 0, 0));
+
+                }
+                else if (Mathf.Abs(Input.GetAxisRaw("Vertical")) == 1f)
+                {
+
+                    attemptedPosition = movePoint.position;
+                    movePoint.position = Move(new Vector3(0, Input.GetAxisRaw("Vertical"), 0));
+
+                }
+            }
+        } 
     }
 
     private Vector3 Move(Vector3 direction)

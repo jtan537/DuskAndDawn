@@ -25,11 +25,15 @@ public class NPCInteract : MonoBehaviour
         // If in dialog - early out
         if (isInDialog) return;
 
-        // Check input
-        if (Input.GetKeyDown(KeyCode.F))
+        if (!PauseScript.isGamePaused)
         {
-            Interact();
+            // Check input
+            if (Input.GetKeyDown(KeyCode.F))
+            {
+                Interact();
+            }
         }
+        
     }
 
     public void OnDialogEnd()

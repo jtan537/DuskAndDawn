@@ -82,48 +82,52 @@ public class IceSlideMetadata : MonoBehaviour
         dawnInDialog = dawnNPCInteract.isInDialog;
         duskInDialog = duskNPCInteract.isInDialog;
 
-        if (!doneGame && !dawnController.isSliding && !duskController.isSliding
-            && !dawnInDialog && !duskInDialog)
+        if (!PauseScript.isGamePaused)
         {
-            if (Input.GetKeyDown("r"))
+            if (!doneGame && !dawnController.isSliding && !duskController.isSliding
+                            && !dawnInDialog && !duskInDialog)
             {
-                if (curPlayer == _dusk)
+                if (Input.GetKeyDown("r"))
                 {
-                    curPlayer = _dawn;
-                    _dusk.GetComponent<PlayerController>().enabled = false;
-                    _dawn.GetComponent<PlayerController>().enabled = true;
-
-                    _dawnLighting.SetActive(true);
-                    _duskLighting.SetActive(false);
-                    foreach (GameObject wall in _walls)
+                    if (curPlayer == _dusk)
                     {
-                        wall.gameObject.GetComponent<MeshRenderer>().material = _dawnColor;
+                        curPlayer = _dawn;
+                        _dusk.GetComponent<PlayerController>().enabled = false;
+                        _dawn.GetComponent<PlayerController>().enabled = true;
+
+                        _dawnLighting.SetActive(true);
+                        _duskLighting.SetActive(false);
+                        foreach (GameObject wall in _walls)
+                        {
+                            wall.gameObject.GetComponent<MeshRenderer>().material = _dawnColor;
+                        }
+                    }
+                    else
+                    {
+                        curPlayer = _dusk;
+                        _dawn.GetComponent<PlayerController>().enabled = false;
+                        _dusk.GetComponent<PlayerController>().enabled = true;
+
+                        _dawnLighting.SetActive(false);
+                        _duskLighting.SetActive(true);
+                        foreach (GameObject wall in _walls)
+                        {
+                            wall.gameObject.GetComponent<MeshRenderer>().material = _duskColor;
+                        }
                     }
                 }
-                else
+
+                if (Input.GetKeyDown(KeyCode.Space))
                 {
-                    curPlayer = _dusk;
-                    _dawn.GetComponent<PlayerController>().enabled = false;
-                    _dusk.GetComponent<PlayerController>().enabled = true;
-
-                    _dawnLighting.SetActive(false);
-                    _duskLighting.SetActive(true);
-                    foreach (GameObject wall in _walls)
-                    {
-                        wall.gameObject.GetComponent<MeshRenderer>().material = _duskColor;
-                    }
+                    _dawn.transform.position = new Vector3(dawnEntranceX, dawnEntranceY, _dawn.transform.position.z);
+                    dawnMovePoint.transform.position = _dawn.transform.position;
+                    _dusk.transform.position = new Vector3(duskEntranceX, duskEntranceY, _dusk.transform.position.z);
+                    duskMovePoint.transform.position = _dusk.transform.position;
                 }
-            }
 
-            if (Input.GetKeyDown(KeyCode.Space))
-            {
-                _dawn.transform.position = new Vector3(dawnEntranceX, dawnEntranceY, _dawn.transform.position.z);
-                dawnMovePoint.transform.position = _dawn.transform.position;
-                _dusk.transform.position = new Vector3(duskEntranceX, duskEntranceY, _dusk.transform.position.z);
-                duskMovePoint.transform.position = _dusk.transform.position;
             }
-                
         }
+            
         if (!dawnController.isSliding && !duskController.isSliding)
         {
             checkWinCondition();

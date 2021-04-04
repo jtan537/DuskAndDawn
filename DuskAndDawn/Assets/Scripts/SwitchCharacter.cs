@@ -76,35 +76,39 @@ public class SwitchCharacter : MonoBehaviour
         _currentduskCamera = _metadata.getDuskCurrentCamera();
         _currentdawnCamera = _metadata.getDawnCurrentCamera();
 
-        // Don't allow switching when in dialog or while transitioning
-        if (Input.GetKeyDown("r") && !_metadata.dawnInDialog && !_metadata.duskInDialog && !isTransitioning)
+        if (!PauseScript.isGamePaused)
         {
-            
-            
-            // Switch to Dawn if tutorial for Dusk is done
-            if (_currentCharacter == _dusk && dusk_elixir_drunk)
+            // Don't allow switching when in dialog or while transitioning
+            if (Input.GetKeyDown("r") && !_metadata.dawnInDialog && !_metadata.duskInDialog && !isTransitioning)
             {
-                isTransitioning = true;
-                _metadata.setCurPlayer(_dawn);
-                GetComponent<AudioSource>().Play();
-                disableDusk();
-                skyboxCtrl.DuskToDawn();
-                fadeIn();
-                StartCoroutine(enableDawnAfterTime(_transitionTime));
-                
-            }
-            // Switch to Dusk if tutorial for Dawn is done
-            else if (_currentCharacter == _dawn && dawn_elixir_drunk)
-            {
-                isTransitioning = true;
-                _metadata.setCurPlayer(_dusk);
-                GetComponent<AudioSource>().Play();
-                disableDawn();
-                skyboxCtrl.DawnToDusk();
-                fadeIn();
-                StartCoroutine(enableDuskAfterTime(_transitionTime));
+
+
+                // Switch to Dawn if tutorial for Dusk is done
+                if (_currentCharacter == _dusk && dusk_elixir_drunk)
+                {
+                    isTransitioning = true;
+                    _metadata.setCurPlayer(_dawn);
+                    GetComponent<AudioSource>().Play();
+                    disableDusk();
+                    skyboxCtrl.DuskToDawn();
+                    fadeIn();
+                    StartCoroutine(enableDawnAfterTime(_transitionTime));
+
+                }
+                // Switch to Dusk if tutorial for Dawn is done
+                else if (_currentCharacter == _dawn && dawn_elixir_drunk)
+                {
+                    isTransitioning = true;
+                    _metadata.setCurPlayer(_dusk);
+                    GetComponent<AudioSource>().Play();
+                    disableDawn();
+                    skyboxCtrl.DawnToDusk();
+                    fadeIn();
+                    StartCoroutine(enableDuskAfterTime(_transitionTime));
+                }
             }
         }
+        
     }
 
     IEnumerator enableDawnAfterTime(float time)

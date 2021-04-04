@@ -46,99 +46,105 @@ public class ThreeDMovement : MonoBehaviour
 
     private void Update()
     {
-        // Create sphere and check if it collides with the ground layer.
-        isGrounded = Physics.CheckSphere(groundCheck.position, groundCheckRadius, groundMask);
-
-        // Create sphere and check if it collides with the moving ground layer.
-        Collider[] collided = Physics.OverlapSphere(groundCheck.position, groundCheckRadius, movingGroundMask);
-        isMovingGrounded = collided.Length > 0;
-
-        if (isMovingGrounded && velocity.y <= 0)
+        if (!PauseScript.isGamePaused)
         {
-            curMovingGround = collided[0];
-            // Whenever grounded, update respawn position to the moving grounded's child position
-            this.transform.parent = collided[0].gameObject.transform;
-            leftMovingGround = false;
-        } else
-        {
-            
-            this.transform.parent = null;
-        }
+            // Create sphere and check if it collides with the ground layer.
+            isGrounded = Physics.CheckSphere(groundCheck.position, groundCheckRadius, groundMask);
 
-        if (!leftMovingGround)
-        {
-            respawnPoint.updateRespawnPosition(curMovingGround.gameObject.transform.GetChild(1).transform.position);
-        }
+            // Create sphere and check if it collides with the moving ground layer.
+            Collider[] collided = Physics.OverlapSphere(groundCheck.position, groundCheckRadius, movingGroundMask);
+            isMovingGrounded = collided.Length > 0;
 
-        if (isGrounded && velocity.y <= 0)
-        {
-            
-            // Whenever grounded, update respawn position if its static ground
-            if (!isMovingGrounded)
+            if (isMovingGrounded && velocity.y <= 0)
             {
-                leftMovingGround = true;
-                respawnPoint.updateRespawnPosition(transform.position);
-                curMovingGround = null;
-                // -2 to force the player on the ground a bit if not on moving ground (doing this on mnoving ground bounces the player)
-                velocity.y = -2f;
-            } else
-            {
-                velocity.y = 0f;
+                curMovingGround = collided[0];
+                // Whenever grounded, update respawn position to the moving grounded's child position
+                this.transform.parent = collided[0].gameObject.transform;
+                leftMovingGround = false;
             }
-            
-            
-            _moveSpeed = groundedMoveSpeed;
-        } else
-        {
-            _moveSpeed = jumpMoveSpeed;
-        }
+            else
+            {
+
+                this.transform.parent = null;
+            }
+
+            if (!leftMovingGround)
+            {
+                respawnPoint.updateRespawnPosition(curMovingGround.gameObject.transform.GetChild(1).transform.position);
+            }
+
+            if (isGrounded && velocity.y <= 0)
+            {
+
+                // Whenever grounded, update respawn position if its static ground
+                if (!isMovingGrounded)
+                {
+                    leftMovingGround = true;
+                    respawnPoint.updateRespawnPosition(transform.position);
+                    curMovingGround = null;
+                    // -2 to force the player on the ground a bit if not on moving ground (doing this on mnoving ground bounces the player)
+                    velocity.y = -2f;
+                }
+                else
+                {
+                    velocity.y = 0f;
+                }
 
 
-        var targetVector = new Vector3(Input.GetAxisRaw("HorizontalKey"), 0f, Input.GetAxisRaw("VerticalKey")).normalized;
+                _moveSpeed = groundedMoveSpeed;
+            }
+            else
+            {
+                _moveSpeed = jumpMoveSpeed;
+            }
 
-        // Play sound if current player and is walking
-        if (isGrounded && targetVector.magnitude > 0)
-        {
-            playWalkSound = true;
-        } else
-        {
-            playWalkSound = false;
-        }
 
-        var movementVector = MoveTowardTarget(targetVector);
+            var targetVector = new Vector3(Input.GetAxisRaw("HorizontalKey"), 0f, Input.GetAxisRaw("VerticalKey")).normalized;
 
-        RotateTowardMovementVector(movementVector);
+            // Play sound if current player and is walking
+            if (isGrounded && targetVector.magnitude > 0)
+            {
+                playWalkSound = true;
+            }
+            else
+            {
+                playWalkSound = false;
+            }
 
-        if (isGrounded)
-        {
-            anim.SetBool("jumped", false);
-            _jumpedAnimPlayed = false;
-        }
-        if (Input.GetButtonDown("Jump") )
-        {
+            var movementVector = MoveTowardTarget(targetVector);
+
+            RotateTowardMovementVector(movementVector);
+
             if (isGrounded)
             {
-                // Velocity needed to jump some height h: v = sqrt(h * -2 * gravity)
-                velocity.y = Mathf.Sqrt(jumpHeight * -2f * gravity);
-                playJumpSound = true;
-                anim.SetBool("jumped", true);
-                if (!_jumpedAnimPlayed)
+                anim.SetBool("jumped", false);
+                _jumpedAnimPlayed = false;
+            }
+            if (Input.GetButtonDown("Jump"))
+            {
+                if (isGrounded)
                 {
-                    anim.Play("Jump");
-                    _jumpedAnimPlayed = true;
+                    // Velocity needed to jump some height h: v = sqrt(h * -2 * gravity)
+                    velocity.y = Mathf.Sqrt(jumpHeight * -2f * gravity);
+                    playJumpSound = true;
+                    anim.SetBool("jumped", true);
+                    if (!_jumpedAnimPlayed)
+                    {
+                        anim.Play("Jump");
+                        _jumpedAnimPlayed = true;
+                    }
+
+
                 }
-                
+            }
 
-            } 
+
+
+
+            // Apply Gravity (gravity * t^2 = velocity)
+            velocity.y += gravity * Time.deltaTime;
+            controller.Move(velocity * Time.deltaTime);
         }
-
-        
-
-        
-        // Apply Gravity (gravity * t^2 = velocity)
-        velocity.y += gravity * Time.deltaTime;
-        controller.Move(velocity * Time.deltaTime);
-
     }
 
 

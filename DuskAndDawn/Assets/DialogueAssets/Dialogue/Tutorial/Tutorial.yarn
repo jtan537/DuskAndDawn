@@ -144,26 +144,6 @@ position: 255,-58
     DAWN: This appears to be a switch, but it doesn't appear to do anything on MY SIDE.
 <<endif>>
 ===
-title: Dusk.Elder.Gem
-tags: 
-colorID: 0
-position: 1092,199
----
-<<SetSpeaker Dusk sad>>
-Dusk: Finally got the gem...
-<<SetSpeaker Frog happy>>
-Frog: Well? Like I said Dusk, you need to work with others sometimes.
-//Frog: If a path seems unpassable TRY SWITCHING TO DAWN. Maybe you need her to help you. 
-//<<SetSpeaker Frog>>
-//Frog: So...will you just do me one last favour? Be kind to her and help her, okay? 
-//<<SetSpeaker Dusk>>
-//Dusk: ...Alright. 
-<<SetSpeaker Frog happy>>
-Frog: Here's a journal before you leave. Press (T) to open it. It'll keep a record on how many gems you have. 
-Frog: Last thing, if you ever forget the controls press (X) to open the controls menu.
-Frog: Good luck on your journey, Dusk.
-<<set $done_tutorial to true>>
-===
 title: Dusk.Elder.Elixir
 tags: 
 colorID: 0
@@ -227,4 +207,24 @@ position: 513,-392
 ---
 <<SetSpeaker Dawn>>
 Dawn: Guess I'll ignore it for now.
+===
+title: Dusk.Elder.Gem
+tags: 
+colorID: 0
+position: 1108,212
+---
+<<SetSpeaker Dusk sad>>
+Dusk: Finally got the gem...
+<<SetSpeaker Frog happy>>
+Frog: Well? Like I said Dusk, you need to work with others sometimes.
+//Frog: If a path seems unpassable TRY SWITCHING TO DAWN. Maybe you need her to help you. 
+//<<SetSpeaker Frog>>
+//Frog: So...will you just do me one last favour? Be kind to her and help her, okay? 
+//<<SetSpeaker Dusk>>
+//Dusk: ...Alright. 
+<<SetSpeaker Frog happy>>
+//Frog: Here's a journal before you leave. Press (T) to open it. It'll keep a record on how many gems you have. 
+//Frog: Last thing, if you ever forget the controls press (X) to open the controls menu.
+Frog: Good luck on your journey, Dusk.
+<<set $done_tutorial to true>>
 ===
