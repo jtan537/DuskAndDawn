@@ -8,6 +8,7 @@ public class Teleport : MonoBehaviour
     // public float a;
     // public Transform target;
     private bool canTeleport = false;
+    public bool unlockedLadder = true;
     private GameObject player;
     GameObject InteractTriggerUI;
     GameObject textObj;
@@ -40,8 +41,8 @@ public class Teleport : MonoBehaviour
     void Update()
     {
         _curPlayer = _metadata.getCurPlayer();
-        if (canTeleport){
-            if (Input.GetKeyDown(KeyCode.F)){
+        if (canTeleport && unlockedLadder){
+            if (Input.GetKeyDown(KeyCode.F) && !_metadata.dawnInDialog && !_metadata.duskInDialog && !SwitchCharacter.isTransitioning){
                 player.GetComponent<CharacterController>().enabled = false;
                 player.transform.position = gameObject.transform.GetChild(1).gameObject.transform.position;
                 player.GetComponent<CharacterController>().enabled = true;
@@ -52,32 +53,54 @@ public class Teleport : MonoBehaviour
             }
         }
 
-
+        if (!unlockedLadder)
+        {
+            if (gameObject.GetComponent<NPC>() != null)
+            {
+                gameObject.GetComponent<NPC>().enabled = true;
+            }
+        } else
+        {
+            if (gameObject.GetComponent<NPC>() != null)
+            {
+                gameObject.GetComponent<NPC>().deactivateNPC();
+                Destroy(gameObject.GetComponent<NPC>());
+            }
+        }
     }
 
     private void OnTriggerStay(Collider other)
     {
-        if (_curPlayer.name == other.gameObject.name)
+        if (unlockedLadder)
         {
-            print("can teleport");
-            canTeleport = true;
-            InteractTriggerUI.SetActive(true);
-            textObj.GetComponent<TextMeshProUGUI>().SetText("Use Ladder");
-        } else
+            if (_curPlayer.name == other.gameObject.name && !_metadata.dawnInDialog && !_metadata.duskInDialog && !SwitchCharacter.isTransitioning)
+            {
+                print("can teleport");
+                canTeleport = true;
+                InteractTriggerUI.SetActive(true);
+                textObj.GetComponent<TextMeshProUGUI>().SetText("Use Ladder");
+            }
+            else
+            {
+                print("can not teleport");
+                canTeleport = false;
+                InteractTriggerUI.SetActive(false);
+                textObj.GetComponent<TextMeshProUGUI>().SetText("");
+            }
+        }
+        
+    }
+
+    private void OnTriggerExit(Collider other) 
+    {
+        if (unlockedLadder)
         {
             print("can not teleport");
             canTeleport = false;
             InteractTriggerUI.SetActive(false);
             textObj.GetComponent<TextMeshProUGUI>().SetText("");
         }
-    }
-
-    private void OnTriggerExit(Collider other) 
-    {
-        print("can not teleport");
-        canTeleport = false;
-        InteractTriggerUI.SetActive(false);
-        textObj.GetComponent<TextMeshProUGUI>().SetText("");
+        
     }
 
 

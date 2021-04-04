@@ -7,9 +7,14 @@ public class Gem : InventoryItemBase
     [SerializeField]
     GameObject _shadow;
 
-    EnterTower enterTower;
+    Metadata metadata;
 
     public bool pickedUp = false;
+
+    private void Start()
+    {
+        metadata = GameObject.Find("Metadata").GetComponent<Metadata>();
+    }
     public override void OnPickup(Collider collider)
     {
         collider.enabled = false;
@@ -23,10 +28,10 @@ public class Gem : InventoryItemBase
         GetComponent<AudioSource>().Play();
         if (gameObject.tag == "Dawn")
         {
-            enterTower.dawnGemsPickedUp += 1;
+            metadata.dawnGemsPickedUp += 1;
         } else if (gameObject.tag == "Dusk")
         {
-            enterTower.duskGemsPickedUp += 1;
+            metadata.duskGemsPickedUp += 1;
         } else 
         {
             Debug.LogError("Gem must be tagged Dawn or Dusk");

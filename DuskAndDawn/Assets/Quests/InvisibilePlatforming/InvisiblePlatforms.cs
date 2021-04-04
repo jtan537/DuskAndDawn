@@ -21,7 +21,7 @@ public class InvisiblePlatforms : MonoBehaviour
     {
         _curPlayer = _metadata.getCurPlayer();
         enteredShowPlatformZone = gameObject.GetComponent<EnableDuskPlatforms>().enteredShowPlatformZone;
-        if (!enteredShowPlatformZone && gameObject.tag == _curPlayer.name)
+        if (!enteredShowPlatformZone && GameObject.Find("Lighting").transform.Find("Dusk Lighting").gameObject.activeSelf)
         {
             foreach (GameObject platform in _platforms)
             {

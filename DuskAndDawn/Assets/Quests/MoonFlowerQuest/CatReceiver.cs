@@ -36,7 +36,7 @@ public class CatReceiver : MonoBehaviour
         
         IInventoryItem item = e.Item;
 
-        if (NPC.ActiveNPC.name == "Cat" && item.Name == "MoonFlower")
+        if (NPC.ActiveNPC != null && NPC.ActiveNPC.name == "Cat" && item.Name == "MoonFlower")
         {
             Debug.Log("Cat quest");
             item.OnUse();

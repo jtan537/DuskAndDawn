@@ -8,6 +8,7 @@ using UnityEngine.SceneManagement;
 
 public class EnterTower : MonoBehaviour
 {
+    Metadata metadata;
 
     public int dawnGemsPickedUp = 0, duskGemsPickedUp = 0;
     public int dawnRequiredGems = 3, duskRequiredGems = 3;
@@ -22,6 +23,9 @@ public class EnterTower : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        metadata = GameObject.Find("Metadata").GetComponent<Metadata>();
+        
+
         _varStorage = GameObject.FindObjectOfType<VariableStorageBehaviour>().GetComponent<VariableStorageBehaviour>();
         foreach (Transform child in transform)
         {
@@ -44,6 +48,8 @@ public class EnterTower : MonoBehaviour
 
     void Update()
     {
+        dawnGemsPickedUp = metadata.dawnGemsPickedUp;
+        duskGemsPickedUp = metadata.duskGemsPickedUp;
         if (_varStorage.GetValue("$entered_tower").AsBool == true)
         {
             SceneManager.LoadScene(sceneName: "IceSlidingPuzzle");

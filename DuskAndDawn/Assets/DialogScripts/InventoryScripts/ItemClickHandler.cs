@@ -7,7 +7,7 @@ using TMPro;
 public class ItemClickHandler : MonoBehaviour
 {
     public Inventory inventory;
-    public bool active = false;
+    public bool active = true;
 
     public Transform ItemDetails;
 

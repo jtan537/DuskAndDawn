@@ -25,7 +25,7 @@ public class SwitchCharacter : MonoBehaviour
     private NPC[] _allNPCs;
     private List<NPC> _dawnNPCs = new List<NPC>(), _duskNPCs = new List<NPC>();
 
-    private bool isTransitioning = false;
+    public static bool isTransitioning = false;
     public static bool switchedToDawn = false;
 
 
@@ -223,12 +223,16 @@ public class SwitchCharacter : MonoBehaviour
     {
         foreach (NPC npc in npcList)
         {
-            npc.enabled = isEnabled;
-            if (isEnabled == false)
+            if (npc != null)
             {
-                // Disable any text if on
-                npc.deactivateNPC();
+                npc.enabled = isEnabled;
+                if (isEnabled == false)
+                {
+                    // Disable any text if on
+                    npc.deactivateNPC();
+                }
             }
+            
         }
     }
 

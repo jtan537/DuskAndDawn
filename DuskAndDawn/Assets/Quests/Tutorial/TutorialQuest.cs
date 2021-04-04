@@ -23,7 +23,7 @@ public class TutorialQuest : MonoBehaviour
 
     public GameObject DawnItemDetails;
     public GameObject DuskItemDetails;
-
+    public ItemClickHandler[] handlers;
     private void Start()
     {
         gem.SetActive(false);
@@ -50,6 +50,7 @@ public class TutorialQuest : MonoBehaviour
                 _npc.activatedQuest = true;
                 IInventoryItem item = gameObject.GetComponent<IInventoryItem>();
                 inventory.AddItem(item);
+
                 GameObject.Find("Dawn").GetComponent<NPCInteract>().Interact(gemDialogueNode);
                 _triggered_next_dialogue = true;
             }

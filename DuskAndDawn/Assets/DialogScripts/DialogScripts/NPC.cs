@@ -4,6 +4,7 @@ using UnityEngine;
 using TMPro;
 using Yarn.Unity;
 using System;
+using Cinemachine;
 
 public class NPC : MonoBehaviour
 {
@@ -51,7 +52,7 @@ public class NPC : MonoBehaviour
             SetActiveNPC(true);
             textObj.GetComponent<TextMeshProUGUI>().SetText(text);
             InteractTriggerUI.SetActive(true);
-            Debug.Log("Before initial");
+            /*Debug.Log("Before initial");
             if (activatedQuest)
             {
                 Debug.Log("Active");
@@ -59,7 +60,7 @@ public class NPC : MonoBehaviour
                 {
                     handler.active = true;
                 }
-            }
+            }*/
         }
     }
 
@@ -71,13 +72,13 @@ public class NPC : MonoBehaviour
             SetActiveNPC(true);
             /*            textObj.GetComponent<TextMeshProUGUI>().SetText(text);
                         InteractTriggerUI.SetActive(true);*/
-            if (activatedQuest)
+/*            if (activatedQuest)
             {
                 foreach (ItemClickHandler handler in handlers)
                 {
                     handler.active = true;
                 }
-            }
+            }*/
         } 
     }
 
@@ -89,13 +90,13 @@ public class NPC : MonoBehaviour
             textObj.GetComponent<TextMeshProUGUI>().SetText("");
             InteractTriggerUI.SetActive(false);
 
-            if (activatedQuest)
+/*            if (activatedQuest)
             {
                 foreach (ItemClickHandler handler in handlers)
                 {
                     handler.active = false;
                 }
-            }
+            }*/
         }
     }
 

@@ -1,7 +1,7 @@
 title: Dawn.House.Start
 tags: 
 colorID: 0
-position: 434,274
+position: 434,273
 ---
 <<SetSpeaker Dawn>>
 Seems like no one's home...
@@ -17,7 +17,7 @@ Maybe I can jump on these boxes...
 title: Dusk.Graveyard.Start
 tags: 
 colorID: 0
-position: 535,598
+position: 534,598
 ---
 <<SetSpeaker Dusk>>
 There's a gravestone here.
@@ -69,6 +69,26 @@ tags:
 colorID: 0
 position: -130,73
 ---
-Dawn: Let's go inside Dusk.
-Dusk: Yea, let's do this.
+<<SetSpeaker Dawn>>
+DAWN: Let's go inside Dusk.
+<<SetSpeaker Dusk>>
+DUSK: Yea, let's do this.
+===
+title: Level2Ladder
+tags: 
+colorID: 0
+position: 242,15
+---
+<<SetSpeaker Dusk>>
+DUSK: We shouldn't try to ascend the tower yet, I think we each need to have 2 gems first.
+===
+title: UnlockLevel2Ladder
+tags: 
+colorID: 0
+position: 495,10
+---
+<<SetSpeaker Dawn>>
+DAWN: We both have 2 gems now!
+<<SetSpeaker Dusk>>
+DUSK: I think that's all we can get here for now, let's try ascending the tower.
 ===

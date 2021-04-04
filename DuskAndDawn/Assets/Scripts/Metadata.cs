@@ -21,6 +21,8 @@ public class Metadata : MonoBehaviour
     public CinemachineVirtualCamera dawnCurrentCamera;
     public GameObject curPlayer;
 
+    public int dawnGemsPickedUp = 0, duskGemsPickedUp = 0;
+
     int countIceHack = 0;
 
     private void Update()

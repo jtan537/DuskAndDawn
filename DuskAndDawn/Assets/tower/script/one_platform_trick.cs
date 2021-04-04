@@ -17,10 +17,10 @@ public class one_platform_trick : MonoBehaviour
     }
     void Update() 
     {
-        box_status = cube.activeSelf;
         if (isAlwaysOn && box_status == true)
         {
             GetComponent<Collider>().enabled = false;
+            GetComponent<MeshRenderer>().enabled = false;
         }
         
     }
@@ -41,6 +41,10 @@ public class one_platform_trick : MonoBehaviour
                     box_status = false;
                 }
                 trigger = true;
+            }
+            if (gameObject.GetComponent<AudioSource>() != null)
+            {
+                gameObject.GetComponent<AudioSource>().PlayOneShot(gameObject.GetComponent<AudioSource>().clip);
             }
         }
     }

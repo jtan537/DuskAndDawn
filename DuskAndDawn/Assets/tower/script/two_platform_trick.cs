@@ -22,8 +22,6 @@ public class two_platform_trick : MonoBehaviour
     }
     void Update()
     {
-        box_1_status = cube_1.activeSelf;
-        box_2_status = cube_2.activeSelf;
 
         
     }
@@ -55,6 +53,10 @@ public class two_platform_trick : MonoBehaviour
                     box_2_status = false;
                 }
                 trigger_1 = true;
+            }
+            if (gameObject.GetComponent<AudioSource>() != null)
+            {
+                gameObject.GetComponent<AudioSource>().PlayOneShot(gameObject.GetComponent<AudioSource>().clip);
             }
         }
     }

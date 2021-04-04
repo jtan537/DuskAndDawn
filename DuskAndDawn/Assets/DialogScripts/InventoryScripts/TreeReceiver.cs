@@ -40,7 +40,7 @@ public class TreeReceiver : MonoBehaviour
         
     	IInventoryItem item = e.Item;
 
-        if (NPC.ActiveNPC.name == "Tree" && item.Name == "Sun")
+        if (NPC.ActiveNPC != null && NPC.ActiveNPC.name == "Tree" && item.Name == "Sun")
         {
             Debug.Log("Tree Quest");
             item.OnUse();
