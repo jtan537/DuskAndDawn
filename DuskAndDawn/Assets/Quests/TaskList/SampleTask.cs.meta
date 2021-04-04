@@ -3,13 +3,7 @@ guid: b729082eebd244db9bf99cf56052b95b
 MonoImporter:
   externalObjects: {}
   serializedVersion: 2
-  defaultReferences:
-  - taskImage: {instanceID: 0}
-  - taskName: {instanceID: 0}
-  - reward: {instanceID: 0}
-  - assignee: {instanceID: 0}
-  - DawnGem: {fileID: 21300000, guid: 9050c6f8b7f744a58b4c54d04af9100c, type: 3}
-  - DuskGem: {fileID: 21300000, guid: fcb77c0cd3c0644b69f84e7fb4a0ab60, type: 3}
+  defaultReferences: []
   executionOrder: 0
   icon: {instanceID: 0}
   userData: 

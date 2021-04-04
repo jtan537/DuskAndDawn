@@ -5,7 +5,6 @@ using UnityEngine;
 public class InventoryCollider : MonoBehaviour {
 
     public Inventory inventory;
-    public TaskList taskList;
 
     // IInventoryItem interactableItem;
 
