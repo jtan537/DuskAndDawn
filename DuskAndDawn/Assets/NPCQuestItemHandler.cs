@@ -5,6 +5,8 @@ using UnityEngine;
 public class NPCQuestItemHandler : MonoBehaviour
 {
     // Start is called before the first frame update
+    public static NPCQuestItemHandler ActiveNPCQuestItemHandler { get; private set; }
+
     bool activatedQuest = false;
     ItemClickHandler[] handlers;
     void Start()
@@ -21,38 +23,57 @@ public class NPCQuestItemHandler : MonoBehaviour
     }
     private void OnTriggerEnter(Collider collision)
     {
-        if (collision.name == gameObject.tag && activatedQuest)
+        if (collision.name == gameObject.tag)
         {
-            Debug.Log("Active");
-            foreach (ItemClickHandler handler in handlers)
-            {
-                handler.active = true;
+            SetActiveNPCQuestItemHandler(true);
+            if (activatedQuest){
+                Debug.Log("Active");
+                foreach (ItemClickHandler handler in handlers)
+                {
+                    handler.active = true;
+                }
             }
+            
         }
     }
 
     private void OnTriggerStay(Collider collision)
     {
-        if (collision.name == gameObject.tag && activatedQuest)
+        if (collision.name == gameObject.tag)
         {
-            Debug.Log("Active");
-            foreach (ItemClickHandler handler in handlers)
+            SetActiveNPCQuestItemHandler(true);
+            if (activatedQuest)
             {
-                handler.active = true;
+                Debug.Log("Active");
+                foreach (ItemClickHandler handler in handlers)
+                {
+                    handler.active = true;
+                }
             }
+
         }
     }
 
     private void OnTriggerExit(Collider collision)
     {
-        if (collision.name == gameObject.tag && activatedQuest)
+        if (collision.name == gameObject.tag)
         {
-            foreach (ItemClickHandler handler in handlers)
+            SetActiveNPCQuestItemHandler(false);
+            if (activatedQuest)
             {
-                handler.active = false;
+                Debug.Log("Active");
+                foreach (ItemClickHandler handler in handlers)
+                {
+                    handler.active = false;
+                }
             }
+
         }
     }
 
+    public void SetActiveNPCQuestItemHandler(bool set)
+    {
+        ActiveNPCQuestItemHandler = set ? this : null;
+    }
 
 }

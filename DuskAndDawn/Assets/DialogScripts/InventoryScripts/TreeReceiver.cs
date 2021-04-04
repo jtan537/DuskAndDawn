@@ -40,7 +40,7 @@ public class TreeReceiver : MonoBehaviour
         
     	IInventoryItem item = e.Item;
 
-        if (NPC.ActiveNPC != null && NPC.ActiveNPC.name == "Tree" && item.Name == "Sun")
+        if (NPCQuestItemHandler.ActiveNPCQuestItemHandler != null && NPCQuestItemHandler.ActiveNPCQuestItemHandler.name == "DawnTreeQuestItemHandler" && item.Name == "Sun")
         {
             Debug.Log("Tree Quest");
             item.OnUse();
@@ -57,7 +57,7 @@ public class TreeReceiver : MonoBehaviour
                 taskList.UpdateTask(task, taskList);
                 taskList.RefreshDisplay();
 
-                GameObject.Find("Dawn").GetComponent<NPCInteract>().Interact();
+                GameObject.Find("Dawn").GetComponent<NPCInteract>().Interact("Tree.Start");
                 quest.numRequiredSuns = -1;
             }
         }   

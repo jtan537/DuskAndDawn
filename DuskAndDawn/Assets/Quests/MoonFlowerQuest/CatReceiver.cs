@@ -36,7 +36,7 @@ public class CatReceiver : MonoBehaviour
         
         IInventoryItem item = e.Item;
 
-        if (NPC.ActiveNPC != null && NPC.ActiveNPC.name == "Cat" && item.Name == "MoonFlower")
+        if (NPCQuestItemHandler.ActiveNPCQuestItemHandler != null && NPCQuestItemHandler.ActiveNPCQuestItemHandler.name == "DuskCatQuestItemHandler" && item.Name == "MoonFlower")
         {
             Debug.Log("Cat quest");
             item.OnUse();
@@ -50,7 +50,7 @@ public class CatReceiver : MonoBehaviour
                 DuskItemDetails.SetActive(false);
                 taskList.UpdateTask(task, taskList);
                 taskList.RefreshDisplay();
-                GameObject.Find("Dusk").GetComponent<NPCInteract>().Interact();
+                GameObject.Find("Dusk").GetComponent<NPCInteract>().Interact("Dusk.Cat.Start");
                 quest.numRequiredFlowers = -1;
             }
         }
