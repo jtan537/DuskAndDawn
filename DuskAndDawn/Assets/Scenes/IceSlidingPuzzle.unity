@@ -1441,7 +1441,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   soundEffects:
-  - {fileID: 8300000, guid: d65ac197297d3c246a065bd8020ad17a, type: 3}
+  - {fileID: 8300000, guid: b6e526ded2eb0744e8bb6ab664e9e8f4, type: 3}
   backgroundMusic:
   - {fileID: 8300000, guid: 8daeca563f0b3154c866c734850b3dd5, type: 3}
   - {fileID: 8300000, guid: 64efc3acb29600340ab0daf06130c11f, type: 3}
@@ -5275,7 +5275,7 @@ VideoPlayer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1674523920}
   m_Enabled: 1
-  m_VideoClip: {fileID: 32900000, guid: be81adb60887bc24593b0d0ba59a7eea, type: 3}
+  m_VideoClip: {fileID: 32900000, guid: 0f97699a168b6f64f8eb88e50919cfd8, type: 3}
   m_TargetCameraAlpha: 1
   m_TargetCamera3DLayout: 0
   m_TargetCamera: {fileID: 0}

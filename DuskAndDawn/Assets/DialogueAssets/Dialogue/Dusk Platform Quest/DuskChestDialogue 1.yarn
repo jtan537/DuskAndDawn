@@ -1,28 +1,24 @@
 title: Dusk.Chest.Start
 tags: 
 colorID: 0
-position: 931,-272
+position: 930,-273
 ---
 <<if visited("Dusk.chest.complete") is true>>
 [[Dusk.chest.final.dialogue]]
 <<endif>>
 <<SetSpeaker Dusk frustrated>>
-Dusk: Finally, I'm here.
+Dusk: Woo, finally made it.
 <<SetSpeaker Dusk>>
 Dusk: There's a gem inside. 
-Dusk: (Can't believe I had to BEG Dawn for help)
-<<SetSpeaker Dusk sad>>
-Dusk: (Hm?)
-Dusk: (The flowers here are quite pretty...)
 [[Dusk.chest.complete]]
 ===
 title: Dusk.chest.final.dialogue
 tags: 
 colorID: 0
-position: 629,-537
+position: 628,-538
 ---
-I see you have returned to the chest. Are you that greedy for more gems? It's empty...
-Because you took the gem, silly.
+<<SetSpeaker Dusk>>
+Dusk: It's empty...
 ===
 title: Dusk.chest.complete
 tags: 

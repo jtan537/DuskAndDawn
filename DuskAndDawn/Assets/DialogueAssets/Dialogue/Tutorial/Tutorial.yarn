@@ -1,7 +1,7 @@
 title: Dawn.Elder.Start
 tags: 
 colorID: 0
-position: 630,-61
+position: 628,-63
 ---
 <<if visited("Dusk.Elder.Start") is true>>
     <<SetSpeaker Rat happy>>
@@ -33,36 +33,36 @@ position: 630,-61
 <<SetSpeaker Rat happy>>
 MOUSE ELDERLY: Dawn, you're the Chosen this year. You must journey to the top of the tower.
 <<SetSpeaker Dawn happy>>
-DAWN: I'm honoured to have this experience. I've dreamt of being a Chosen ever since I've heard stories of how beautiful twilight is.
-DAWN: I've read the books you've written about twilight, Elderly. 
+//DAWN: I'm honoured to have this experience. I've dreamt of being a Chosen ever since I've heard stories of how beautiful twilight is.
+//DAWN: I've read the books you've written about twilight, Elderly. 
 DAWN:It feels like a dream...witnessing something so unreal. I can't wait!
 <<SetSpeaker Rat happy>>
 MOUSE: Haha, as eager as ever, Dawn. However, pace yourself, for haste leads to poor decisions. 
-MOUSE: Slow and steady, young Dawn. Remember, this is a moment that you must walk slowly and focus on your surroundings other than yourself.
+// MOUSE: Slow and steady, young Dawn. Remember, this is a moment that you must walk slowly and focus on your surroundings other than yourself.
 <<SetSpeaker Dawn sad>>
 DAWN: I see...I guess I was too eager. I shall follow your advice. 
 <<SetSpeaker Rat>>
-MOUSE: Listen well, you need three sun gems. I have the first 1 for you. Go and pick it up.
+MOUSE: You need three sun gems. I have the first 1 for you. Go and pick it up.
 <<set $give_dawn_tutorial_gem to true>>
 <<stop>>
 ===
 title: Dawn.Elder.Gem
 tags: 
 colorID: 0
-position: 856,-58
+position: 854,-59
 ---
 <<SetSpeaker Rat happy>>
 Mouse: You have your first gem out of three!
-Mouse: Don’t forget on this tower, Dawn can only interact with 2 sides and Dusk with the other 2 sides.
-<<SetSpeaker Dawn>>
-Dawn: Dusk? 
-<<SetSpeaker Rat sigh>>
-Mouse: Yes. There are two Chosens. Did you forget? 
-<<SetSpeaker Dawn playful>>
-Dawn: ...Maybe...heh..
-<<SetSpeaker Rat sigh>>
-Mouse: Oh, Dawn...Forgetful as ever, I see. Dusk is the other chosen. She'll be your partner throughout the journey. 
-Mouse: You won't be able to see her but you need to work together. How? Well...
+//Mouse: Don’t forget on this tower, Dawn can only interact with 2 sides and Dusk with the other 2 sides.
+//<<SetSpeaker Dawn>>
+//Dawn: Dusk? 
+//<<SetSpeaker Rat sigh>>
+//Mouse: Yes. There are two Chosens. Did you forget? 
+//<<SetSpeaker Dawn playful>>
+//Dawn: ...Maybe...heh..
+//<<SetSpeaker Rat>>
+//Mouse: Oh, Dawn...Forgetful as ever, I see. Dusk is the other chosen. She'll be your partner throughout the journey. 
+//Mouse: You won't be able to see her but you need to work together. How? Well...
 <<SetSpeaker Rat>>
 Mouse: Drink this. Here is the Elixir of Twilight.
 Mouse: Press ‘B’ to open your inventory. Click on the item using your mouse to drink it.
@@ -71,7 +71,7 @@ Mouse: Press ‘B’ to open your inventory. Click on the item using your mouse 
 title: Dawn.Elder.Elixir
 tags: 
 colorID: 0
-position: 1094,-57
+position: 1092,-60
 ---
 <<SetSpeaker Rat>>
 Mouse: You can now communicate with Dusk. Press ‘R’ to switch to Dusk.
@@ -79,7 +79,7 @@ Mouse: You can now communicate with Dusk. Press ‘R’ to switch to Dusk.
 title: Dusk.Elder.Start
 tags: 
 colorID: 0
-position: 627,211
+position: 625,210
 ---
 <<if visited("Dusk.Elder.Gem") is true>>
 <<SetSpeaker Frog happy>>
@@ -103,15 +103,15 @@ position: 627,211
 <<SetSpeaker Frog>>
 Elder Frog: You are the Chosen this year --
 <<SetSpeaker Dusk frustrated>>
-Dusk: Yup. I've got it. Just gimme the Gem and Elixir and let’s get this over with. I'm...not really in the mood to really interact with others right now. 
+Dusk: Yup. I've got it. Just gimme the Gem and Elixir and let’s get this over with. 
 <<SetSpeaker Frog sigh>>
 Frog: ... Very well, here's the elixir. Try to cooperate with Dawn, you cannot do everything alone, Dusk. 
-<<SetSpeaker Frog>>
-Frog:You know that best. I know you do.
-<<SetSpeaker Dusk>>
-Dusk: I'm not here for that right now, Elder. You know that best.
-<<SetSpeaker Frog sigh>>
-Frog: *Sigh*
+//<<SetSpeaker Frog>>
+//Frog:You know that best. I know you do.
+//<<SetSpeaker Dusk>>
+//Dusk: I'm not here for that right now, Elder. You know that best.
+//<<SetSpeaker Frog sigh>>
+//Frog: *Sigh*
 <<SetSpeaker Frog>>
 Frog: Don't forget you need to press 'B' to open up your inventory then click on the Elixir with your mouse button.
 
@@ -122,7 +122,7 @@ Frog: Don't forget you need to press 'B' to open up your inventory then click on
 title: Dawn.Tutorial.Switch
 tags: 
 colorID: 0
-position: 256,-57
+position: 255,-58
 ---
 <<if visited("Dusk.Elder.Gem") is true>>
 <<SetSpeaker Dawn>>
@@ -147,20 +147,21 @@ position: 256,-57
 title: Dusk.Elder.Gem
 tags: 
 colorID: 0
-position: 1095,202
+position: 1092,199
 ---
 <<SetSpeaker Dusk sad>>
 Dusk: Finally got the gem...
 <<SetSpeaker Frog happy>>
 Frog: Well? Like I said Dusk, you need to work with others sometimes.
-Frog: If a path seems unpassable TRY SWITCHING TO DAWN. Maybe you need her to help you. 
-<<SetSpeaker Frog>>
-Frog: So...will you just do me one last favour? Be kind to her and help her, okay? 
-<<SetSpeaker Dusk>>
-Dusk: ...Alright. 
+//Frog: If a path seems unpassable TRY SWITCHING TO DAWN. Maybe you need her to help you. 
+//<<SetSpeaker Frog>>
+//Frog: So...will you just do me one last favour? Be kind to her and help her, okay? 
+//<<SetSpeaker Dusk>>
+//Dusk: ...Alright. 
 <<SetSpeaker Frog happy>>
-Frog: Good luck on your Journey, Dusk.
-Frog: I hope you learn to leave your past...Open your heart up, Dusk, and rely on others.
+Frog: Here's a journal before you leave. Press (T) to open it. It'll keep a record on how many gems you have. 
+Frog: Last thing, if you ever forget the controls press (X) to open the controls menu.
+Frog: Good luck on your journey, Dusk.
 <<set $done_tutorial to true>>
 ===
 title: Dusk.Elder.Elixir
@@ -183,7 +184,7 @@ Frog: Haha, of course I am! 'Teamwork makes the dream work', as they say.
 title: Tutorial.Greeting
 tags: 
 colorID: 0
-position: 252,189
+position: 251,188
 ---
 <<SetSpeaker Dusk>>
 Dusk: Hello? 
@@ -191,19 +192,18 @@ Dusk: Hello?
 Dawn: WHAAAT! Is that you, Dusk?!
 <<SetSpeaker Dusk frustrated>>
 Dusk: (...)  So, I guess your Dawn.
-<<SetSpeaker Dawn>>
-Dawn: Whoa ! Yeah, it's nice to meet you!
+//<<SetSpeaker Dawn>>
+//Dawn: Whoa ! Yeah, it's nice to meet you!
 <<SetSpeaker Dusk>>
-Dusk: Yeah, nice to meet you too.
-<<SetSpeaker Dawn happy>>
-Dawn: I'm so excited to be working with you ! I hope we get along. I'm SO EXCITED TO GO ON THIS JOURNEY, I'VE ONLY HEARD STORIES OF HOW BEAUTIFUL TWILIGHT IS!!!!
-Dawn: And I grew up reading all the books in the library about the phenomenon! *continues to ramble*
+Dusk: ...
+//<<SetSpeaker Dawn happy>>
+//Dawn: I'm so excited to be working with you ! I hope we get along. I'm SO EXCITED TO GO ON THIS JOURNEY, -- *continues to ramble*
 <<SetSpeaker Dusk frustrated>>
-Dusk: (She talks so much and so fast, I can't keep up.) Same. Uh, so listen this Old Frog wants me to ask you for help.
-<<SetSpeaker Dawn>>
-Dawn: Yeah, of course ! What can I do to help you though? We're on different sides of the tower.
+Dusk: Uh, so listen this Old Frog wants me to ask you for help.
+//<<SetSpeaker Dawn>>
+//Dawn: Yeah, of course ! What can I do to help you though? We're on different sides of the tower.
 <<SetSpeaker Dusk>>
-Dusk: Im not sure. The frog mentioned that there should be a SWITCH on your side of the tower though. Activating it should do something to help me.
+Dusk: He mentioned that there should be a SWITCH on your side of the tower though. Activating it should do something to help me.
 <<SetSpeaker Dawn>>
 Dawn: Alright. I'll look for the switch then. Give me a moment!
 
