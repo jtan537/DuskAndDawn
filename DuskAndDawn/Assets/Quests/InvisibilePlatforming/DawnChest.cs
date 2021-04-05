@@ -23,7 +23,7 @@ public class DawnChest : MonoBehaviour
         _recieveGem = _varStorage.GetValue("$dawn_received_chest_gem").AsBool;
         if (_recieveGem && !_done)
         {
-            GetComponent<AudioSource>().Play();
+           // GetComponent<AudioSource>().Play();
             _anim.SetBool("isOpen", true);
             GiveGem();
         }

@@ -51,7 +51,7 @@ public class Gem : InventoryItemBase
     {
         get
         {
-            return "A gem that is extremely valuable. Rumours have it that collecting four of them will unlock something special.";
+            return "A gem that is extremely valuable. Rumours have it that collecting three of them will unlock something special.";
         }
     }
 }

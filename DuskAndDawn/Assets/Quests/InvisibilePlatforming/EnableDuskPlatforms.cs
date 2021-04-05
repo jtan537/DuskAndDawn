@@ -10,7 +10,9 @@ public class EnableDuskPlatforms : MonoBehaviour
     {
         if (other.gameObject.name == "Dusk")
         {
+            
             enteredShowPlatformZone = true;
+
         }
         
     }

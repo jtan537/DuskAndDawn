@@ -13,13 +13,13 @@ position: 628,-63
 
 <<if visited("Dawn.Elder.Elixir") is true>>
     <<SetSpeaker Rat>>
-    MOUSE: You can now communicate with Dusk. Press ‘R’ to SWITCH to Dusk.
+    MOUSE: You can now communicate with Dusk. Press (R) to SWITCH to Dusk.
     <<stop>>
 <<endif>>
 
 <<if visited("Dawn.Elder.Gem") is true>>
     <<SetSpeaker Rat>>    
-    MOUSE: Press ‘B’ to OPEN your inventory. CLICK on the item using your mouse to drink it.
+    MOUSE: Press (B) to OPEN your inventory. CLICK on the item using your mouse to drink it.
     <<stop>>
 <<endif>>
 
@@ -42,7 +42,7 @@ MOUSE: Haha, as eager as ever, Dawn. However, pace yourself, for haste leads to 
 <<SetSpeaker Dawn sad>>
 DAWN: I see...I guess I was too eager. I shall follow your advice. 
 <<SetSpeaker Rat>>
-MOUSE: You need three sun gems. I have the first 1 for you. Go and pick it up.
+MOUSE: You need three gems. I have the first 1 for you. Go and pick it up.
 <<set $give_dawn_tutorial_gem to true>>
 <<stop>>
 ===
@@ -65,21 +65,21 @@ Mouse: You have your first gem out of three!
 //Mouse: You won't be able to see her but you need to work together. How? Well...
 <<SetSpeaker Rat>>
 Mouse: Drink this. Here is the Elixir of Twilight.
-Mouse: Press ‘B’ to open your inventory. Click on the item using your mouse to drink it.
+Mouse: Press (B) to open your inventory. Click on the item using your mouse to drink it.
 <<set $give_dawn_elixir to true>>
 ===
 title: Dawn.Elder.Elixir
 tags: 
 colorID: 0
-position: 1092,-60
+position: 1091,-60
 ---
 <<SetSpeaker Rat>>
-Mouse: You can now communicate with Dusk. Press ‘R’ to switch to Dusk.
+Mouse: You can now communicate with Dusk. Press (R) to switch to Dusk.
 ===
 title: Dusk.Elder.Start
 tags: 
 colorID: 0
-position: 625,210
+position: 624,209
 ---
 <<if visited("Dusk.Elder.Gem") is true>>
 <<SetSpeaker Frog happy>>
@@ -90,14 +90,14 @@ position: 625,210
 
 <<if visited("Dusk.Elder.Elixir") is true>>
 <<SetSpeaker Frog>>
-    Elder: You need PRESS 'R' to switch to Dawn to get this gem.
+    Elder: You need PRESS (R) to switch to Dawn to get this gem.
     Elder: Maybe there's a switch on Dawn's side you need to activate.
     <<stop>>
 <<endif>>
 
 <<if $give_dusk_elixir is true>>
 <<SetSpeaker Frog>>
-    Elder: Press 'B' to open your inventory and click on the Elixir with your mouse button to drink it.
+    Elder: Press (B) to open your inventory and click on the Elixir with your mouse button to drink it.
     <<stop>>
 <<endif>>
 <<SetSpeaker Frog>>
@@ -113,7 +113,7 @@ Frog: ... Very well, here's the elixir. Try to cooperate with Dawn, you cannot d
 //<<SetSpeaker Frog sigh>>
 //Frog: *Sigh*
 <<SetSpeaker Frog>>
-Frog: Don't forget you need to press 'B' to open up your inventory then click on the Elixir with your mouse button.
+Frog: Don't forget you need to press (B) to open up your inventory then click on the Elixir with your mouse button.
 
 <<set $give_dusk_elixir to true>>
 <<set $enable_dusk_tutorial_switch to true>>
@@ -122,7 +122,7 @@ Frog: Don't forget you need to press 'B' to open up your inventory then click on
 title: Dawn.Tutorial.Switch
 tags: 
 colorID: 0
-position: 255,-58
+position: 254,-59
 ---
 <<if visited("Dusk.Elder.Gem") is true>>
 <<SetSpeaker Dawn>>
@@ -155,7 +155,7 @@ Frog: You can now communicate with Dawn.
 Frog: and... HERE'S THE GEM! Try to get this by yourself!
 <<set $give_dusk_tutorial_gem to true>>
 <<SetSpeaker Frog smug>>
-Frog: You need to PRESS 'R' to switch to Dawn to get this gem, It's too high up for you to jump.
+Frog: You need to PRESS (R) to switch to Dawn to get this gem, It's too high up for you to jump.
 <<SetSpeaker Dusk frustrated>>
 Dusk: You're doing this on purpose, aren't you?
 <<SetSpeaker Frog happy>>
@@ -164,7 +164,7 @@ Frog: Haha, of course I am! 'Teamwork makes the dream work', as they say.
 title: Tutorial.Greeting
 tags: 
 colorID: 0
-position: 251,188
+position: 250,186
 ---
 <<SetSpeaker Dusk>>
 Dusk: Hello? 
@@ -183,7 +183,7 @@ Dusk: Uh, so listen this Old Frog wants me to ask you for help.
 //<<SetSpeaker Dawn>>
 //Dawn: Yeah, of course ! What can I do to help you though? We're on different sides of the tower.
 <<SetSpeaker Dusk>>
-Dusk: He mentioned that there should be a SWITCH on your side of the tower though. Activating it should do something to help me.
+Dusk: He mentioned that there should be a SWITCH on your side of the tower. Activating it should do something to help me.
 <<SetSpeaker Dawn>>
 Dawn: Alright. I'll look for the switch then. Give me a moment!
 
@@ -192,7 +192,7 @@ Dawn: Alright. I'll look for the switch then. Give me a moment!
 title: Dawn.Tutorial.Press
 tags: 
 colorID: 0
-position: -58,-381
+position: -59,-382
 ---
 <<SetSpeaker Dusk>>
 Dusk: Oh! A platform appeared on my side!

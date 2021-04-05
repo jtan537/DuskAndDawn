@@ -27,7 +27,7 @@ public class DuskChest : MonoBehaviour
         if (_recieveGem && !_done)
         {
 
-            GetComponent<AudioSource>().Play();
+           // GetComponent<AudioSource>().Play();
             _anim.SetBool("isOpen", true);
             GiveGem();
         }

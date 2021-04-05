@@ -8,7 +8,7 @@ ScriptedImporter:
   assetBundleName: 
   assetBundleVariant: 
   script: {fileID: 11500000, guid: 94073015eacc34c1d8fc6786e43d60ca, type: 3}
-  baseLanguageID: en-CA
+  baseLanguageID: 
   stringIDs:
   - Tutorial-Dawn.Elder.Start-0
   - Tutorial-Dawn.Elder.Start-1
@@ -39,29 +39,26 @@ ScriptedImporter:
   - Tutorial-Dawn.Tutorial.Switch-26
   - Tutorial-Dawn.Tutorial.Switch-27
   - Tutorial-Dawn.Tutorial.Switch-28
-  - Tutorial-Dusk.Elder.Gem-29
-  - Tutorial-Dusk.Elder.Gem-30
-  - Tutorial-Dusk.Elder.Gem-31
-  - Tutorial-Dusk.Elder.Gem-32
-  - Tutorial-Dusk.Elder.Gem-33
-  - Tutorial-Dusk.Elder.Elixir-34
-  - Tutorial-Dusk.Elder.Elixir-35
-  - Tutorial-Dusk.Elder.Elixir-36
-  - Tutorial-Dusk.Elder.Elixir-37
-  - Tutorial-Dusk.Elder.Elixir-38
+  - Tutorial-Dusk.Elder.Elixir-29
+  - Tutorial-Dusk.Elder.Elixir-30
+  - Tutorial-Dusk.Elder.Elixir-31
+  - Tutorial-Dusk.Elder.Elixir-32
+  - Tutorial-Dusk.Elder.Elixir-33
+  - Tutorial-Tutorial.Greeting-34
+  - Tutorial-Tutorial.Greeting-35
+  - Tutorial-Tutorial.Greeting-36
+  - Tutorial-Tutorial.Greeting-37
+  - Tutorial-Tutorial.Greeting-38
   - Tutorial-Tutorial.Greeting-39
   - Tutorial-Tutorial.Greeting-40
-  - Tutorial-Tutorial.Greeting-41
-  - Tutorial-Tutorial.Greeting-42
-  - Tutorial-Tutorial.Greeting-43
-  - Tutorial-Tutorial.Greeting-44
-  - Tutorial-Tutorial.Greeting-45
-  - Tutorial-Dawn.Tutorial.Press-46
-  - Tutorial-Dawn.Tutorial.Press-47
-  - Tutorial-Dawn.Tutorial.Ignore-48
+  - Tutorial-Dawn.Tutorial.Press-41
+  - Tutorial-Dawn.Tutorial.Press-42
+  - Tutorial-Dawn.Tutorial.Ignore-43
+  - Tutorial-Dusk.Elder.Gem-44
+  - Tutorial-Dusk.Elder.Gem-45
+  - Tutorial-Dusk.Elder.Gem-46
   compilationStatus: 1
   isSuccesfullyCompiled: 1
   compilationErrorMessage: 
-  baseLanguage: {fileID: 7128917941130120860, guid: c61a66f35e9043946a5214d67c1cf8f2,
-    type: 3}
+  baseLanguage: {instanceID: 0}
   localizations: []
