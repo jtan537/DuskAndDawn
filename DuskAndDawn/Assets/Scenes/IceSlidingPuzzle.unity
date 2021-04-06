@@ -392,7 +392,7 @@ Light:
   m_Shape: 0
   m_Color: {r: 0.8396226, g: 0.5427744, b: 0.07524917, a: 1}
   m_Intensity: 6
-  m_Range: 10.868271
+  m_Range: 1
   m_SpotAngle: 30
   m_InnerSpotAngle: 21.80208
   m_CookieSize: 10
@@ -22455,7 +22455,7 @@ Light:
   m_Shape: 0
   m_Color: {r: 0.8396226, g: 0.5427744, b: 0.07524917, a: 1}
   m_Intensity: 6
-  m_Range: 10.868271
+  m_Range: 1
   m_SpotAngle: 30
   m_InnerSpotAngle: 21.80208
   m_CookieSize: 10
@@ -22642,8 +22642,8 @@ Light:
   m_Type: 2
   m_Shape: 0
   m_Color: {r: 0.8396226, g: 0.5427744, b: 0.07524917, a: 1}
-  m_Intensity: 6
-  m_Range: 10.868271
+  m_Intensity: 1
+  m_Range: 1
   m_SpotAngle: 30
   m_InnerSpotAngle: 21.80208
   m_CookieSize: 10
@@ -24649,7 +24649,7 @@ Light:
   m_Shape: 0
   m_Color: {r: 0.8396226, g: 0.5427744, b: 0.07524917, a: 1}
   m_Intensity: 6
-  m_Range: 10.868271
+  m_Range: 1
   m_SpotAngle: 30
   m_InnerSpotAngle: 21.80208
   m_CookieSize: 10
@@ -25042,8 +25042,8 @@ Light:
   m_Type: 2
   m_Shape: 0
   m_Color: {r: 0.8396226, g: 0.5427744, b: 0.07524917, a: 1}
-  m_Intensity: 6
-  m_Range: 10.868271
+  m_Intensity: 1
+  m_Range: 1
   m_SpotAngle: 30
   m_InnerSpotAngle: 21.80208
   m_CookieSize: 10
@@ -25932,7 +25932,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh18638
+  m_Name: pb_Mesh19174
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2
@@ -26424,7 +26424,7 @@ Light:
   m_Shape: 0
   m_Color: {r: 0.8396226, g: 0.5427744, b: 0.07524917, a: 1}
   m_Intensity: 6
-  m_Range: 10.868271
+  m_Range: 1
   m_SpotAngle: 30
   m_InnerSpotAngle: 21.80208
   m_CookieSize: 10
@@ -26516,8 +26516,8 @@ Light:
   m_Type: 2
   m_Shape: 0
   m_Color: {r: 0.8396226, g: 0.5427744, b: 0.07524917, a: 1}
-  m_Intensity: 6
-  m_Range: 10.868271
+  m_Intensity: 1
+  m_Range: 1
   m_SpotAngle: 30
   m_InnerSpotAngle: 21.80208
   m_CookieSize: 10
@@ -28370,7 +28370,7 @@ Light:
   m_Shape: 0
   m_Color: {r: 0.8396226, g: 0.5427744, b: 0.07524917, a: 1}
   m_Intensity: 6
-  m_Range: 10.868271
+  m_Range: 1
   m_SpotAngle: 30
   m_InnerSpotAngle: 21.80208
   m_CookieSize: 10
@@ -28468,8 +28468,8 @@ Light:
   m_Type: 2
   m_Shape: 0
   m_Color: {r: 0.8396226, g: 0.5427744, b: 0.07524917, a: 1}
-  m_Intensity: 6
-  m_Range: 10.868271
+  m_Intensity: 1
+  m_Range: 1
   m_SpotAngle: 30
   m_InnerSpotAngle: 21.80208
   m_CookieSize: 10
@@ -31628,7 +31628,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh18656
+  m_Name: pb_Mesh19204
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2
@@ -31902,7 +31902,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh18538
+  m_Name: pb_Mesh18980
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2
@@ -32104,7 +32104,7 @@ Light:
   m_Shape: 0
   m_Color: {r: 0.8396226, g: 0.5427744, b: 0.07524917, a: 1}
   m_Intensity: 6
-  m_Range: 10.868271
+  m_Range: 1
   m_SpotAngle: 30
   m_InnerSpotAngle: 21.80208
   m_CookieSize: 10
@@ -33021,7 +33021,7 @@ Light:
   m_Shape: 0
   m_Color: {r: 0.8396226, g: 0.5427744, b: 0.07524917, a: 1}
   m_Intensity: 6
-  m_Range: 10.868271
+  m_Range: 1
   m_SpotAngle: 30
   m_InnerSpotAngle: 21.80208
   m_CookieSize: 10
@@ -34322,7 +34322,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &1436042168
 Transform:
   m_ObjectHideFlags: 0
@@ -34340,7 +34340,6 @@ Transform:
   - {fileID: 1647549691}
   - {fileID: 1782312281}
   - {fileID: 1123026622}
-  - {fileID: 2046784193}
   - {fileID: 1825807624}
   - {fileID: 1514325799}
   - {fileID: 1830855151}
@@ -34356,6 +34355,7 @@ Transform:
   - {fileID: 1001840035}
   - {fileID: 1922390553}
   - {fileID: 1497794710}
+  - {fileID: 2046784193}
   m_Father: {fileID: 1592581429}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -34430,7 +34430,7 @@ PrefabInstance:
     - target: {fileID: -8679921383154817045, guid: 5329c00f408778943b9e188649eedb70,
         type: 3}
       propertyPath: m_RootOrder
-      value: 6
+      value: 21
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 5329c00f408778943b9e188649eedb70,
         type: 3}
@@ -34843,7 +34843,7 @@ Light:
   m_Shape: 0
   m_Color: {r: 0.8396226, g: 0.5427744, b: 0.07524917, a: 1}
   m_Intensity: 6
-  m_Range: 10.868271
+  m_Range: 1
   m_SpotAngle: 30
   m_InnerSpotAngle: 21.80208
   m_CookieSize: 10
@@ -35282,7 +35282,7 @@ Light:
   m_Shape: 0
   m_Color: {r: 0.8396226, g: 0.5427744, b: 0.07524917, a: 1}
   m_Intensity: 6
-  m_Range: 10.868271
+  m_Range: 1
   m_SpotAngle: 30
   m_InnerSpotAngle: 21.80208
   m_CookieSize: 10
@@ -35870,7 +35870,7 @@ Light:
   m_Shape: 0
   m_Color: {r: 0.8396226, g: 0.5427744, b: 0.07524917, a: 1}
   m_Intensity: 6
-  m_Range: 10.868271
+  m_Range: 1
   m_SpotAngle: 30
   m_InnerSpotAngle: 21.80208
   m_CookieSize: 10
@@ -35969,7 +35969,7 @@ Light:
   m_Shape: 0
   m_Color: {r: 0.8396226, g: 0.5427744, b: 0.07524917, a: 1}
   m_Intensity: 6
-  m_Range: 10.868271
+  m_Range: 1
   m_SpotAngle: 30
   m_InnerSpotAngle: 21.80208
   m_CookieSize: 10
@@ -36202,8 +36202,8 @@ Light:
   m_Type: 2
   m_Shape: 0
   m_Color: {r: 0.8396226, g: 0.5427744, b: 0.07524917, a: 1}
-  m_Intensity: 6
-  m_Range: 10.868271
+  m_Intensity: 1
+  m_Range: 1
   m_SpotAngle: 30
   m_InnerSpotAngle: 21.80208
   m_CookieSize: 10
@@ -36558,7 +36558,7 @@ Light:
   m_Shape: 0
   m_Color: {r: 0.8396226, g: 0.5427744, b: 0.07524917, a: 1}
   m_Intensity: 6
-  m_Range: 10.868271
+  m_Range: 1
   m_SpotAngle: 30
   m_InnerSpotAngle: 21.80208
   m_CookieSize: 10
@@ -36894,7 +36894,7 @@ Light:
   m_Shape: 0
   m_Color: {r: 0.8396226, g: 0.5427744, b: 0.07524917, a: 1}
   m_Intensity: 6
-  m_Range: 10.868271
+  m_Range: 1
   m_SpotAngle: 30
   m_InnerSpotAngle: 21.80208
   m_CookieSize: 10
@@ -39153,8 +39153,8 @@ Light:
   m_Type: 2
   m_Shape: 0
   m_Color: {r: 0.8396226, g: 0.5427744, b: 0.07524917, a: 1}
-  m_Intensity: 6
-  m_Range: 10.868271
+  m_Intensity: 1
+  m_Range: 1
   m_SpotAngle: 30
   m_InnerSpotAngle: 21.80208
   m_CookieSize: 10
@@ -39252,8 +39252,8 @@ Light:
   m_Type: 2
   m_Shape: 0
   m_Color: {r: 0.8396226, g: 0.5427744, b: 0.07524917, a: 1}
-  m_Intensity: 6
-  m_Range: 10.868271
+  m_Intensity: 1
+  m_Range: 1
   m_SpotAngle: 30
   m_InnerSpotAngle: 21.80208
   m_CookieSize: 10
@@ -39418,7 +39418,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh18584
+  m_Name: pb_Mesh19062
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2
@@ -40160,7 +40160,7 @@ Light:
   m_Shape: 0
   m_Color: {r: 0.8396226, g: 0.5427744, b: 0.07524917, a: 1}
   m_Intensity: 6
-  m_Range: 10.868271
+  m_Range: 1
   m_SpotAngle: 30
   m_InnerSpotAngle: 21.80208
   m_CookieSize: 10
@@ -40586,7 +40586,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh18390
+  m_Name: pb_Mesh18686
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2
