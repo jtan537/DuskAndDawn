@@ -23,11 +23,7 @@ public class NPC : MonoBehaviour
     public string text;
     public string npc_name;
 
-    [SerializeField]
     private Metadata _metadata;
-
-    [SerializeField]
-    private DialogUI dialogUI;
 
     // Each quest will manipulate this value.
     // Ex: Tree quest.cs sets this to true if player accepted tree quest
@@ -35,14 +31,10 @@ public class NPC : MonoBehaviour
     public ItemClickHandler[] handlers;
     private void Start()
     {
-        //_metadata = GameObject.FindObjectOfType<Metadata>().GetComponent<Metadata>();
-        if (_metadata == null)
-        {
-            print(this.gameObject.name);
-        }
+        _metadata = GameObject.FindObjectOfType<Metadata>().GetComponent<Metadata>();
         try
         {
-            dialogUI.dialogueRunner.Add(yarnDialog);
+            GameObject.FindObjectOfType<DialogUI>().dialogueRunner.Add(yarnDialog);
         } catch (Exception e)
         {
             print("Readding Yarn dialog: " + yarnDialog.name);
