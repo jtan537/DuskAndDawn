@@ -128,7 +128,7 @@ public class IceSlideMetadata : MonoBehaviour
             }
         }
             
-        if (!dawnController.isSliding && !duskController.isSliding)
+        if (!duskController.isSliding && !dawnController.isSliding)
         {
             checkWinCondition();
         }
@@ -144,12 +144,20 @@ public class IceSlideMetadata : MonoBehaviour
         {
             solvedPuzzle = false;
         }
-        if (dawnMovePoint.transform.position.x == dawnExitX && dawnMovePoint.transform.position.y == dawnExitY && !dawnController.isSliding
-            && duskMovePoint.transform.position.x == duskExitX && duskMovePoint.transform.position.y == duskExitY && !duskController.isSliding
+        if (_dawn.transform.position.x == dawnExitX && dawnMovePoint.transform.position.x == dawnExitX &&
+            _dawn.transform.position.y == dawnExitY && dawnMovePoint.transform.position.y == dawnExitY && !dawnController.isSliding &&
+            _dusk.transform.position.x == duskExitX && duskMovePoint.transform.position.x == duskExitX &&
+            _dusk.transform.position.y == duskExitY && duskMovePoint.transform.position.y == duskExitY && !duskController.isSliding
             && !solvedPuzzle)
         {
             Debug.Log("Solved Puzzle!");
-            GameObject.Find("Dawn").GetComponent<IceSlidingInteract>().Interact("IceSliding.DonePuzzle");
+            if (curPlayer == _dusk)
+            {
+                GameObject.Find("Dusk").GetComponent<IceSlidingInteract>().Interact("IceSliding.DonePuzzle");
+            } else
+            {
+                GameObject.Find("Dawn").GetComponent<IceSlidingInteract>().Interact("IceSliding.DonePuzzle");
+            }
             solvedPuzzle = true;
         }
     }
