@@ -35,7 +35,7 @@ public class PlayerAudioControl : MonoBehaviour
 
 		if (movement.playJumpSound && gameObject.name == "Dusk")
 		{
-			SoundManager.oneShotSoundFX(Random.Range(7, 9), jumpVolume);
+			SoundManager.oneShotSoundFX(Random.Range(8, 10), jumpVolume);
 			movement.playJumpSound = false;
 		}
 	}

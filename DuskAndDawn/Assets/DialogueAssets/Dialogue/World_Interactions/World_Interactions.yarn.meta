@@ -8,7 +8,7 @@ ScriptedImporter:
   assetBundleName: 
   assetBundleVariant: 
   script: {fileID: 11500000, guid: 94073015eacc34c1d8fc6786e43d60ca, type: 3}
-  baseLanguageID: en-CA
+  baseLanguageID: 
   stringIDs:
   - World_Interactions-Dawn.House.Start-0
   - World_Interactions-Dawn.Box.Hint-1
@@ -28,9 +28,14 @@ ScriptedImporter:
   - World_Interactions-Dusk.Frog.Wife-15
   - World_Interactions-Dusk.Frog.Wife-16
   - World_Interactions-Dusk.Frog.Wife-17
+  - World_Interactions-EnterTower.Start-18
+  - World_Interactions-EnterTower.Start-19
+  - World_Interactions-Level2Ladder-20
+  - World_Interactions-UnlockLevel2Ladder-21
+  - World_Interactions-UnlockLevel2Ladder-22
+  - World_Interactions-Level2Ladder.Dawn-23
   compilationStatus: 1
   isSuccesfullyCompiled: 1
   compilationErrorMessage: 
-  baseLanguage: {fileID: 7128917941130120860, guid: 614bb7465916ed640ae389128b1a6bdc,
-    type: 3}
+  baseLanguage: {instanceID: 0}
   localizations: []

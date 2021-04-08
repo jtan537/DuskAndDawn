@@ -12,7 +12,7 @@ public class NPC : MonoBehaviour
     public string YarnStartNode { get { return yarnStartNode; } }
     public string Name { get { return npc_name; } }
 
-    public static List<string> programNames = new List<string>();
+    
 
 #pragma warning disable 0649
     [SerializeField] string yarnStartNode = "Start";
@@ -26,7 +26,7 @@ public class NPC : MonoBehaviour
     public string npc_name;
 
     private Metadata _metadata;
-    bool addedQuest = false;
+   
 
     // Each quest will manipulate this value.
     // Ex: Tree quest.cs sets this to true if player accepted tree quest
@@ -35,17 +35,23 @@ public class NPC : MonoBehaviour
     private void Start()
     {
         _metadata = GameObject.FindObjectOfType<Metadata>().GetComponent<Metadata>();
-        
+        try
+        {
+            GameObject.FindObjectOfType<DialogUI>().dialogueRunner.Add(yarnDialog);
+        }
+        catch (Exception e)
+        {
+            print("Readding Yarn dialog: " + yarnDialog.name);
+        }
+
         InteractTriggerUI.SetActive(false);
+        // GameObject.FindObjectOfType<DialogUI>().AddSpeaker(speakerData);
+
     }
 
     private void OnTriggerEnter(Collider collision)
     {
-        if (!programNames.Contains(yarnDialog.name))
-        {
-            programNames.Add(yarnDialog.name);
-            GameObject.FindObjectOfType<DialogUI>().dialogueRunner.Add(yarnDialog);
-        }
+       
         if (collision.CompareTag("Player") && collision.gameObject.name == gameObject.tag && _metadata.getCurPlayer().name == collision.gameObject.name)
         {
             GetComponent<AudioSource>().Play();

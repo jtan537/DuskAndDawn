@@ -52,7 +52,7 @@ public class EnterTower : MonoBehaviour
         duskGemsPickedUp = metadata.duskGemsPickedUp;
         if (_varStorage.GetValue("$entered_tower").AsBool == true)
         {
-            SceneManager.LoadScene(sceneName: "IceSlidingPuzzle");
+            StartCoroutine(GameObject.FindObjectOfType<SceneLoader>().FadeAndLoadScene(SceneLoader.FadeDirection.In, "IceSlidingPuzzle")); 
         }
     }
 }

@@ -92,3 +92,11 @@ DAWN: We both have 2 gems now!
 <<SetSpeaker Dusk>>
 DUSK: I think that's all we can get here for now, let's try ascending the tower.
 ===
+title: Level2Ladder.Dawn
+tags: 
+colorID: 0
+position: -171,405
+---
+<<SetSpeaker Dawn>>
+Dawn: I don't think we can ascend yet...We need 2 gems, right?
+===

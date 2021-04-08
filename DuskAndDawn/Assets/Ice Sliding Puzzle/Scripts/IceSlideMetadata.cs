@@ -46,9 +46,11 @@ public class IceSlideMetadata : MonoBehaviour
     Material _duskColor, _dawnColor;
 
 
+
     // Start is called before the first frame update
     void Start()
     {
+        
         curPlayer = _dawn;
         _dawn.transform.position = new Vector3(dawnEntranceX, dawnEntranceY, _dawn.transform.position.z);
         dawnMovePoint.transform.position = _dawn.transform.position;
@@ -73,6 +75,7 @@ public class IceSlideMetadata : MonoBehaviour
         }
 
         videoPlayer.Prepare();
+      
     }
 
 

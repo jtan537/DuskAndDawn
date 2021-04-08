@@ -141,16 +141,15 @@ Cat: I'm gonna think for a bit.
 title: During.Quest
 tags: 
 colorID: 0
-position: 303,-248
+position: 302,-248
 ---
 <<SetSpeaker Cat thinking>>
-Cat: I wonder where she could have planted it...
-Cat: No way it could be on a secret platform, right?
+Cat: If you found the flower, you can give it to me by opening your inventory (B).
 ===
 title: Talk.To.Cat.Again
 tags: 
 colorID: 0
-position: 525,-248
+position: 525,-249
 ---
 <<SetSpeaker Cat thinking>>
 Cat:Hmm, where could this flower be?
