@@ -7,8 +7,7 @@ position: 930,146
 [[Waiting.For.Dawn]]
 <<endif>>
 <<SetSpeaker Dusk>>
-Dusk: Hmm, I see a platform with a chest over there.
-Dusk: But there's no path to it...
+Dusk: Hmm, I think I see flowers over there but there's no path to it...
 <<SetSpeaker Dawn sad>>
 Dawn: Really? I can see that there's platforms you can jump across.
 <<SetSpeaker Dusk>>

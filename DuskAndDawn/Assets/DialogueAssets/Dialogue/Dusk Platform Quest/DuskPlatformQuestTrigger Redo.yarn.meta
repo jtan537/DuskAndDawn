@@ -18,8 +18,7 @@ ScriptedImporter:
   - DuskPlatformQuestTrigger Redo-Dusk.Platform.Start-5
   - DuskPlatformQuestTrigger Redo-Dusk.Platform.Start-6
   - DuskPlatformQuestTrigger Redo-Dusk.Platform.Start-7
-  - DuskPlatformQuestTrigger Redo-Dusk.Platform.Start-8
-  - DuskPlatformQuestTrigger Redo-Waiting.For.Dawn-9
+  - DuskPlatformQuestTrigger Redo-Waiting.For.Dawn-8
   compilationStatus: 1
   isSuccesfullyCompiled: 1
   compilationErrorMessage: 

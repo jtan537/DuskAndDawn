@@ -7,7 +7,7 @@ public class MoveZLR : MonoBehaviour
     private bool move;
     public GameObject left;
     public GameObject right;
-    private int speed = 10;
+    private int speed = 6;
 
     // Start is called before the first frame update
     void Start()
