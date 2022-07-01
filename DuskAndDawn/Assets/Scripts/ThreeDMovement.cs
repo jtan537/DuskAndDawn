@@ -10,6 +10,9 @@ public class ThreeDMovement : MonoBehaviour
     [SerializeField]
     UpdateRespawnPoint respawnPoint;
 
+    [SerializeField]
+    bool alwaysJump = false;
+
     private float _moveSpeed;
 
     Vector3 velocity;
@@ -120,7 +123,7 @@ public class ThreeDMovement : MonoBehaviour
                 anim.SetBool("jumped", false);
                 _jumpedAnimPlayed = false;
             }
-            if (Input.GetButtonDown("Jump"))
+            if (Input.GetButtonDown("Jump") || alwaysJump)
             {
                 if (isGrounded)
                 {
